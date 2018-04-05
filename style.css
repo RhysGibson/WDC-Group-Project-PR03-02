@@ -1,11 +1,11 @@
 .body {
-  background-color: red;
+  background-color: white;
 }
 .loginBody
 {
 	margin: 0;
 	padding: 0;
-	background: url(background.jpg);
+	background: url(loginbackground.jpg);
 	background-size: cover;
 	font-family: sans-serif;
 }
