@@ -166,7 +166,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:lightgray;
+    background-color:darkgray;
 }
 
 li {
@@ -253,4 +253,11 @@ form.searchBox::after {
 
 ::placeholder {
   color: slategrey;
+}
+
+#eop {
+  width: 100%;
+  background-color: darkgrey;
+  margin-top: 55%;
+  color: black;
 }
