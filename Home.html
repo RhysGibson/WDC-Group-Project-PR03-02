@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>This page definitely has a title</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Home Page</title>
         <meta charset="utf-8"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+        $("backgroundImage > div:gt(0)").hide();
+
+        setInterval(function() {
+          $('#backgroundImage > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#backgroundImage');
+        },9000);
+       </script>
     </head>
     <body>
+
+        <ul>
+          <li><a class="active" href="#home">Logo</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Current Deals</a></li>
+          <li><a href="#contact">Manage Booking</a></li>
+          <li><a href="#contact">Manage Hotel</a></li>
+          <li><a href="#contact">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li style="float:right"><a href="#about">Log In/Register</a></li>
+          <li style="float:right"><a href="#about">Language/Currency</a></li>
+        </ul>
+
+        <div id="backgroundImage">
+          <div>
+            <img src="Beach.jpg" alt="Image of a Beach in Adelaide" width="100%">
+          </div>
+          <div>
+            <img src="City.jpg" alt="Image of Adelaide" width="100%">
+          </div>
+        </div>
 
     </body>
 </html>

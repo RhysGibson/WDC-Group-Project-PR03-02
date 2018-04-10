@@ -189,3 +189,14 @@ li a {
 li a:hover:not(.active) {
     background-color:darkgray;
 }
+
+#backgroundImage {
+  margin: 20px auto;
+  position: relative;
+  padding: 10px;
+  max-width: 1350px;
+}
+
+#backgroundImage > div {
+  position: absolute;
+}
