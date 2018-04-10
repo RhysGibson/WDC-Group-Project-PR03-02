@@ -158,7 +158,7 @@
 	text-decoration: none;
 }
 #MainColour {
-  background-color: #1481b7
+  background-color: #1481b7;
 }
 
 ul {
@@ -199,4 +199,58 @@ li a:hover:not(.active) {
 
 #backgroundImage > div {
   position: absolute;
+}
+
+.searchContainer {
+  position: relative;
+    text-align: center;
+    color: black;
+}
+
+.search {
+  margin-top: 25%;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.searchBox input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+form.searchBox button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.searchBox button:hover {
+  background: #0b7dda;
+}
+
+form.searchBox::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+::placeholder {
+  color: slategrey;
 }

@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Home Page</title>
         <meta charset="utf-8"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -15,7 +16,7 @@
             .fadeIn(1000)
             .end()
             .appendTo('#backgroundImage');
-        },9000);
+        },14000);
        </script>
     </head>
     <body>
@@ -32,14 +33,21 @@
           <li style="float:right"><a href="#about">Language/Currency</a></li>
         </ul>
 
-        <div id="backgroundImage">
-          <div>
-            <img src="Beach.jpg" alt="Image of a Beach in Adelaide" width="100%">
+        <div class="searchContainer">
+          <div id="backgroundImage">
+            <div>
+              <img src="Beach.jpg" alt="Image of a Beach in Adelaide" width="100%">
+            </div>
+            <div>
+              <img src="City.jpg" alt="Image of Adelaide" width="100%">
+            </div>
           </div>
-          <div>
-            <img src="City.jpg" alt="Image of Adelaide" width="100%">
+          <div class="search">
+            <form class="searchBox" action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search" style="color:black;">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
           </div>
         </div>
-
     </body>
 </html>
