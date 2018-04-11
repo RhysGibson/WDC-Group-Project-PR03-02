@@ -4,20 +4,80 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+  <script src="script.js"></script>
   <title>Search results for ...</title>
 <body>
 
-  <ul>
+  <ul class="topbar">
     <li><a class="active" href="#home">Logo</a></li>
     <li><a href="#news">News</a></li>
-    <li><a href="#contact">Current Deals</a></li>
-    <li><a href="#contact">Manage Booking</a></li>
-    <li><a href="#contact">Manage Hotel</a></li>
-    <li><a href="#contact">FAQ</a></li>
+    <li><a href="#deals">Current Deals</a></li>
+    <li><a href="#managebooking">Manage Booking</a></li>
+    <li><a href="#managhotel">Manage Hotel</a></li>
+    <li><a href="#recentlyviewed">Recently Viewed</a></li>
+    <li><a href="#favourites">Favourites</a></li>
+    <li><a href="#FAQ">FAQ</a></li>
     <li><a href="#contact">Contact Us</a></li>
-    <li style="float:right"><a href="#about">Log In/Register</a></li>
+    <li style="float:right"><a href="#login">Log In/Register</a></li>
     <li style="float:right"><a href="#about">Language/Currency</a></li>
   </ul>
 
+  <div class="page" id="searchContainer">
+    <div id="filters">
+      <p>Price Range:</p>
+      <span>Min Price:</span>
+      <input id="priceRangeSearchMin" type="number" name="costs" min="1" value="1" onchange="getPriceRangeMin()"/><br />
+      <span>Max Price:</span>
+      <input id="priceRangeSearchMax" type="number" name="costs" min="2" value="600" onchange="getPriceRangeMax()"/><br />
+      <span id="priceRangeText">$ 1-600</span>
+      <p>Number of People:</p>
+      <span id="numPeopleSearch">0</span>
+      <p>Hotel Stars</p>
+      <input id="hotelStarsSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getHotelStarsSearch()"/><br />
+      <span id="hotelStarsText">3</span>
+      <p>User Rating</p>
+      <input id="userRatingSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getUserRatingSearch()"/><br />
+      <span id="userRatingText">3</span>
+      <p>Location</p>
+      <input id="locationSearch" type="text" value="Adelaide"><br />
+      <p>Accomodation</p>
+      <input type="checkbox" name="bed" value="kingBed" />King Bed<br />
+      <input type="checkbox" name="bed" value="queenBed" />Queen Bed<br />
+      <input type="checkbox" name="bed" value="singleBed" />Single Bed<br />
+      <p>Features</p>
+      <input type="checkbox" name="features" value="complimentaryBreakfast" />Complimentary Breakfast<br />
+      <input type="checkbox" name="features" value="freeWifi" />Free WiFi<br />
+      <input type="checkbox" name="features" value="pool" />Pool<br />
+    </div>
+
+    <div id="searchResults">
+      <div class="result">
+        <div class="leftResult">
+          <p>Favorite</p>
+          <p>Hilton Hotel</p>
+        </div>
+        <div class="rightResult">
+          <p>Booking Costs</p>
+          <a href="#viewdetails">View Details</a>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <p>Favorite</p>
+          <p>Hilton Hotel</p>
+        </div>
+        <div class="rightResult">
+          <p>Booking Costs</p>
+          <a href="#viewdetails">View Details</a>
+        </div>
+      </div>
+    <div>
+
+    <div id="searchResultsNavigation">
+      <p>Viewing page 1 of 1 (2 Results)</p>
+      <a href="#prevpage">Prev</a>
+      <a href="#nextpage">Next</a>
+    </div>
+  </div>
 </body>
 </html>

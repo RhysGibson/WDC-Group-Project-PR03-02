@@ -161,12 +161,12 @@
   background-color: #1481b7;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:darkgray;
+.topbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:darkgray;
 }
 
 li {
@@ -260,4 +260,61 @@ form.searchBox::after {
   background-color: darkgrey;
   margin-top: 55%;
   color: black;
+}
+
+.page {
+	width:1200px;
+	margin:auto;
+}
+
+.result {
+  display: inline-block;
+  margin:0 auto;
+  width:880px;
+  height:auto;
+  background:skyblue;
+  margin-top:8px;
+  margin-bottom:8px;
+  padding:5px;
+  text-align:left;
+}
+
+#filters {
+	float:left;
+	border-style:solid;
+	border-radius:4px;
+	border-width:1px;
+	border-color:darkgrey;
+	background-color:white;
+	height:690px;
+	width:275px;
+	padding:1px;
+  font-weight:bold;
+}
+
+#searchResults {
+  float:right;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+  height:auto;
+  width:900px;
+  position:relative;
+  overflow:hidden;
+  padding:5px;
+}
+
+#searchContainer {
+	margin-top:10px;
+  text-align:center;
+}
+
+.leftResult {
+  float:left;
+}
+
+.rightResult {
+  float:right;
 }
