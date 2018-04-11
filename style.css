@@ -169,16 +169,16 @@
   background-color:darkgray;
 }
 
-li {
+.topbar li {
     float: left;
     border-right:1px solid #bbb;
 }
 
-li:last-child {
+.topbar li:last-child {
     border-right: none;
 }
 
-li a {
+.topbar li a {
     display: block;
     color: black;
     text-align: center;
@@ -186,7 +186,7 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+.topbar li a:hover:not(.active) {
     background-color:slategray;
 }
 
@@ -286,9 +286,9 @@ form.searchBox::after {
 	border-width:1px;
 	border-color:darkgrey;
 	background-color:white;
-	height:690px;
+	height:auto;
 	width:275px;
-	padding:1px;
+	padding:5px;
   font-weight:bold;
 }
 
@@ -317,4 +317,24 @@ form.searchBox::after {
 
 .rightResult {
   float:right;
+}
+
+.bookingCosts{
+  float:right;
+  margin-right:60px;
+}
+
+.viewDetails{
+  text-align:center;
+  width:100px;
+  float:right;
+  margin-top:50px;
+}
+
+.hotelImageSearch{
+  width:200px;
+  border:solid 1px;
+  border-width:1px;
+  border-color:black;
+  height:200px;
 }

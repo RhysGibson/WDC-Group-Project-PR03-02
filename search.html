@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
   <script src="script.js"></script>
   <title>Search results for ...</title>
-<body>
+<body onload="setSearchNumbers()">
 
   <ul class="topbar">
     <li><a class="active" href="#home">Logo</a></li>
@@ -31,7 +31,7 @@
       <input id="priceRangeSearchMax" type="number" name="costs" min="2" value="600" onchange="getPriceRangeMax()"/><br />
       <span id="priceRangeText">$ 1-600</span>
       <p>Number of People:</p>
-      <span id="numPeopleSearch">0</span>
+      <input id="numPeopleSearch" type="number" name="people" min="1" max="9" value="1"/><br />
       <p>Hotel Stars</p>
       <input id="hotelStarsSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getHotelStarsSearch()"/><br />
       <span id="hotelStarsText">3</span>
@@ -48,33 +48,362 @@
       <input type="checkbox" name="features" value="complimentaryBreakfast" />Complimentary Breakfast<br />
       <input type="checkbox" name="features" value="freeWifi" />Free WiFi<br />
       <input type="checkbox" name="features" value="pool" />Pool<br />
+      <br />
+      <button id="refineButton" type="submit">Refine Search</button>
+      <button id="clearFilters" type="reset">Clear Filters</button>
     </div>
 
     <div id="searchResults">
       <div class="result">
         <div class="leftResult">
-          <p>Favorite</p>
-          <p>Hilton Hotel</p>
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 1 Stars/2 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
         </div>
         <div class="rightResult">
-          <p>Booking Costs</p>
-          <a href="#viewdetails">View Details</a>
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$52 - Cheap Hotels</li>
+              <li>$55 - Hotels R Us</li>
+              <li>$56 - We Hotel You</li>
+              <li>$56 - Hotel Notvago</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <p>Favorite</p>
-          <p>Hilton Hotel</p>
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 3 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
         </div>
         <div class="rightResult">
-          <p>Booking Costs</p>
-          <a href="#viewdetails">View Details</a>
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="leftResult">
+          <a href="#favorite">Favourite</a>
+          <p>Hilton Hotel - 5 Stars</p>
+          <div class="hotelImageSearch">
+             <img src="hotel.jpg" alt="Hotel Image">
+          </div>
+        </div>
+        <div class="rightResult">
+          <div class="viewDetails">
+            <a href="#viewdetails">View Details</a>
+          </div>
+          <div class="bookingCosts">
+            <p>Booking Costs</p>
+            <ul>
+              <li>$502 - Cheap Hotels</li>
+              <li>$553 - Hotels R Us</li>
+              <li>$562 - We Hotel You</li>
+              <li>$563 - Hotel Notvago</li>
+            </ul>
+          </div>
         </div>
       </div>
     <div>
 
     <div id="searchResultsNavigation">
-      <p>Viewing page 1 of 1 (2 Results)</p>
+      <p id="searchNumPages">Viewing page  of  ( Results)</p>
+      <a id="searchPage1" href="#1">1</a></br>
       <a href="#prevpage">Prev</a>
       <a href="#nextpage">Next</a>
     </div>
