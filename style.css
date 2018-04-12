@@ -258,7 +258,7 @@ form.searchBox::after {
 #eop {
   width: 100%;
   background-color: darkgrey;
-  margin-top: 55%;
+  margin-top: 0 auto;
   color: black;
 }
 
@@ -337,4 +337,76 @@ form.searchBox::after {
   border-width:1px;
   border-color:black;
   height:200px;
+}
+
+.recommendationsleft {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 40px;
+    padding:5px;
+    text-align:left;
+}
+
+.recommendationsright {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 10px;
+    padding:5px;
+    text-align:left;
+}
+
+.leftrec {
+  float:left;
+}
+
+.rightrec {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.hotleft {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 40px;
+    padding:5px;
+    text-align:left;
+}
+
+.hotright {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 10px;
+    padding:5px;
+    text-align:left;
+}
+
+.lefthot {
+  float:left;
+}
+
+.righthot {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
 }
