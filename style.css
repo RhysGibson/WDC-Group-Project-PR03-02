@@ -417,3 +417,57 @@ form.searchBox::after {
   margin: 20px auto;
   width: 1300px;
 }
+
+.contentoutline {
+  margin-top: 10px;
+  margin-left: 108px;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+  height:auto;
+  width:1180px;
+  position:relative;
+  overflow:hidden;
+  padding:5px;
+}
+
+.hotelroom {
+      display: inline-block;
+      margin:0 auto;
+      width:1180px;
+      height:auto;
+      background:skyblue;
+      margin-top:8px;
+      margin-bottom:8px;
+      padding:5px;
+      text-align:left;
+}
+
+.leftroom{
+  float:left;
+}
+
+.rightroom {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.hotelRoomImageSearch{
+  width:400px;
+  border:solid 1px;
+  border-width:1px;
+  border-color:black;
+  height:400px;
+}
+
+.homeoutline {
+  margin-top: 55%;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+}
