@@ -4,9 +4,10 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="script.js"></script>
   <title>Map Search</title>
-<body onload="setSearchNumbers()">
+<body>
 
   <ul class="topbar">
     <li><a href="home.html">goprohotels</a></li>
@@ -24,86 +25,104 @@
 
   <div id="mapSearchContainer">
     <div id="mapListings">
-      <div class=centeredText>
-        <p class="titleText">Hotels found near <b>Adelaide</b></p>
+      <div class="centeredText">
+        <div class="searchSearch">
+          <form class="searchBoxSearch" action="search.html">
+            <input type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
+            <button type="submit"><i class="fa fa-map-marker"></i></button>
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <p class="titleText"><br/>Hotels found near <b>Adelaide</b></p>
         <button id="openFilters" type="button" onclick="openFilters()">Open Filters</button>
-        <p>Current Price Range: $ 1-600</p>
+        <br/>
+        <span>Current Price Range: $ 1-600</span><br/>
+        <span>Current Distance: 5km</span><br/>
         <span>Sort by:</span>
         <select name="sort">
           <option value="closest">Distance from marker</option>
-         <option value="pricelow">Price (Low)</option>
-         <option value="pricehigh">Price (High)</option>
-         <option value="userstarslow">User Stars (Low)</option>
-         <option value="userstarshigh">User Stars (High)</option>
-         <option value="hotelstarslow">Hotel Stars (Low)</option>
-         <option value="hotelstarshigh">Hotel Stars (High)</option>
+          <option value="poplow">Popularity (Low)</option>
+          <option value="pophigh">Popularity (High)</option>
+          <option value="pricelow">Price (Low)</option>
+          <option value="pricehigh">Price (High)</option>
+          <option value="userstarslow">User Stars (Low)</option>
+          <option value="userstarshigh">User Stars (High)</option>
+          <option value="hotelstarslow">Hotel Stars (Low)</option>
+          <option value="hotelstarshigh">Hotel Stars (High)</option>
         </select>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <p>Hilton Hotel</p>
+        <a href="#hotel">Hilton Hotel</a>
         <div class="mapResultImage">
           <img src="hotel.jpg" alt="Hotel Image">
         </div>
         <p>User Rating: *****</p>
         <p>Hotel Rating: *****</p>
-        <p>$500</p>
+        <p class="mapSearchCost">$500</p>
       </div>
     </div>
     <div id="map">
       <p>Map would go here</p>
     </div>
   </div>
+  <div class="bottomPart" id="eop">
+    <p><a href="faq.html">FAQ</a></p>
+    <p><a href="terms.html">Terms and Conditions</a></p>
 
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-instagram"></i>
+  </div>
 </body>
 </html>

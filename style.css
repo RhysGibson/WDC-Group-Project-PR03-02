@@ -287,6 +287,7 @@ form.searchBox::after {
 	width:275px;
 	padding:5px;
   font-weight:bold;
+  margin-top:10px;
 }
 
 #searchResults {
@@ -301,6 +302,7 @@ form.searchBox::after {
   position:relative;
   overflow:hidden;
   padding:5px;
+  margin-top:10px;
 }
 
 #searchContainer {
@@ -523,6 +525,7 @@ form.searchBox::after {
 }
 
 .titleText {
+  margin-top:10px;
   font-family:Raleway;
   font-size:large;
 }
@@ -532,4 +535,121 @@ form.payment input[type=text] {
   margin: 5px;
   border: 1px solid black;
   background: white;
+}
+
+.searchBarSearch {
+  display:inline-block;
+}
+
+.searchSearch {
+  width:95%;
+  margin:0 auto;
+  margin-bottom:5px;
+  position: relative;
+}
+
+.rightAlign{
+  margin-top:5px;
+  text-align:right;
+}
+
+form.searchBoxSearch input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 70%;
+  background: white;
+}
+
+form.searchBoxSearch button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+.bottomPart {
+  display:inline-block;
+  clear:both;
+  margin-top:10px;
+}
+
+.mapSearchCost {
+  font-weight: bold;
+  font-size:20px;
+}
+
+#hotelOverviewContainer{
+  width:90%;
+  margin:auto;
+  margin-top:10px;
+  height:auto;
+}
+
+#overviewPhotos{
+  height:400px;
+  width:600px;
+  border:1px solid;
+  float:left;
+}
+
+.hotelname {
+  font-size:25px;
+}
+
+#overviewGeneralInfo {
+  margin-left:20px;
+  float:left;
+}
+
+#overviewInDepth {
+  display:inline-block;
+  width:100%;
+}
+
+#overviewMap {
+  float:left;
+  border:solid 1px;
+  width:350px;
+  height:350px;
+  margin-right:20px;
+}
+
+#reviewBox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 90%;
+  height:100px;
+  font-family:Raleway;
+}
+
+#reviewButton {
+  margin-left:auto;
+  margin-right:auto;
+  height:50px;
+  width:8%;
+}
+
+.review {
+  display:block;
+  width:36%;
+  font-size:18px;
+  font-family:Raleway;
+}
+
+.reviewThumbs {
+  float:left;
+  font-size:50px;
+  margin-right:5px;
+}
+
+#reviewRating {
+  display:inline-block;
 }
