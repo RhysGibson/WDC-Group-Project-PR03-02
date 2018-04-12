@@ -39,7 +39,6 @@
 	text-align: center;
 }
 
-
 .loginBox p
 {
 	margin: 0;
@@ -90,8 +89,6 @@
 	font-weight: bold;
 	text-decoration: none;
 }
-
-
 
 .registerBox
 {
@@ -409,4 +406,14 @@ form.searchBox::after {
   float:right;
   margin-right: 40px;
   margin-top: 30px;
+}
+
+.termsandcondit {
+  margin: 20px auto;
+  width: 1300px;
+}
+
+.FAQ {
+  margin: 20px auto;
+  width: 1300px;
 }
