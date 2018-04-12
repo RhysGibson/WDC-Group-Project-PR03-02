@@ -526,3 +526,10 @@ form.searchBox::after {
   font-family:Raleway;
   font-size:large;
 }
+
+form.payment input[type=text] {
+  font-size: 17px;
+  margin: 5px;
+  border: 1px solid black;
+  background: white;
+}
