@@ -9,7 +9,7 @@
 <body onload="setSearchNumbers()">
 
   <ul class="topbar">
-    <li><a class="active" href="home.html">goprohotels</a></li>
+    <li><a href="home.html">goprohotels</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#deals">Current Deals</a></li>
     <li><a href="#managebooking">Manage Booking</a></li>
@@ -47,17 +47,26 @@
       <p>Features</p>
       <input type="checkbox" name="features" value="complimentaryBreakfast" />Complimentary Breakfast<br />
       <input type="checkbox" name="features" value="freeWifi" />Free WiFi<br />
-      <input type="checkbox" name="features" value="pool" />Pool<br />
-      <br />
-      <button id="refineButton" type="submit">Refine Search</button>
-      <button id="clearFilters" type="reset">Clear Filters</button>
+      <input type="checkbox" name="features" value="pool" />Pool<br /><br />
+      <span>Sort by:</span>
+      <select name="sort">
+       <option value="pricelow">Price (Low)</option>
+       <option value="pricehigh">Price (High)</option>
+       <option value="userstarslow">User Stars (Low)</option>
+       <option value="userstarshigh">User Stars (High)</option>
+       <option value="hotelstarslow">Hotel Stars (Low)</option>
+       <option value="hotelstarshigh">Hotel Stars (High)</option>
+      </select>
+      <br /><br />
+      <button id="refineButton" type="submit" onclick="refineSearch()">Refine Search</button>
+      <button id="clearFilters" type="reset" onclick="resetFilters()">Clear Filters</button>
     </div>
 
     <div id="searchResults">
-      <div class="result">
+      <div class="result hoteltwo userone">
         <div class="leftResult">
           <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 1 Stars/2 Stars</p>
+          <p>Hilton Hotel - 2 Stars/1 Stars</p>
           <div class="hotelImageSearch">
              <img src="hotel.jpg" alt="Hotel Image">
           </div>
@@ -401,13 +410,14 @@
       </div>
     <div>
 
-    <div id="searchResultsNavigation">
-      <p id="searchNumPages">Viewing page  of  ( Results)</p>
-      <a id="searchPage1" href="#1">1</a></br>
-      <a href="#prevpage">Prev</a>
-      <a href="#nextpage">Next</a>
+      <div id="searchResultsNavigation">
+        <p id="searchNumPages">Viewing page  of  ( Results)</p>
+        <a id="searchPage1" href="#1">1</a><br />
+        <a href="#prevpage">Prev</a>
+        <a href="#nextpage">Next</a>
+      </div>
+    </div>
     </div>
   </div>
-</div>
 </body>
 </html>

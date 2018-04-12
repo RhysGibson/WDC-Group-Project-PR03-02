@@ -1,5 +1,5 @@
 var peopleCount = 0;
-var setLocation = "Adelaide"
+var setLocation = "Adelaide";
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -44,7 +44,7 @@ function getUserRatingSearch(){
 
 function setSearchNumbers(){
   // Set Bottom Section
-  var Elements
+  //var Elements
   var childCount = document.getElementById("searchResults").childElementCount;
   childCount--;
   var pageCount = Math.ceil(childCount/10);
@@ -65,4 +65,25 @@ function setSearchNumbers(){
       childrenElements[j].style.display = "none";
     }
   }
+}
+
+function refineSearch(){
+  var childCount = document.getElementById("searchResults").childElementCount;
+  childCount--;
+  var lowPrice = document.getElementById("priceRangeSearchMin");
+  var highPrice = document.getElementById("priceRangeSearchMax");
+  var hotelStar = document.getElementById("hotelStarsSearch");
+  var userStar = document.getElementById("userRatingSearch");
+  var location = document.getElementById("locationSearch");
+  var childrenElements = document.getElementById("searchResults").children;
+  for(var i = 0; i<childCount-Number(1); i++){
+    childrenElements[i].style.display = "block";
+    if(childrenElements[i]){
+
+    }
+  }
+}
+
+function resetFilters(){
+
 }
