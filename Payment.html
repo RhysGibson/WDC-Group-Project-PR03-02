@@ -6,9 +6,6 @@
         <title>Payment</title>
         <meta charset="utf-8"/>
         <script src="script.js"></script>
-        <script>
-        document.getElementById("test").innerHTML = roomChoice;<!--this is not working -->
-        </script>
     </head>
     <body>
           <ul class="topbar">
@@ -24,7 +21,6 @@
           </ul>
 
           <div class="contentoutline">
-            <div id="test">hi</div> <!--this is where its supposed to be displaying a number-->
             <form class="payment" action="/action_page.php">
               <input type="text" name="firstname" placeholder="First Name">
               <br>
@@ -36,9 +32,7 @@
               <br>
               <input type="checkbox" name="confirm" value="Confirm?">Confirm?
               <br><br>
-              <input type="submit" value="Confirm">
             </form>
-
             <p>We do not require your credit card details as we use the magic of the internet to make your payments happen.</p>
             <p>No this is not a joke, check the FAQ for more.</p>
           </div>
