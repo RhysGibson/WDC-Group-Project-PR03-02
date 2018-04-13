@@ -839,11 +839,6 @@ footer p{
 	margin: 5px 0 0 12%;
 }
 
-.old_ie header h1, .old_ie nav, .old_ie nav li, .old_ie #adbanner a, .old_ie article, .old_ie .readmore, .old_ie #sponsors a {
-    display: inline;
-    zoom: 1;
-}
-
 #userRatingText {
   color:green;
 }
