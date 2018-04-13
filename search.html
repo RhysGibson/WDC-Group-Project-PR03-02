@@ -59,10 +59,10 @@
       <input id="numPeopleSearch" type="number" name="people" min="1" max="9" value="1"/><br />
       <p>Hotel Stars</p>
       <input id="hotelStarsSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getHotelStarsSearch()"/><br />
-      <span id="hotelStarsText">3</span>
+      <span id="hotelStarsText"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <p>User Rating</p>
       <input id="userRatingSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getUserRatingSearch()"/><br />
-      <span id="userRatingText">3</span>
+      <span id="userRatingText"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <p>Location</p>
       <input id="locationSearch" type="text" value="Adelaide"><br />
       <p>Accomodation</p>
@@ -78,12 +78,14 @@
     </div>
 
     <div id="searchResults">
-      <div class="result hoteltwo userone">
+      <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
@@ -103,322 +105,250 @@
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 3 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="result">
         <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
+          <a style="color:red;font-size:30px;" href="#favorite" tooltip="Add to favourites"><i class="fa fa-heart"></i></a>
+          <span class="hotelname">Hilton Hotel</span><br/>
+          <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+          <div>
+             <img class="hotelImageSearch" src="images/hotel.jpg" alt="Hotel Image">
           </div>
         </div>
         <div class="rightResult">
           <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
+            <a href="hotelOverview.html">View Details</a>
           </div>
           <div class="bookingCosts">
             <p>Booking Costs</p>
             <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="result">
-        <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
-          </div>
-        </div>
-        <div class="rightResult">
-          <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
-          </div>
-          <div class="bookingCosts">
-            <p>Booking Costs</p>
-            <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="result">
-        <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
-          </div>
-        </div>
-        <div class="rightResult">
-          <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
-          </div>
-          <div class="bookingCosts">
-            <p>Booking Costs</p>
-            <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="result">
-        <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
-          </div>
-        </div>
-        <div class="rightResult">
-          <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
-          </div>
-          <div class="bookingCosts">
-            <p>Booking Costs</p>
-            <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="result">
-        <div class="leftResult">
-          <a href="#favorite">Favourite</a>
-          <p>Hilton Hotel - 5 Stars</p>
-          <div class="hotelImageSearch">
-             <img src="hotel.jpg" alt="Hotel Image">
-          </div>
-        </div>
-        <div class="rightResult">
-          <div class="viewDetails">
-            <a href="#viewdetails">View Details</a>
-          </div>
-          <div class="bookingCosts">
-            <p>Booking Costs</p>
-            <ul>
-              <li>$502 - Cheap Hotels</li>
-              <li>$553 - Hotels R Us</li>
-              <li>$562 - We Hotel You</li>
-              <li>$563 - Hotel Notvago</li>
+              <li>$502 - Hotels 4 U</li>
+              <li>$520 - Hotels R Us</li>
+              <li>$549 - Cheap Hotels</li>
+              <li>$520 - Hotel Notvago</li>
             </ul>
           </div>
         </div>
@@ -428,8 +358,8 @@
       <div id="searchResultsNavigation">
         <p id="searchNumPages">Viewing page  of  ( Results)</p>
         <a id="searchPage1" href="#1">1</a><br />
-        <a href="#prevpage">Prev</a>
-        <a href="#nextpage">Next</a>
+        <a class="siteColor" href="#prevpage"><i class="fa fa-chevron-left"></i></a>
+        <a class="siteColor" href="#nextpage"><i class="fa fa-chevron-right"></i></a>
       </div>
     </div>
     </div>

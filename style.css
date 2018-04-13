@@ -158,13 +158,15 @@
 #MainColour {
   background-color: #1481b7;
 }
-
+.siteColor {
+  color:#2555a3;
+}
 .topbar{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color:darkgray;
+  background-color:#2555a3;
 }
 
 .topbar li {
@@ -178,14 +180,15 @@
 
 .topbar li a {
     display: block;
-    color: black;
+    font-family:Arial;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .topbar li a:hover:not(.active) {
-    background-color:slategray;
+    background-color:#4d77bc;
 }
 
 #backgroundImage {
@@ -254,10 +257,11 @@ form.searchBox::after {
 }
 
 #eop {
+  text-align: center;
   width: 100%;
-  background-color: darkgrey;
+  background-color: #2555a3;
   margin-top: 0 auto;
-  color: black;
+  color: white;
 }
 
 .page {
@@ -586,8 +590,14 @@ form.searchBoxSearch button {
   font-size:20px;
 }
 
+#overviewReviews {
+  margin-top:15px;
+  width:95%;
+  display:inline-block;
+}
+
 #hotelOverviewContainer{
-  width:90%;
+  width:80%;
   margin:auto;
   margin-top:10px;
   height:auto;
@@ -601,6 +611,7 @@ form.searchBoxSearch button {
 }
 
 .hotelname {
+  font-family:Arial;
   font-size:25px;
 }
 
@@ -681,7 +692,7 @@ form.searchBoxSearch button {
 }
 img{
 	border: none;
-    
+
 }
 
 .b3{
@@ -780,8 +791,8 @@ section{
 }
 #secwrapper{
 	/*background: url('images/bg.gif') fixed;
-	background-color: #f47771;*/ 
-	padding-top: 20px; 
+	background-color: #f47771;*/
+	padding-top: 20px;
 }
 article{
 	width: 280px;
@@ -828,7 +839,7 @@ article p{
 	height: 125px;
 	display: inline-block;
 	margin: 5px 4px 6px 7px;
-	border: 1px solid #c3c3c3; 
+	border: 1px solid #c3c3c3;
 }
 #sponsors a p{
 	margin: 50px auto;
@@ -865,4 +876,14 @@ footer p{
     zoom: 1;
 }
 
+#userRatingText {
+  color:green;
+}
 
+#hotelStarsText {
+  color:gold;
+}
+
+#eop i{
+  font-size:50px;
+}

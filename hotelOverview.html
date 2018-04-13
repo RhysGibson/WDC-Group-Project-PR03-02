@@ -24,8 +24,8 @@
   </ul>
 
   <div id="hotelOverviewContainer" class="hotelname">
-    <div id="overviewPhotos">
-      <img src="hotel.jpg" alt="Hotel Image">
+    <div>
+      <img id="overviewPhotos" src="images/hotel.jpg" alt="Hotel Image">
     </div>
     <div id="overviewGeneralInfo">
       <span style="font-size: 50px;">Hilton Hotel</span>
@@ -37,14 +37,14 @@
       <br/>
       <br/>
       <span>User Rating: </span>
-      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+      <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <br/>
       <span>Hotel Rating: </span>
-      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+      <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <br/><br/>
       <span>Details of Booking:</span>
       <br/>
-      <ul>
+      <ul style="margin-left:25px">
         <li>Rooms: 1 Room</li>
         <li>Accomodation: 1 King Size Bed</li>
         <li>Check-In/Check-Out: 10/03/2019-15/03/2019 (5 Days)</li>
@@ -55,6 +55,7 @@
     </div>
     <div id="overviewInDepth">
       <hr>
+      <br/>
       <div id="overviewMap">
         <p>Map would go here</p>
       </div>
@@ -67,9 +68,10 @@
         <p>Hilton is a global brand founded by Conrad Hilton. The Hilton Hotel is one of Adelaide's finest hotels. It's central location in the CBD allows you to commute around the city easily, letting you make the most of your time in Adelaide. Whether you're looking for a good time in the city or just a nice play to stay for a while, the Hilton Hotel has you covered. Our staff will be sure to take care of any of your needs to the best of our ability to leave you with a satisfied experience.
         </p>
       </div>
+      <br/>
       <hr>
       <div style="text-align:right;" id="overviewReviews">
-        <p style="text-align:center;">Leave us a Review! (Hotel Replies Marked in Red)</p>
+        <p style="text-align:center;">Leave us a Review! (Hotel Replies Marked in <b style="color:darkred">Red</b>)</p>
         <textarea id="reviewBox">Leave your review here...</textarea>
         <br/>
         <button style="float:right" type="submit" id="reviewButton">Submit Review</button>
@@ -83,6 +85,8 @@
         <span style="float:right">Your Rating:</span>
         <br/>
       </div>
+      <br/><br/>
+      <hr>
       <br/>
       <span style="float:left;text-decoration:underline;margin-left:15px;">Reviews</span>
       <select style="float:right;margin-right:15px;" class="rightAlign" name="sort">

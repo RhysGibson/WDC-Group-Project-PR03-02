@@ -36,11 +36,19 @@ function getPriceRangeMax(){
 }
 
 function getHotelStarsSearch(){
-  document.getElementById("hotelStarsText").innerHTML = document.getElementById("hotelStarsSearch").value;
+  var hotelStars = document.getElementById("hotelStarsText");
+  hotelStars.innerHTML = "";
+  for(var i = 0; i<document.getElementById("hotelStarsSearch").value; i++){
+    hotelStars.innerHTML += '<i class="fa fa-star"></i>';
+  }
 }
 
 function getUserRatingSearch(){
-  document.getElementById("userRatingText").innerHTML = document.getElementById("userRatingSearch").value;
+  var userRating = document.getElementById("userRatingText");
+  userRating.innerHTML = "";
+  for(var i = 0; i<document.getElementById("userRatingSearch").value; i++){
+    userRating.innerHTML += '<i class="fa fa-star"></i>';
+  }
 }
 
 function setSearchNumbers(){
