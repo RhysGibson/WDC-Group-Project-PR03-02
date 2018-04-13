@@ -2,6 +2,8 @@ var peopleCount = 0;
 var setLocation = "Adelaide";
 var roomChoice;
 
+
+
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }

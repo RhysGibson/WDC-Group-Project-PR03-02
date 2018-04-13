@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+<ul class="topbar">
+          <li><a class="active" href="home.html">goprohotels</a></li>
+          <li><a href="News.html">News</a></li>
+          <li><a href="#contact">Current Deals</a></li>
+          <li><a href="manageBookings.html">Manage Booking</a></li>
+          <li><a href="#contact">Manage Hotel</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="faq.html">Contact Us</a></li>
+          <li style="float:right"><a href="Login%20Screen%20V1.html">Log In/Register</a></li>
+          <li style="float:right"><a href="#about">Language/Currency</a></li>
+        </ul>
+    <h1>Current Bookings</h1>
+      
+<div id ="booked" style="margin: 2%;border: solid">
+    <div>
+                <img class = "hotelImageSearch" src="images/hotel.jpg" alt="Hotel Room image">
+              </div>
+    <p>Room:<span id = "Room"> Hilton Hotel</span></p>
+    <p>Room Number:<span id = "room"></span></p>      
+    <p>Cost:$502</p>
+    <p>Payment:fulfilled</p>
+    <p><a href = "roomCanceled.html">Cancel Room</a></p>
+      </div>
+      
+<div id = "notbooked">
+      <p>You have not booked a hotel! <a href = "search.html">Click here to book.</a></p>
+      
+      </div>
+<script>     
+var hotelBooking;
+roomNumber();
+var x = document.getElementById("room").innerHTML;
+console.log(x);
+    
+if(x > 0){
+hotelBooking = true;
+}else{
+    hotelBooking = false;
+}
+    
+if(hotelBooking == false){
+document.getElementById("booked").style.display = "none";
+}else if(hotelBooking == true){
+   document.getElementById("notbooked").style.display = "none";
+}
+    
+</script>
+
+  </body>
+
+</html>
