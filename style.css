@@ -1,4 +1,7 @@
-.body {
+html {
+  overflow-y: scroll;
+}
+body {
   background-color: white;
 }
 .loginBody
@@ -262,7 +265,7 @@ form.searchBox::after {
   text-align: center;
   width: 100%;
   background-color: #2555a3;
-  margin-top:10px;
+  margin-top:25px;
   color: white;
 }
 
@@ -855,23 +858,23 @@ footer p{
 }
 
 .footer {
-  margin-top:25px;
   display:inline-block;
   position: relative;
+  width:100%;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1px;
   text-align: center;
 }
 
 .footerSmall {
-  margin-top:25px;
   display:inline-block;
   position: absolute;
+  width:100%;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 1px;
   text-align: center;
 }
