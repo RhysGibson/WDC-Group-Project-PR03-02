@@ -1,6 +1,6 @@
 var peopleCount = 0;
 var setLocation = "Adelaide";
-var setroom = 0;
+var roomChoice = 0;
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -89,6 +89,22 @@ function resetFilters(){
 
 }
 
-function getroom(){
-  document.getElementById("roomNumber").innerHTML = setroom;
+function settingRoom1(){
+  if (typeof(Storage) !== "undefined") {
+      localStorage.setItem("room1", 1);
+      roomChoice = localStorage.getItem("room1");
+      document.getElementById("roomNumber").innerHTML = roomChoice;
+  } else {
+      document.getElementById("roomNumber").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+}
+
+function settingRoom2(){
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("room2", 2);
+    roomChoice = localStorage.getItem("room2");
+    document.getElementById("roomNumber").innerHTML = roomChoice;
+  } else {
+    document.getElementById("roomNumber").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
 }

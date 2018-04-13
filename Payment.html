@@ -6,6 +6,9 @@
         <title>Payment</title>
         <meta charset="utf-8"/>
         <script src="script.js"></script>
+        <script>
+        document.getElementById("test").innerHTML = roomChoice;<!--this is not working -->
+        </script>
     </head>
     <body>
           <ul class="topbar">
@@ -21,7 +24,7 @@
           </ul>
 
           <div class="contentoutline">
-            <p> For Room <div id="roomNumber"></div></p>
+            <div id="test">hi</div> <!--this is where its supposed to be displaying a number-->
             <form class="payment" action="/action_page.php">
               <input type="text" name="firstname" placeholder="First Name">
               <br>
