@@ -1,5 +1,6 @@
 var peopleCount = 0;
 var setLocation = "Adelaide";
+var setroom = 0;
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -86,4 +87,8 @@ function refineSearch(){
 
 function resetFilters(){
 
+}
+
+function getroom(){
+  document.getElementById("roomNumber").innerHTML = setroom;
 }
