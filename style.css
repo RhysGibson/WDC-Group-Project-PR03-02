@@ -257,10 +257,12 @@ form.searchBox::after {
 }
 
 #eop {
+  font-family:Arial;
+  font-size:15px;
   text-align: center;
   width: 100%;
   background-color: #2555a3;
-  margin-top: 0 auto;
+  margin-top:10px;
   color: white;
 }
 
