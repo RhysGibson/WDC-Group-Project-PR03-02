@@ -5,7 +5,7 @@
 {
 	margin: 0;
 	padding: 0;
-	background: url(loginbackground.jpg);
+	background: url(images/loginbackground.jpg);
 	background-size: cover;
 	font-family: sans-serif;
 }
@@ -855,4 +855,26 @@ footer p{
 #eop i{
   margin-top:15px;
   font-size:50px;
+}
+
+.footer {
+  margin-top:25px;
+  display:inline-block;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footerSmall {
+  margin-top:25px;
+  display:inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }
