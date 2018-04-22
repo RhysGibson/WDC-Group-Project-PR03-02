@@ -105,3 +105,29 @@ function roomNumber() {
   roomChoice = unescape(temp[1]);
   document.getElementById("room").innerHTML = roomChoice;
 }
+
+
+function addHotel(){
+console.log("hello there")
+}
+
+function checkHotel1(){
+    console.log("hello there")
+    document.getElementById('pop1').style.display='block'; 
+}
+
+function checkHotel2(){
+    console.log("hello there")
+    document.getElementById('pop2').style.display='block'; 
+}
+
+function loadPreview(sender) {
+console.log(sender);
+var element = document.getElementById(sender);
+if(element.style.opacity == "0.6"){
+    element.style.opacity = "1";
+}else{
+    element.style.opacity = "0.6";
+}
+element.style.filter  = 'alpha(opacity=90)'; 
+}
