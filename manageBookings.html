@@ -23,11 +23,11 @@
         <li style="float:right"><a href="#about">Language/Currency</a></li>
       </ul>
       <br>
-<h1 style = "text-align:center">Your Bookings</h1> 
-<div class = "hotelImages" id ="img1" onmouseover="loadPreview('img1')" onmouseout="loadPreview('img1')" onclick="checkHotel1()" class="img" style="background-image:url('images/hotel.jpg');"></div>       
-      
+<h1 style = "text-align:center">Your Bookings</h1>
+<div class = "hotelImages" id ="img1" onmouseover="loadPreview('img1')" onmouseout="loadPreview('img1')" onclick="checkHotel1()" class="img" style="background-image:url('images/hotel.jpg');"></div>
+
 <button style="width: 18%;height: 19%; margin: 3.6%;margin-left: 10%; opacity: 0.6;" onclick = "addElement()"><img src = "add.png" style="width: 50%;margin-left: 3.5%; opacity: 0.4"></button>
-      
+
 <div id="pop1">
 <button id="close" onclick="document.getElementById('pop1').style.display='none'">X</button><br>
 <h1>Hilton Hotel</h1>
@@ -38,16 +38,16 @@
     <p>Payment:fulfilled</p>
     <p><a href = "roomCanceled.html">Cancel Room</a></p>
 </div>
-      
- <div class="footerSmall" id="eop">
-      <p><a href="faq.html">FAQ</a></p>
-      <p><a href="terms.html">Terms and Conditions</a></p>
 
-      <i class="fa fa-facebook"></i>
-      <i class="fa fa-twitter"></i>
-      <i class="fa fa-instagram"></i>
-    </div>
-      
+<div class="footerSmall" id="eop">
+  <p><a href="faq.html">FAQ</a></p>
+  <p><a href="terms.html">Terms and Conditions</a></p>
+
+  <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+</div>
+
       <script>
 var hotelBooking;
 roomNumber();
@@ -66,11 +66,11 @@ if(hotelBooking == false){
 }else if(hotelBooking == true){
     console.log("notBooked");
 }
-function addElement () { 
-  var newDiv = document.createElement("div");  
+function addElement () {
+  var newDiv = document.createElement("div");
 newDiv.style.backgroundImage = "url(images/1.jpg)";
-  // add the newly created element and its content into the DOM 
-  var currentDiv = document.getElementById("img1"); 
+  // add the newly created element and its content into the DOM
+  var currentDiv = document.getElementById("img1");
     newDiv.style.width = "18%";
     newDiv.style.height = "20%";
     newDiv.style.backgroundPosition = "50%";
@@ -82,9 +82,9 @@ newDiv.style.backgroundImage = "url(images/1.jpg)";
     newDiv.style.marginTop = "3.3%";
     newDiv.style.marginLeft = "10%";
     newDiv.setAttribute("onclick","checkHotel1()");
-  document.body.insertBefore(newDiv, currentDiv); 
+  document.body.insertBefore(newDiv, currentDiv);
 }
 </script>
   </body>
-    
+
 </html>
