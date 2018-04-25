@@ -13,17 +13,17 @@ font-family: 'Quattrocento Sans', sans-serif;
 }
 
 h1 {
-  font-family: 'Tajawal', sans-serif;   
+  font-family: 'Tajawal', sans-serif;
     font-weight: 300;
 }
 
 h2 {
-  font-family: 'Tajawal', sans-serif;   
+  font-family: 'Tajawal', sans-serif;
   font-weight: 300;
 }
 
 h3 {
-  font-family: 'Tajawal', sans-serif;   
+  font-family: 'Tajawal', sans-serif;
   font-weight: 300;
 }
 li {
@@ -197,19 +197,17 @@ a{
 }
 .topbar{
   list-style-type: none;
-  margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color:#2555a3;
 }
 
 .topbar li {
     float: left;
-    border-right:1px solid #bbb;
+    font-size:100%;
 }
 
 .topbar li:last-child {
-    border-right: none;
+    float:left;
 }
 
 .topbar li a {
@@ -301,18 +299,20 @@ form.searchBox::after {
 }
 
 .page {
-	width:1200px;
+	width:80%;
 	margin:auto;
 }
 
 .result {
+  border-radius:25px;
   display: inline-block;
   margin:0 auto;
-  width:880px;
+  width:100%;
   height:auto;
-  background:skyblue;
-  margin-top:8px;
-  margin-bottom:8px;
+  background:#8aa5ce;
+  margin-top:1px;
+  border:solid #2555a3;
+  margin-bottom:1px;
   padding:5px;
   text-align:left;
 }
@@ -325,7 +325,7 @@ form.searchBox::after {
 	border-color:darkgrey;
 	background-color:white;
 	height:auto;
-	width:275px;
+	width:19.5%;
 	padding:5px;
   font-weight:bold;
   margin-top:10px;
@@ -339,7 +339,7 @@ form.searchBox::after {
   border-color:darkgrey;
   background-color:white;
   height:auto;
-  width:900px;
+  width:80%;
   position:relative;
   overflow:hidden;
   padding:5px;
@@ -769,21 +769,9 @@ header h1 a{
 	left: 122px;
 }
 nav{
-	position: absolute;
-	top: 32.8%;
-	left: 12.5%;
-}
-nav li a{
-	color: white;
-	text-decoration: none;
-	font-family: Verdana, Arial, sans-serif;
-	font-size: 13px;
-	margin-right: 12px;
-	padding: 5px;
-}
-nav li a:hover{
-	background-color: #383838;
-	border-radius: 3px;
+  height:58px;
+	position: relative;
+  background-color:#2555a3;
 }
 .current{
 	background-color: #383838;
@@ -962,4 +950,24 @@ line-height: 1.8;
 
 #bookingBody {
 opacity: 0;
+}
+
+.navbar{
+  display:table;
+  padding:5px 0;
+  margin:auto;
+  width:80%;
+}
+
+.head{
+  display:table;
+  position:relative;
+  margin:auto;
+  width:80%;
+  height:100px;
+  background-color:white;
+}
+
+.head a{
+  float:right;
 }
