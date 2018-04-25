@@ -352,7 +352,25 @@ form.searchBox::after {
 }
 
 .leftResult {
+  text-align: center;
   float:left;
+  width:40%;
+}
+
+.leftResult a{
+  float:left;
+  padding:25% 0;
+  margin-left:20px;
+  color:red;
+  font-size:40px;
+}
+
+.userRatingColor{
+  color:#2555a3;
+}
+
+.hotelStarsColor{
+  color:gold;
 }
 
 .rightResult {
@@ -361,22 +379,24 @@ form.searchBox::after {
 
 .bookingCosts{
   float:right;
+  padding: 70px 0;
   margin-right:60px;
 }
 
 .viewDetails{
   text-align:center;
+  margin-right:30px;
+  padding:35% 0;
   width:100px;
   float:right;
-  margin-top:50px;
 }
 
 .hotelImageSearch{
-  width:200px;
+  width:70%;
   border:solid 1px;
   border-width:1px;
   border-color:black;
-  height:200px;
+  height:width;
 }
 
 .recommendationsleft {
@@ -617,6 +637,27 @@ form.searchBoxSearch button {
   cursor: pointer;
 }
 
+div.searchBoxSearch input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 70%;
+  background: white;
+}
+
+div.searchBoxSearch button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
 .bottomPart {
   display:inline-block;
   clear:both;
@@ -651,6 +692,10 @@ form.searchBoxSearch button {
 .hotelname {
   font-family:Arial;
   font-size:25px;
+}
+
+.leftResult .hotelname{
+  font-size:50px;
 }
 
 #overviewGeneralInfo {

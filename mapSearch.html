@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="scripts/script.js"></script>
+  <script src="scripts/mapScript.js"></script>
   <title>Map Search</title>
 </head>
 <body>
@@ -30,12 +31,13 @@
     <div id="mapListings">
       <div class="centeredText">
         <div class="searchSearch">
-          <form class="searchBoxSearch" action="search.html">
-            <input type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
-            <button type="submit"><i class="fa fa-map-marker"></i></button>
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+          <div class="searchBoxSearch">
+            <input id="searchReq" type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
+            <button id="mapSearchBut" type="submit" onclick="mapSearch()"><i class="fa fa-map-marker"></i></button>
+            <button id="searchBut" type="submit" onclick="goToSearch()"><i class="fa fa-search"></i></button>
+          </div>
         </div>
+        <br/>
         <p class="titleText"><br/>Hotels found near <b>Adelaide</b></p>
         <button id="openFilters" type="button" onclick="openFilters()">Open Filters</button>
         <br/>
@@ -116,7 +118,7 @@
       </div>
     </div>
     <div id="map">
-      <p>Map would go here</p>
+      <p>Map not loaded. Maybe you are not connected to the internet?</p>
     </div>
   </div>
   </main>
