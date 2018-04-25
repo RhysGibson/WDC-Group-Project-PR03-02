@@ -1,9 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=Tajawal:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 html {
   overflow-y: scroll;
 }
 html, body { height: 100%; width: 100%; margin: 0; }
 body {
   background-color: white;
+}
+p {
+font-family: 'Quattrocento Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Tajawal', sans-serif;   
+    font-weight: 300;
+}
+
+h2 {
+  font-family: 'Tajawal', sans-serif;   
+  font-weight: 300;
+}
+
+h3 {
+  font-family: 'Tajawal', sans-serif;   
+  font-weight: 300;
+}
+li {
+    font-family: 'Roboto', sans-serif;
+}
+span {
+font-family: 'Quattrocento Sans', sans-serif;
+}
+a{
+    font-family: 'Roboto', sans-serif;
 }
 .loginBody
 {
@@ -904,6 +934,7 @@ position: absolute;
  background:#fff;
  border-radius:9px;
  display:none;
+ opacity: 0.1;
 }
 #close{
  right:5px;
@@ -923,4 +954,12 @@ position: relative;
 
 .footer a {
   color: white;
+}
+
+.spacing{
+line-height: 1.8;
+}
+
+#bookingBody {
+opacity: 0;
 }
