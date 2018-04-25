@@ -458,11 +458,12 @@ form.searchBox::after {
 
 .FAQ {
   margin: 20px auto;
-  width: 1300px;
+  width: 1000%;
 }
 
 .contentoutline {
   margin-top: 10px;
+  margin-bottom:10px;
   margin-left: 108px;
   border-style:solid;
   border-radius:8px;
@@ -470,10 +471,11 @@ form.searchBox::after {
   border-color:darkgrey;
   background-color:white;
   height:auto;
-  width:1180px;
+  width:100%;
   position:relative;
   overflow:hidden;
   padding:5px;
+  margin:auto;
 }
 
 .hotelroom {
