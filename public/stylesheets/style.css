@@ -224,9 +224,7 @@ a{
 }
 
 #backgroundImage {
-  width: 99.5%;
-  margin-left: ;
-  padding: 10px;
+  width: 100%;
   margin: auto;
   position: absolute;
 
@@ -409,8 +407,8 @@ form.searchBox::after {
 
 .recommendationsleft {
     display: inline-block;
-    margin:0 auto;
-    width:664px;
+    margin: auto;
+    width:40%;
     height:auto;
     background:skyblue;
     margin-top:8px;
@@ -423,12 +421,12 @@ form.searchBox::after {
 .recommendationsright {
     display: inline-block;
     margin:0 auto;
-    width:664px;
+    width:40%;
     height:auto;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
-    margin-left: 10px;
+    margin-left: 10%;
     padding:5px;
     text-align:left;
 }
@@ -446,7 +444,7 @@ form.searchBox::after {
 .hotleft {
     display: inline-block;
     margin:0 auto;
-    width:664px;
+    width:40%;
     height:auto;
     background:skyblue;
     margin-top:8px;
@@ -459,12 +457,12 @@ form.searchBox::after {
 .hotright {
     display: inline-block;
     margin:0 auto;
-    width:664px;
+    width:40%;
     height:auto;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
-    margin-left: 10px;
+    margin-left: 10%;
     padding:5px;
     text-align:left;
 }
@@ -538,6 +536,9 @@ form.searchBox::after {
 
 .homeoutline {
   margin-top: 58%;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
   border-style:solid;
   border-radius:8px;
   border-width:1px;
