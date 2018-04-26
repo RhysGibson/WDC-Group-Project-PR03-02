@@ -152,6 +152,10 @@ function goToSearch(){
   location.href = "search.html?search=" + document.getElementById('searchReq').value;
 }
 
+function goToSearchIndex(){
+  location.href = "/files/search.html?search=" + document.getElementById('searchReq').value;
+}
+
 // Taken from Online - May use NPM for Querystrings later
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;

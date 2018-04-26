@@ -6,7 +6,7 @@
         <title>GoProHotels | The Number 1 Hotel Website</title>
         <meta charset="utf-8"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+        <script src="/javascripts/script.js"></script>
     </head>
     <body>
 
@@ -56,9 +56,9 @@
          </script>
 
           <div class="search">
-            <form class="searchBox" action="files/search.html">
-              <input type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
-              <button type="submit"><i class="fa fa-search"></i></button>
+            <form class="searchBox">
+              <input id="searchReq" type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
+              <button type="button" onclick="goToSearchIndex()"><i class="fa fa-search"></i></button>
             </form>
           </div>
         </div>

@@ -1076,3 +1076,8 @@ opacity: 0;
   width: 100%;
   margin: auto;
 }
+
+#notBookedContainer{
+  padding:20px;
+  text-align:center;
+}
