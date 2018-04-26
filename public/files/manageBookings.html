@@ -8,31 +8,36 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" href="/stylesheets/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/javascripts/script.js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/script.js"></script>
       <script src="/javascripts/mapScript.js"></script>
   </head>
   <body id = "bookingBody">
-    <nav>
- <div class="navbar">
-   <ul class="topbar">
-     <li><a href="/index.html">Home</a></li>
-     <li><a href="/files/News.html">News</a></li>
-     <li><a href="#deals">Current Deals</a></li>
-     <li><a href="/files/manageBookings.html">Manage Booking</a></li>
-     <li><a href="#managhotel">Manage Hotel</a></li>
-     <li><a href="#recentlyviewed">Recently Viewed</a></li>
-     <li><a href="#favourites">Favourites</a></li>
-     <li><a href="/files/faq.html">Contact Us</a></li>
-     <li style="float:right"><a href="/files/Login%20Screen%20V1.html">Log In/Register</a></li>
-     <li style="float:right"><a href="#about">Language/Currency</a></li>
-   </ul>
- </div>
-</nav>
+    <div id="banner">
+      <div class="row">
+          <a href="/index.html">GoProHotels</a>
+          <button onclick="goToLogin()" style="float:right">Log In/Register</button>
+      </div>
+    </div>
+        <nav>
+      <div class="navbar">
+        <ul class="topbar">
+          <li><a href="files/News.html">News</a></li>
+          <li><a href="#deals">Current Deals</a></li>
+          <li><a href="files/manageBookings.html">Manage Booking</a></li>
+          <li><a href="#managhotel">Manage Hotel</a></li>
+          <li><a href="#recentlyviewed">Recently Viewed</a></li>
+          <li><a href="#favourites">Favourites</a></li>
+          <li><a href="files/faq.html">Contact Us</a></li>
+          <li style="float:right"><a href="#about">Language/Currency</a></li>
+        </ul>
+      </div>
+    </nav>
       <br>
 <h1 style = "text-align:center">Your Bookings</h1>
 <div class = "hotelImages" id ="img1" onmouseover="loadPreview('img1')" onmouseout="loadPreview('img1')" onclick="checkHotel1(); manageBookingMap('Hilton Hotel')" class="img" style="background-image:url('/images/hotel.jpg');"></div>
 
 <button style="width: 18%;height: 19%; margin: 3.6%;margin-left: 10%; opacity: 0.6;" onclick = "location.href = '/files/search.html'"><img src = "/images/add.png" style="width: 50%;margin-left: 3.5%; opacity: 0.4"></button>
-      
+
 <div id="pop1">
 <button id="close" onclick="document.getElementById('pop1').style.display='none';document.getElementById('pop1').style.opacity = 0.1">Close</button><br>
 <h1 style = text-align:center>Hilton Hotel</h1>
@@ -44,8 +49,8 @@
     <p class = "spacing"><a href = "/files/roomCanceled.html">Cancel Room</a></p>
     <div id="map" style = "width: 360px; height: 270px;margin-left: 11.5px;">
       <p>Map not loaded. Maybe you are not connected to the internet?</p>
-    </div>    
-      
+    </div>
+
 </div>
 
 <div class="footerSmall" id="eop">
