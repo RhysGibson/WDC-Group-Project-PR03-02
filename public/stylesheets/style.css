@@ -406,7 +406,7 @@ form.searchBox::after {
     display: inline-block;
     margin: auto;
     width:35%;
-    height:auto;
+    height:35%;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
@@ -419,7 +419,7 @@ form.searchBox::after {
     display: inline-block;
     margin:0 auto;
     width:35%;
-    height:auto;
+    height:35%;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
@@ -442,7 +442,7 @@ form.searchBox::after {
     display: inline-block;
     margin:0 auto;
     width:35%;
-    height:auto;
+    height:35%;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
@@ -455,7 +455,7 @@ form.searchBox::after {
     display: inline-block;
     margin:0 auto;
     width:35%;
-    height:auto;
+    height:35%;
     background:skyblue;
     margin-top:8px;
     margin-bottom:8px;
