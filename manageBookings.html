@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" href="/stylesheets/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/javascripts/script.js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body id = "bookingBody">
+    <nav>
+ <div class="navbar">
+   <ul class="topbar">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/files/News.html">News</a></li>
+     <li><a href="#deals">Current Deals</a></li>
+     <li><a href="/files/manageBookings.html">Manage Booking</a></li>
+     <li><a href="#managhotel">Manage Hotel</a></li>
+     <li><a href="#recentlyviewed">Recently Viewed</a></li>
+     <li><a href="#favourites">Favourites</a></li>
+     <li><a href="/files/faq.html">Contact Us</a></li>
+     <li style="float:right"><a href="/files/Login%20Screen%20V1.html">Log In/Register</a></li>
+     <li style="float:right"><a href="#about">Language/Currency</a></li>
+   </ul>
+ </div>
+</nav>
+      <br>
+<h1 style = "text-align:center">Your Bookings</h1>
+<div class = "hotelImages" id ="img1" onmouseover="loadPreview('img1')" onmouseout="loadPreview('img1')" onclick="checkHotel1()" class="img" style="background-image:url('/images/hotel.jpg');"></div>
+
+<button style="width: 18%;height: 19%; margin: 3.6%;margin-left: 10%; opacity: 0.6;" onclick = "location.href = '/files/search.html'"><img src = "/images/add.png" style="width: 50%;margin-left: 3.5%; opacity: 0.4"></button>
+
+<div id="pop1">
+<button id="close" onclick="document.getElementById('pop1').style.display='none';document.getElementById('pop1').style.opacity = 0.1">Close</button><br>
+<h1>Hilton Hotel</h1>
+<hr>
+    <p class = "spacing">Room:<span id = "Room"> Hilton Hotel</span></p>
+    <p class = "spacing">Room Number: <span id = "room"></span></p>
+    <p class = "spacing">Cost:$502</p>
+    <p class = "spacing">Payment:fulfilled</p>
+    <p class = "spacing"><a href = "/files/roomCanceled.html">Cancel Room</a></p>
+</div>
+
+<div class="footerSmall" id="eop">
+  <p><a href="/files/faq.html">FAQ</a></p>
+  <p><a href="/files/terms.html">Terms and Conditions</a></p>
+
+  <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+</div>
+
+      <script>
+var hotelBooking;
+roomNumber();
+var x = document.getElementById("room").innerHTML;
+console.log(x);
+
+if(x > 0){
+hotelBooking = true;
+}else{
+    hotelBooking = false;
+}
+
+if(hotelBooking == false){
+    document.location = "/files/bookingNotMade.html"
+}else if(hotelBooking == true){
+    fade('bookingBody')
+}
+function addElement () {
+  var newDiv = document.createElement("div");
+newDiv.style.backgroundImage = "url(/images/1.jpg)";
+  // add the newly created element and its content into the DOM
+  var currentDiv = document.getElementById("img1");
+    newDiv.style.width = "18%";
+    newDiv.style.height = "20%";
+    newDiv.style.backgroundPosition = "50%";
+    newDiv.style.backgroundRepeat = "no-repeat";
+    newDiv.style.backgroundSize = "cover";
+    newDiv.style.float = "left";
+    newDiv.style.margin = "1.66%";
+    newDiv.style.marginBottom = "0%";
+    newDiv.style.marginTop = "3.3%";
+    newDiv.style.marginLeft = "10%";
+    newDiv.setAttribute("onclick","checkHotel1()");
+  document.body.insertBefore(newDiv, currentDiv);
+}
+</script>
+  </body>
+
+</html>
