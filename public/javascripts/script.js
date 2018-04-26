@@ -74,6 +74,7 @@ function setSearchNumbers(){
       childrenElements[j].style.display = "none";
     }
   }
+  initSearch();
 }
 
 function refineSearch(){
@@ -147,6 +148,10 @@ function goToMap(){
   location.href = "mapSearch.html?search=" + document.getElementById('searchReq').value;
 }
 
+function goToSearch(){
+  location.href = "search.html?search=" + document.getElementById('searchReq').value;
+}
+
 // Taken from Online - May use NPM for Querystrings later
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -162,4 +167,10 @@ function initMapSearch(){
   var v1 = getParameterByName("search");
   document.getElementById('searchReq').value = v1;
   mapSearch();
+}
+
+function initSearch(){
+  var v1 = getParameterByName("search");
+  console.log(v1);
+  document.getElementById('searchReq').value = v1;
 }

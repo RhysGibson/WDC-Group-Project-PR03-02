@@ -35,10 +35,6 @@ function clearMarkers(){
   setMapOnAll(null);
 }
 
-function goToSearch(){
-  location.href = "search.html";
-}
-
 
 function mapSearch(){
   var searchLocationName = document.getElementById('searchReq').value;
