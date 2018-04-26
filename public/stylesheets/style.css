@@ -395,9 +395,6 @@ form.searchBox::after {
 
 .hotelImageSearch{
   width:70%;
-  border:solid 1px;
-  border-width:1px;
-  border-color:black;
   height:width;
 }
 
