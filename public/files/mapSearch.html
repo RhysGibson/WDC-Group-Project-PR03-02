@@ -10,6 +10,12 @@
   <title>Map Search</title>
 </head>
 <body onload='initMapSearch()'>
+  <div id="banner">
+    <div class="row">
+        <a href="/index.html">GoProHotels</a>
+        <button type="button" onclick="goToLogin()" style="float:right">Log In/Register</button>
+    </div>
+  </div>
   <nav>
     <div class="navbar">
       <ul class="topbar">
@@ -125,6 +131,7 @@
           <img src="/images/hotel.jpg" alt="Hotel Image">
         </div>
         <br/>
+        <button style="font-size:20px;" type="button" onclick="goToOverview()">Book Now!</button><br/>
         <button type="button" onclick="hideSidePanel()">Hide</button>
       </div>
       <div id="map">

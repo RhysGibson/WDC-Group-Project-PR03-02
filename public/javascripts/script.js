@@ -178,3 +178,11 @@ function initSearch(){
   console.log(v1);
   document.getElementById('searchReq').value = v1;
 }
+
+function goToLogin(){
+  location.href="Login Screen V1.html"
+}
+
+function goToOverview(){
+  location.href="hotelOverview.html"
+}
