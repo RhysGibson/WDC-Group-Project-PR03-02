@@ -225,10 +225,10 @@ a{
 
 #backgroundImage {
   margin: 10px;
-  margin-left: 35px;
+  margin-left: 55px;
+  margin-right: 35px;
   position: absolute;
   padding: 10px;
-  max-width: 100%;
 }
 
 #backgroundImage > div {
@@ -1031,4 +1031,8 @@ opacity: 0;
 
 .footerSmall a {
   color: white;
+}
+
+.show img {
+  max-width: 13000%;
 }
