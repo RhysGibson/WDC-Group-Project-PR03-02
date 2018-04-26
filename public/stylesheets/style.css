@@ -558,11 +558,38 @@ form.searchBox::after {
   overflow-x:auto;
 }
 
-#map {
-  border:solid 1px;
+#wrapper{
+  position:relative;
   float:right;
   width:68%;
   height:90%;
+}
+
+.mapHotelImage img {
+  margin:auto 0;
+  width:90%;
+}
+
+#map {
+  width:100%;
+  height:100%;
+  border:solid 1px;
+}
+
+#floating-panel {
+  border-radius:15px;
+  display:none;
+  position:absolute;
+  top: 10%;
+  left: 1%;
+  height:70%;
+  width:25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Verdana','sans-serif';
 }
 
 .mapResult {
@@ -687,17 +714,24 @@ div.searchBoxSearch button {
 }
 
 #hotelOverviewContainer{
-  width:80%;
+  border:1px solid darkgrey;
+  padding:20px;
+  border-radius:25px;
+  width:100%;
   margin:auto;
   margin-top:10px;
   height:auto;
 }
 
 #overviewPhotos{
-  height:400px;
-  width:600px;
-  border:1px solid;
   float:left;
+  margin:auto;
+  width:48%;
+}
+
+#overviewPhotos img{
+  border-radius:15px;
+  width:100%;
 }
 
 .hotelname {
@@ -710,8 +744,8 @@ div.searchBoxSearch button {
 }
 
 #overviewGeneralInfo {
-  margin-left:20px;
-  float:left;
+  width:49%;
+  float:right;
 }
 
 #overviewInDepth {
@@ -722,8 +756,8 @@ div.searchBoxSearch button {
 #overviewMap {
   float:left;
   border:solid 1px;
-  width:350px;
-  height:350px;
+  width:20vw;
+  height:20vw;
   margin-right:20px;
 }
 
@@ -745,7 +779,7 @@ div.searchBoxSearch button {
 
 .review {
   display:block;
-  width:36%;
+  width:45%;
   font-size:18px;
   font-family:Raleway;
 }

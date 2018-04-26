@@ -144,5 +144,22 @@ element.style.filter  = 'alpha(opacity=90)';
 }
 
 function goToMap(){
-  location.href = "mapSearch.html";
+  location.href = "mapSearch.html?search=" + document.getElementById('searchReq').value;
+}
+
+// Taken from Online - May use NPM for Querystrings later
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function initMapSearch(){
+  var v1 = getParameterByName("search");
+  document.getElementById('searchReq').value = v1;
+  mapSearch();
 }

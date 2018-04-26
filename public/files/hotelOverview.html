@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/mapScript.js"></script>
   <title>Hotel Overview</title>
 </head>
 <body>
@@ -27,8 +28,8 @@
   </nav>
   <main class="page">
   <div id="hotelOverviewContainer" class="hotelname">
-    <div>
-      <img id="overviewPhotos" src="/images/hotel.jpg" alt="Hotel Image">
+    <div id="overviewPhotos">
+      <img src="/images/hotel.jpg" alt="Hotel Image">
     </div>
     <div id="overviewGeneralInfo">
       <span style="font-size: 50px;">Hilton Hotel</span>
@@ -40,7 +41,7 @@
       <br/>
       <br/>
       <span>User Rating: </span>
-      <span style="color:green"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+      <span style="color:#2555a3"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <br/>
       <span>Hotel Rating: </span>
       <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
@@ -52,9 +53,9 @@
         <li>Accomodation: 1 King Size Bed</li>
         <li>Check-In/Check-Out: 10/03/2019-15/03/2019 (5 Days)</li>
       </ul>
-      <pre style="font-family:Raleway">
+      <p style="font-family:Raleway">
         $502 - Hotels 4 U &#9; $520 - Hotel Notvago &#9; $549 - Cheap Hotels
-      </pre>
+      </p>
     </div>
     <div id="overviewInDepth">
       <hr>
@@ -219,5 +220,8 @@
     <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
     <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
   </div>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbVDXjRbzdfmxUXsY-cnbZmn1DYmJYME&callback=initHotelMap">
+  </script>
 </body>
 </html>
