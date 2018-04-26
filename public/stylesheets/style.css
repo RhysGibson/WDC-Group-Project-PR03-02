@@ -1,0 +1,1025 @@
+<link href="https://fonts.googleapis.com/css?family=Tajawal:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+html {
+  overflow-y: scroll;
+}
+html, body { height: 100%; width: 100%; margin: 0; }
+body {
+  background-color: white;
+}
+p {
+font-family: 'Quattrocento Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Tajawal', sans-serif;
+    font-weight: 300;
+}
+
+h2 {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+}
+li {
+    font-family: 'Roboto', sans-serif;
+}
+span {
+font-family: 'Quattrocento Sans', sans-serif;
+}
+a{
+    font-family: 'Roboto', sans-serif;
+}
+.loginBody
+{
+	margin: 0;
+	padding: 0;
+	background: url(/images/loginbackground.jpg);
+	background-size: cover;
+	font-family: sans-serif;
+}
+
+.loginBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 420px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+.user
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: calc(-100px/2);
+	left: calc(50% - 50px);
+}
+.login.h2{
+	margin: 0;
+	padding: 0 0 20px;
+	color: skyblue;
+	text-align: center;
+}
+
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color:aliceblue;
+}
+.loginBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: aliceblue;
+	font-size: 16px;
+	background: lightblue;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #42c5f4;
+	color: #262626;
+}
+.loginBox a
+{
+	color: aliceblue;;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.registerBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 380px;
+	height: 520px;
+	padding: 60px 40px;
+	background: rgba(0,0,0,.5);
+}
+.registerBox h2{
+    margin-top: -45px;
+    color: skyblue;
+}
+.registerBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color:aliceblue;
+}
+.registerBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.registerBox input[type="text"],
+.registerBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.registerBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: aliceblue;
+	font-size: 16px;
+	background: lightblue;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.registerBox input[type="submit"]:hover
+{
+	background: #42c5f4;
+	color: #262626;
+}
+.registerBox a
+{
+	color: aliceblue;;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#MainColour {
+  background-color: #1481b7;
+}
+.siteColor {
+  color:#2555a3;
+}
+.topbar{
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.topbar li {
+    float: left;
+    font-size:100%;
+}
+
+.topbar li:last-child {
+    float:left;
+}
+
+.topbar li a {
+    display: block;
+    font-family:Arial;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topbar li a:hover:not(.active) {
+    background-color:#4d77bc;
+}
+
+#backgroundImage {
+  margin: 10px;
+  margin-left: 35px;
+  position: absolute;
+  padding: 10px;
+  max-width: 100%;
+}
+
+#backgroundImage > div {
+  position: absolute;
+}
+
+.searchContainer {
+  position: relative;
+    text-align: center;
+    color: black;
+}
+
+.search {
+  margin-top: 25%;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.searchBox input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+form.searchBox button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.searchBox button:hover {
+  background: #0b7dda;
+}
+
+form.searchBox::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+::placeholder {
+  color: slategrey;
+}
+
+#eop {
+  font-family:Arial;
+  font-size:15px;
+  text-align: center;
+  width: 100%;
+  background-color: #2555a3;
+  margin-top:25px;
+  color: white;
+}
+
+.page {
+	width:80%;
+	margin:auto;
+}
+
+.result {
+  border-radius:25px;
+  display: inline-block;
+  margin:0 auto;
+  width:100%;
+  height:auto;
+  background:#8aa5ce;
+  margin-top:1px;
+  border:solid #2555a3;
+  margin-bottom:1px;
+  padding:5px;
+  text-align:left;
+}
+
+#filters {
+	float:left;
+	border-style:solid;
+	border-radius:4px;
+	border-width:1px;
+	border-color:darkgrey;
+	background-color:white;
+	height:auto;
+	width:19.5%;
+	padding:5px;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+#searchResults {
+  float:right;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+  height:auto;
+  width:80%;
+  position:relative;
+  overflow:hidden;
+  padding:5px;
+  margin-top:10px;
+}
+
+#searchContainer {
+	margin-top:10px;
+  text-align:center;
+}
+
+.leftResult {
+  text-align: center;
+  float:left;
+  width:40%;
+}
+
+.leftResult a{
+  float:left;
+  padding:25% 0;
+  margin-left:20px;
+  color:red;
+  font-size:40px;
+}
+
+.userRatingColor{
+  color:#2555a3;
+}
+
+.hotelStarsColor{
+  color:gold;
+}
+
+.rightResult {
+  float:right;
+}
+
+.bookingCosts{
+  float:right;
+  padding: 70px 0;
+  margin-right:60px;
+}
+
+.viewDetails{
+  text-align:center;
+  margin-right:30px;
+  padding:35% 0;
+  width:100px;
+  float:right;
+}
+
+.hotelImageSearch{
+  width:70%;
+  border:solid 1px;
+  border-width:1px;
+  border-color:black;
+  height:width;
+}
+
+.recommendationsleft {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 40px;
+    padding:5px;
+    text-align:left;
+}
+
+.recommendationsright {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 10px;
+    padding:5px;
+    text-align:left;
+}
+
+.leftrec {
+  float:left;
+}
+
+.rightrec {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.hotleft {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 40px;
+    padding:5px;
+    text-align:left;
+}
+
+.hotright {
+    display: inline-block;
+    margin:0 auto;
+    width:664px;
+    height:auto;
+    background:skyblue;
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left: 10px;
+    padding:5px;
+    text-align:left;
+}
+
+.lefthot {
+  float:left;
+}
+
+.righthot {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.termsandcondit {
+  margin: 20px auto;
+  width: 1300px;
+}
+
+.FAQ {
+  margin: 20px auto;
+  width: 1000%;
+}
+
+.contentoutline {
+  margin-top: 10px;
+  margin-bottom:10px;
+  margin-left: 108px;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+  height:auto;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+  padding:5px;
+  margin:auto;
+}
+
+.hotelroom {
+      display: inline-block;
+      margin:0 auto;
+      width:1180px;
+      height:auto;
+      background:skyblue;
+      margin-top:8px;
+      margin-bottom:8px;
+      padding:5px;
+      text-align:left;
+}
+
+.leftroom{
+  float:left;
+}
+
+.rightroom {
+  float:right;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.hotelRoomImageSearch{
+  width:400px;
+  border:solid 1px;
+  border-width:1px;
+  border-color:black;
+  height:400px;
+}
+
+.homeoutline {
+  margin-top: 55%;
+  border-style:solid;
+  border-radius:8px;
+  border-width:1px;
+  border-color:darkgrey;
+  background-color:white;
+}
+
+#mapSearchContainer {
+  height:800px;
+  width:1500px;
+	margin:auto;
+  margin-top:15px;
+}
+
+#mapListings {
+  border:solid 1px;
+  margin-right:15px;
+  float:left;
+  width:30%;
+  height:auto;
+  overflow-x:auto;
+}
+
+#map {
+  border:solid 1px;
+  float:right;
+  width:68%;
+  height:90%;
+}
+
+.mapResult {
+  display: inline-block;
+  border:1px solid skyblue;
+  margin:5px;
+  padding:5px;
+  width:97%;
+}
+
+.mapResultImage {
+  float:left;
+  border:1px solid;
+  margin-right:10px;
+  margin-bottom:5px;
+  height:100px;
+  width:100px;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+#mapListings {
+  overflow:scroll;
+  height:90%;
+  overflow-x:hidden;
+}
+
+.titleText {
+  margin-top:10px;
+  font-family:Raleway;
+  font-size:large;
+}
+
+form.payment input[type=text] {
+  font-size: 17px;
+  margin: 5px;
+  border: 1px solid black;
+  background: white;
+}
+
+.searchBarSearch {
+  display:inline-block;
+}
+
+.searchSearch {
+  width:95%;
+  margin:0 auto;
+  margin-bottom:5px;
+  position: relative;
+}
+
+.rightAlign{
+  margin-top:5px;
+  text-align:right;
+}
+
+form.searchBoxSearch input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 70%;
+  background: white;
+}
+
+form.searchBoxSearch button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+div.searchBoxSearch input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 70%;
+  background: white;
+}
+
+div.searchBoxSearch button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+.bottomPart {
+  display:inline-block;
+  clear:both;
+  margin-top:10px;
+}
+
+.mapSearchCost {
+  font-weight: bold;
+  font-size:20px;
+}
+
+#overviewReviews {
+  margin-top:15px;
+  width:95%;
+  display:inline-block;
+}
+
+#hotelOverviewContainer{
+  width:80%;
+  margin:auto;
+  margin-top:10px;
+  height:auto;
+}
+
+#overviewPhotos{
+  height:400px;
+  width:600px;
+  border:1px solid;
+  float:left;
+}
+
+.hotelname {
+  font-family:Arial;
+  font-size:25px;
+}
+
+.leftResult .hotelname{
+  font-size:50px;
+}
+
+#overviewGeneralInfo {
+  margin-left:20px;
+  float:left;
+}
+
+#overviewInDepth {
+  display:inline-block;
+  width:100%;
+}
+
+#overviewMap {
+  float:left;
+  border:solid 1px;
+  width:350px;
+  height:350px;
+  margin-right:20px;
+}
+
+#reviewBox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 90%;
+  height:100px;
+  font-family:Raleway;
+}
+
+#reviewButton {
+  margin-left:auto;
+  margin-right:auto;
+  height:50px;
+  width:8%;
+}
+
+.review {
+  display:block;
+  width:36%;
+  font-size:18px;
+  font-family:Raleway;
+}
+
+.reviewThumbs {
+  float:left;
+  font-size:50px;
+  margin-right:5px;
+}
+
+#reviewRating {
+  display:inline-block;
+}
+@font-face {
+    font-family: 'LeagueGothic';
+    src: url('fonts/League_Gothic-webfont.eot');
+    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/League_Gothic-webfont.woff') format('woff'),
+         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansProLight';
+    src: url('fonts/SourceSansPro-Light-webfont.eot');
+    src: url('fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SourceSansPro-Light-webfont.woff') format('woff'),
+         url('fonts/SourceSansPro-Light-webfont.ttf') format('truetype'),
+         url('fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: none;
+
+}
+
+.b3{
+	font-family: SourceSansProLight, Verdana, Arial, sans-serif;
+	font-size: 14px;
+}
+.b5{
+	display: inline-block;
+}
+header{
+	background-color: black;
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	z-index: 100;
+	border-bottom: 0px solid #C10021;
+}
+header h1 a{
+	font-family: LeagueGothic, Verdana, Arial, sans-serif;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 28px;
+	position:absolute;
+	top:8px;
+	left: 35px;
+}
+#version{
+	color: white;
+	font-size: 10px;
+	position: relative;
+	top: 12px;
+	left: 122px;
+}
+nav{
+  height:58px;
+	position: relative;
+  background-color:#2555a3;
+}
+.current{
+	background-color: #383838;
+	border-radius: 3px;
+}
+section{
+	width: 1000px;
+	margin: auto;
+}
+#secwrapper{
+	/*background: url('images/bg.gif') fixed;
+	background-color: #f47771;*/
+	padding-top: 10px;
+}
+article{
+	width: 300px;
+	margin-right: 40px;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid #c8c8c8;
+	margin-bottom: 20px;
+	padding: 7px;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px #ccc;
+	background-color: white;
+	*display:inline;
+    zoom:1;
+}
+#sponsors, .rightcl{
+	margin-right: 0px;
+}
+.readmore{
+	background-color: black;
+	padding: 5px 10px;
+	color: white;
+	text-decoration: none;
+	border-radius: 3px;
+	display: inline-block;
+}
+.readmore:hover{
+	background-color: #383838;
+}
+article p{
+	margin-bottom: 7px;
+}
+#photobox img{
+	margin: 5px 4px 6px 6.5px;
+	border: 1px solid black;
+}
+#sponsors a{
+	color: #6b6b6b;
+	text-decoration: none;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #d1d1d1;
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	margin: 5px 4px 6px 7px;
+	border: 1px solid #c3c3c3;
+}
+#sponsors a p{
+	margin: 50px auto;
+	width: 125px;
+	text-align: center;
+}
+#sponsors a:hover{
+	border: 1px solid #a7a7a7;
+	/*text-decoration: underline;*/
+	color: #3f3f3f;
+	background-color: #cacaca;
+}
+#featured{
+	position: relative;
+}
+#featuredico{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+footer{
+	background-color: black;
+	height: 28px;
+	color: white;
+	padding: 7px;
+}
+footer p{
+	margin: 5px 0 0 12%;
+}
+
+#userRatingText {
+  color:green;
+}
+
+#hotelStarsText {
+  color:gold;
+}
+
+#eop i{
+  margin-top:15px;
+  font-size:50px;
+}
+
+.footer {
+  display:inline-block;
+  position: relative;
+  width:100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1px;
+  text-align: center;
+}
+
+.footerSmall {
+  display:inline-block;
+  position: absolute;
+  width:100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1px;
+  text-align: center;
+}
+.hotelImages {
+    position: relative;
+    width:  18%;
+    height: 20%;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    float:left;
+    margin:1.66%;
+    margin-bottom: 0%;
+    margin-top: 3.3%;
+    margin-left: 10%;
+}
+
+#pop1{
+ height:50%;
+ width:32%;
+position: absolute;
+ bottom:30%;
+ right:35%;
+ border:2px solid;
+ padding:10px;
+ background:#fff;
+ border-radius:9px;
+ display:none;
+ opacity: 0.1;
+}
+#close{
+ right:5px;
+ top:5;
+ float:right;
+}
+
+.hotelName{
+position: relative;
+    text-align: center;
+    width:  30%;
+    height: 3%;
+    margin:1.66%;
+    margin-top: 0%;
+    font-size: 30px;
+}
+
+.footer a {
+  color: white;
+}
+
+.spacing{
+line-height: 1.8;
+}
+
+#bookingBody {
+opacity: 0;
+}
+
+.navbar{
+  display:table;
+  padding:5px 0;
+  margin:auto;
+  width:80%;
+}
+
+.head{
+  display:table;
+  position:relative;
+  margin:auto;
+  width:80%;
+  height:100px;
+  background-color:white;
+}
+
+.head a{
+  float:right;
+}
+
+.footerSmall a {
+  color: white;
+}

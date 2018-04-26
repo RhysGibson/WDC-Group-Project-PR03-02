@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Home Page</title>
+        <meta charset="utf-8"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+        $("backgroundImage > div:gt(0)").hide();
+
+        setInterval(function() {
+          $('#backgroundImage > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#backgroundImage');
+        },9000);
+       </script>
+    </head>
+    <body>
+
+      <nav>
+    <div class="navbar">
+      <ul class="topbar">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="files/News.html">News</a></li>
+        <li><a href="#deals">Current Deals</a></li>
+        <li><a href="files/manageBookings.html">Manage Booking</a></li>
+        <li><a href="#managhotel">Manage Hotel</a></li>
+        <li><a href="#recentlyviewed">Recently Viewed</a></li>
+        <li><a href="#favourites">Favourites</a></li>
+        <li><a href="files/faq.html">Contact Us</a></li>
+        <li style="float:right"><a href="files/Login%20Screen%20V1.html">Log In/Register</a></li>
+        <li style="float:right"><a href="#about">Language/Currency</a></li>
+      </ul>
+    </div>
+  </nav>
+        <div class="searchContainer">
+          <div id="backgroundImage"> <!-- Glitches out with images on first rotation-->
+            <div>
+              <img src="images/Beach.jpg" alt="Image of a Beach in Adelaide" width="1340">
+            </div>
+            <div>
+              <img src="images/City.jpg" alt="Image of Adelaide" width="1340">
+            </div>
+            <div>
+              <img src="images/Sunrise.jpg" alt="Image of a Sunrise in Adelaide" width="1340">
+            </div>
+            <div>
+              <img src="images/River.jpg" alt="Image of Adelaide" width="1340">
+            </div>
+          </div>
+          <div class="search">
+            <form class="searchBox" action="files/search.html">
+              <input type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="homeoutline">
+        <h3>Recommendations</h3>
+        <div class="recommendationsleft">
+          <div class="leftrec">
+            <p>Hilton Hotel - 5 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="rightrec">
+            <ul>
+              <li>$350</li>
+              <li>Free Wifi</li>
+              <li>Included Breakfast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="recommendationsright">
+          <div class="leftrec">
+            <p>Hilton Hotel - 4 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="rightrec">
+            <ul>
+              <li>$199</li>
+              <li>Free Wifi</li>
+              <li>Included Breakfast</li>
+              <li>Free Public Transport</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Hot Deals</h3>
+        <div class="hotleft">
+          <div class="lefthot">
+            <p>Hilton Hotel - 3 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="righthot">
+            <ul>
+              <li>$99</li>
+              <li>Free Wifi</li>
+              <li>Included Breakfast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hotright">
+          <div class="lefthot">
+            <p>Hilton Hotel - 4 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="righthot">
+            <ul>
+              <li>$149</li>
+              <li>Free Wifi</li>
+              <li>Included Breakfast</li>
+              <li>Free Public Transport</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer" id="eop">
+        <p><a href="files/faq.html">FAQ</a></p>
+        <p><a href="files/terms.html">Terms and Conditions</a></p>
+
+        <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </body>
+</html>
