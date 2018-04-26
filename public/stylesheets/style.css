@@ -1031,3 +1031,8 @@ opacity: 0;
 .show img {
   max-width: 100%;
 }
+
+.dealsandrec {
+  width: 100%;
+  margin: auto;
+}
