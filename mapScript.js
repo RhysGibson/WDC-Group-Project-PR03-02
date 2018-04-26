@@ -52,3 +52,18 @@ function mapSearch(){
   map.setZoom(20);
   markers.push(marker);
 }
+
+function manageBookingMap(hotelName) {
+  clearMarkers();
+    var hotel = adelaide;
+    if(hotelName == "Hilton Hotel"){
+    hotel = hotelhilton;
+  }
+    var marker = new google.maps.Marker({
+    position: hotel,
+    map: map
+  });
+  map.panTo(hotel);
+  map.setZoom(20);
+  markers.push(marker);
+}
