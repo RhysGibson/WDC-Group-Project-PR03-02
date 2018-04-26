@@ -42,7 +42,7 @@
     <p class = "spacing">Cost:$502</p>
     <p class = "spacing">Payment:fulfilled</p>
     <p class = "spacing"><a href = "/files/roomCanceled.html">Cancel Room</a></p>
-    <div id="map" style = "width: 360px; height: 270px; margin-right: 12.3px;">
+    <div id="map" style = "width: 360px; height: 270px;margin-left: 11.5px;">
       <p>Map not loaded. Maybe you are not connected to the internet?</p>
     </div>    
       
@@ -62,13 +62,11 @@ var hotelBooking;
 roomNumber();
 var x = document.getElementById("room").innerHTML;
 console.log(x);
-
 if(x > 0){
 hotelBooking = true;
 }else{
     hotelBooking = false;
 }
-
 if(hotelBooking == false){
     document.location = "/files/bookingNotMade.html"
 }else if(hotelBooking == true){
