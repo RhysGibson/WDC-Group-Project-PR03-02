@@ -142,3 +142,7 @@ if(element.style.opacity == "0.6"){
 }
 element.style.filter  = 'alpha(opacity=90)';
 }
+
+function goToMap(){
+  location.href = "mapSearch.html";
+}

@@ -13,9 +13,7 @@ function initMap(){
 }
 
 function goToSearch(){
-  document.getElementById('searchBut').onclick = function() {
-    location.href = "search.html";
-  }
+  location.href = "search.html";
 }
 
 function mapSearch(){
