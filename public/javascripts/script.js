@@ -183,6 +183,10 @@ function goToLogin(){
   location.href="Login Screen V1.html"
 }
 
+function goToLoginIndex(){
+  location.href="/files/Login Screen V1.html"
+}
+
 function goToOverview(){
   location.href="hotelOverview.html"
 }
