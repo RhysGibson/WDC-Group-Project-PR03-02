@@ -224,11 +224,12 @@ a{
 }
 
 #backgroundImage {
-  margin: 10px;
-  margin-left: 55px;
-  margin-right: 35px;
-  position: absolute;
+  width: 99.5%;
+  margin-left: ;
   padding: 10px;
+  margin: auto;
+  position: absolute;
+
 }
 
 #backgroundImage > div {
@@ -239,6 +240,8 @@ a{
   position: relative;
     text-align: center;
     color: black;
+    max-width: 100%;
+    max-height: 90%;
 }
 
 .search {
@@ -530,7 +533,7 @@ form.searchBox::after {
 }
 
 .homeoutline {
-  margin-top: 55%;
+  margin-top: 58%;
   border-style:solid;
   border-radius:8px;
   border-width:1px;
@@ -1025,5 +1028,5 @@ opacity: 0;
 }
 
 .show img {
-  max-width: 90%;
+  max-width: 100%;
 }
