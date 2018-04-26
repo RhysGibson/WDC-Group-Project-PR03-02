@@ -6,18 +6,7 @@
         <title>Home Page</title>
         <meta charset="utf-8"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script>
-        $("backgroundImage > div:gt(0)").hide();
 
-        setInterval(function() {
-          $('#backgroundImage > div:first')
-            .fadeOut(1000)
-            .next()
-            .fadeIn(1000)
-            .end()
-            .appendTo('#backgroundImage');
-        },9000);
-       </script>
     </head>
     <body>
 
@@ -52,6 +41,20 @@
               <img src="images/River.jpg" alt="Image of Adelaide" >
             </div>
           </div>
+
+          <script>
+          $("#backgroundImage > div:gt(0)").hide();
+
+          setInterval(function() {
+            $('#backgroundImage > div:first')
+              .fadeOut(1000)
+              .next()
+              .fadeIn(1000)
+              .end()
+              .appendTo('#backgroundImage');
+          },9000);
+         </script>
+         
           <div class="search">
             <form class="searchBox" action="files/search.html">
               <input type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
