@@ -78,6 +78,7 @@ function setSearchNumbers(){
 }
 
 function refineSearch(){
+  /*
   var childCount = document.getElementById("searchResults").childElementCount;
   childCount--;
   var lowPrice = document.getElementById("priceRangeSearchMin");
@@ -91,7 +92,7 @@ function refineSearch(){
     if(childrenElements[i]){
 
     }
-  }
+  }*/
 }
 
 function resetFilters(){
