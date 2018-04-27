@@ -75,7 +75,7 @@ function initMap(){
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
 
-    if (places.length == 0) {
+    if (places.length === 0) {
       return;
     }
 
@@ -203,13 +203,13 @@ function mapSearch(){
 
 function showInfo(hotel){
   var name = "Adelaide";
-  var description = "A wonderful city filled with even more wonderful hotels."
-  var cost = "No hotels selected."
-  var includes = "Please select a hotel."
+  var description = "A wonderful city filled with even more wonderful hotels.";
+  var cost = "No hotels selected.";
+  var includes = "Please select a hotel.";
   document.getElementById('floating-panel').style.display = "block";
   if(hotel==="Hilton Adelaide"){
     name = hotel;
-    description = "The Hilton Hotel is located in a central location within Adelaide."
+    description = "The Hilton Hotel is located in a central location within Adelaide.";
     cost = "Cost: $500";
     includes = "Free Wifi and Complimentary Breakfast Everyday.";
   } else if(hotel==="Hotel Grand Chancellor Adelaide"){
@@ -222,17 +222,63 @@ function showInfo(hotel){
     description = "A hotel located on Rundle Mall. Provides easy access to shopping.";
     cost = "Cost: $350";
     includes = "Free Wifi";
-  } else if(hotel=="The Hotel hotelmetropolitan"){
+  } else if(hotel=="The Hotel Metropolitan"){
     name = hotel;
-    description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883."
-    cost: "Cost: $250";
-    includes = "Free Wifi"
+    description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883.";
+    cost = "Cost: $250";
+    includes = "Free Wifi";
   } else if(hotel=="Majestic Roof Garden Hotel"){
     name = hotel;
     description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
     cost = "Cost: $350";
-    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights."
+    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights.";
+  } else if(hotel=="InterContinental Adelaide"){
+    name = hotel;
+    description = "Relaxed rooms and Suites in an elegant hotel featuring an outdoor pool, 3 restaurants and a gym.";
+    cost = "Cost: $450";
+    includes = "Free Wifi and Unlimited Pool access";
+  } else if(hotel=="Stamford Plaza Adelaide"){
+    name = hotel;
+    description = "Set in a bustling area in Adelaide's city centre, thus upscale hotel is a minute's walk from Adelaide Casino.";
+    cost = "Cost: $300";
+    includes = "Free Wifi";
+  } else if(hotel=="Adelaide Rockford"){
+    name = hotel;
+    description = "A 2 minute walk from the City West tram stop, this hotel is only 1.5 km from Adelaide Oval";
+    cost = "Cost: $350";
+    includes = "Free Wifi and an Indoor and Outdoor Pool";
+  } else if(hotel=="Oaks Embassy"){
+    name = hotel;
+    description = "Set across from the Adelaide Convention Centre in a bustling area with theatres and restaurants";
+    cost = "Cost: $350";
+    includes = "Indoor and Outdoor Pool";
+  } else if(hotel=="Oaks Horizons"){
+    name = hotel;
+    description = "Bright apartment with kitchens and laundry facilities";
+    cost = "Cost: $300";
+    includes = "Gym and Sauna";
+  } else if(hotel=="The Playford Hotel"){
+    name = hotel;
+    description = "Elegant rooms and suites situated within a 4 minute walk from the Adelaide Railway Station and the Adelaide Casino";
+    cost = "Cost: $400";
+    includes = "Free Wifi and an Indoor Pool";
+  } else if(hotel=="Mercure Grosvenor Adelaide"){
+    name = hotel;
+    description = "Modern rooms in a contemporary lodging 1 minute away from a tram stop";
+    cost = "Cost: $300";
+    includes = "Gym and a Restaurant";
+  } else if(hotel=="Miller Apartments"){
+    name = hotel;
+    description = "Situated near the city centre, easy walking distance to Rundle Mall";
+    cost = "Cost: $250";
+    includes = "Free Wifi";
+  } else if(hotel=="Adelaide Paringa Motel"){
+    name = hotel;
+    description = "Set in a 1926 building with an Edwardian facade";
+    cost = "Cost: $250";
+    includes = "Free tea and coffee";
   }
+
   document.getElementById('mapHotelName').innerHTML = name;
   document.getElementById('mapHotelDesc').innerHTML = description;
   document.getElementById('mapHotelCost').innerHTML = cost;
