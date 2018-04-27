@@ -8,10 +8,58 @@ var hotelmetropolitan = {lat: -34.928518, lng: 138.597419};
 var hotelmajesticroof = {lat: -34.923179, lng: 138.607706};
 
 function initMap(){
+  // Autocomplete taken from Google Maps page
+  var input = document.getElementById('searchReq');
+  var options = {
+    types: ['establishment']
+  };
+  var autocomplete = new google.maps.places.Autocomplete(input,options);
+  // Map
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: adelaide
   });
+  autocomplete.bindTo('bounds', map);
+  var marker = new google.maps.Marker({
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
+  });
+  // Autocomplete Event Listener
+  autocomplete.addListener('place_changed', function() {
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("No details available for input: '" + place.name + "'");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+    marker.setPosition(place.geometry.location);
+    console.log(place.name);
+    marker.setVisible(true);
+    marker.addListener('click', function() {
+      showInfo(place.name);
+      map.setZoom(20);
+      map.setCenter(marker.getPosition());
+    });
+    markers.push(marker);
+
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+  });
+  mapSearch();
 }
 
 function initHotelMap(){
@@ -35,14 +83,14 @@ function clearMarkers(){
   setMapOnAll(null);
 }
 
-
 function mapSearch(){
   var searchLocationName = document.getElementById('searchReq').value;
+  console.log(searchLocationName);
   var hotel = adelaide;
   var zoom = 15;
   var showMarker = false;
   clearMarkers();
-  if(searchLocationName == "Hilton Hotel"){
+  if(searchLocationName == "Hilton Adelaide"){
     hotel = hotelhilton;
     zoom = 20;
   } else if(searchLocationName == "Hotel Grand Chancellor"){
@@ -70,7 +118,7 @@ function mapSearch(){
       map: map
     });
     marker.addListener('click', function() {
-      showInfo(hotel);
+      showInfo(searchLocationName);
       map.setZoom(zoom);
       map.setCenter(marker.getPosition());
     });
@@ -83,26 +131,26 @@ function showInfo(hotel){
   var description = "A wonderful city filled with even more wonderful hotels."
   var cost = "No hotels selected."
   document.getElementById('floating-panel').style.display = "block";
-  if(hotel===hotelhilton){
-    name = "Hilton Hotel";
+  if(hotel==="Hilton Adelaide"){
+    name = hotel;
     description = "The Hilton Hotel is located in a central location within Adelaide."
     cost = "Cost: $500";
-  } else if(hotel==hotelchancellor){
-    name = "Hotel Grand Chancellor";
+  } else if(hotel==="Hotel Grand Chancellor Adelaide"){
+    name = "Hotel Grand Chancellor Adelaide";
     description = "A hotel with many fine qualities such as a central location and access to public transport.";
     cost = "Cost: $300";
-  } else if(hotel==hotelrichmond){
-    name = "Hotel Richmond";
+  } else if(hotel==="Hotel Richmond"){
+    name = hotel;
     description = "A hotel located on Rundle Mall. Provides easy access to shopping."
     cost = "Cost: $350";
-  } else if(hotel==hotelmetropolitan){
-    name = "The Hotel Metropolian";
+  } else if(hotel=="The Hotel hotelmetropolitan"){
+    name = hotel;
     description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883."
     cost: "Cost: $250";
-  } else if(hotel==hotelmajesticroof){
-    name = "Majestic Roof Garden Hotel";
+  } else if(hotel=="Majestic Roof Garden Hotel"){
+    name = hotel;
     description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
-    cost: "Cost: $350";
+    cost = "Cost: $350";
   }
   document.getElementById('mapHotelName').innerHTML = name;
   document.getElementById('mapHotelDesc').innerHTML = description;

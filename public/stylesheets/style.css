@@ -286,6 +286,18 @@ form.searchBox button:hover {
   background: #0b7dda;
 }
 
+div.searchBox button:hover {
+  background: #0b7dda;
+}
+
+div.searchBoxSearch button:hover {
+  background: #0b7dda;
+}
+
+div.searchBoxMapSearch button:hover {
+  background: #0b7dda;
+}
+
 form.searchBox::after {
   content: "";
   clear: both;
@@ -699,6 +711,27 @@ div.searchBoxSearch input[type=text] {
 div.searchBoxSearch button {
   float: left;
   width: 15%;
+  padding: 10px;
+  background: #1481b7;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+div.searchBoxMapSearch input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid black;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+div.searchBoxMapSearch button {
+  float: left;
+  width: 20%;
   padding: 10px;
   background: #1481b7;
   color: white;
