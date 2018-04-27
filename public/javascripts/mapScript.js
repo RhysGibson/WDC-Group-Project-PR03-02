@@ -59,8 +59,6 @@ function initMap(){
   };
   var input = document.getElementById('searchReq');
   var searchBox = new google.maps.places.SearchBox(input,options);
-  console.log(searchedLoc);
-  showInfo(searchedLoc);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -199,6 +197,7 @@ function mapSearch(){
     });
     markers.push(marker);
   }
+  showInfo(searchLocationName);
 }
 
 function showInfo(hotel){
@@ -232,6 +231,7 @@ function showInfo(hotel){
     description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
     cost = "Cost: $350";
     includes = "Free Wifi and Complimentary Breakfast for the first 2 nights.";
+<<<<<<< HEAD
   } else if(hotel=="InterContinental Adelaide"){
     name = hotel;
     description = "Relaxed rooms and Suites in an elegant hotel featuring an outdoor pool, 3 restaurants and a gym.";
@@ -277,6 +277,8 @@ function showInfo(hotel){
     description = "Set in a 1926 building with an Edwardian facade";
     cost = "Cost: $250";
     includes = "Free tea and coffee";
+=======
+>>>>>>> 1fde8877edee880cf40e9ac327f010437c945c12
   }
 
   document.getElementById('mapHotelName').innerHTML = name;
@@ -296,9 +298,9 @@ function manageBookingMap(hotelName) {
   });
   clearMarkers();
     var hotel = adelaide;
-    if(hotelName == "Hilton Hotel"){
+
     hotel = hotelhilton;
-  }
+
     var marker = new google.maps.Marker({
     position: hotel,
     map: map

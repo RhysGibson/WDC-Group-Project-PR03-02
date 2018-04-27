@@ -107,7 +107,7 @@ function roomNumber() {
 
 
 function addHotel(){
-console.log("hello there")
+console.log("hello there");
 }
 
 function checkHotel1(){
@@ -129,7 +129,7 @@ function fade(sender) {
 }
 
 function checkHotel2(){
-    console.log("hello there")
+    console.log("hello there");
     document.getElementById('pop2').style.display='block';
 }
 
@@ -180,13 +180,13 @@ function initSearch(){
 }
 
 function goToLogin(){
-  location.href="Login Screen V1.html"
+  location.href="Login Screen V1.html";
 }
 
 function goToLoginIndex(){
-  location.href="/files/Login Screen V1.html"
+  location.href="/files/Login Screen V1.html";
 }
 
 function goToOverview(){
-  location.href="hotelOverview.html"
+  location.href="hotelOverview.html";
 }
