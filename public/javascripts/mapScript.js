@@ -21,7 +21,7 @@ function initMap(){
     zoom: 15,
     center: adelaide
   });
-  if(searchedLoc!==""){
+  if(searchedLoc!=""){
     map.setZoom(17);
   }
   // Set Autocomplete Restrictions
