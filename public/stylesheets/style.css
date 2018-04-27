@@ -406,7 +406,9 @@ form.searchBox::after {
     margin: auto;
     width:35%;
     height:35%;
-    background:skyblue;
+    background:#8aa5ce;
+    border:1px solid #2555a3;
+    border-radius:25px;
     margin-top:8px;
     margin-bottom:8px;
     margin-left: 40px;
@@ -419,7 +421,9 @@ form.searchBox::after {
     margin:0 auto;
     width:35%;
     height:35%;
-    background:skyblue;
+    background:#8aa5ce;
+    border:1px solid #2555a3;
+    border-radius:25px;
     margin-top:8px;
     margin-bottom:8px;
     margin-left: 10%;
@@ -442,7 +446,9 @@ form.searchBox::after {
     margin:0 auto;
     width:35%;
     height:35%;
-    background:skyblue;
+    background:#8aa5ce;
+    border:1px solid #2555a3;
+    border-radius:25px;
     margin-top:8px;
     margin-bottom:8px;
     margin-left: 40px;
@@ -455,7 +461,9 @@ form.searchBox::after {
     margin:0 auto;
     width:35%;
     height:35%;
-    background:skyblue;
+    background:#8aa5ce;
+    border:1px solid #2555a3;
+    border-radius:25px;
     margin-top:8px;
     margin-bottom:8px;
     margin-left: 10%;
@@ -503,9 +511,11 @@ form.searchBox::after {
 .hotelroom {
       display: inline-block;
       margin:0 auto;
-      width:1180px;
+      width:100%;
       height:auto;
-      background:skyblue;
+      background:#8aa5ce;
+      border:1px solid #2555a3;
+      border-radius:25px;
       margin-top:8px;
       margin-bottom:8px;
       padding:5px;
@@ -1036,7 +1046,7 @@ position: relative;
 }
 
 .spacing{
-line-height: 1.8;
+  line-height: 1.8;
 }
 
 #bookingBody {
@@ -1094,12 +1104,12 @@ opacity: 0;
 
 #banner button{
   margin-top:6px;
-  margin-right:30px;
+  margin-right:120px;
   font-size:25px;
 }
 
 #homeIcon {
-    width: 215px; 
+    width: 215px;
     height: 53px;
     margin-left: 120px;
 }
