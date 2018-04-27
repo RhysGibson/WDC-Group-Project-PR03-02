@@ -4,9 +4,12 @@
 html {
   overflow-y: scroll;
 }
-html, body { height: 100%; width: 100%; margin: 0; }
+html{ height:100% }
 body {
   background-color: white;
+  padding-bottom:105px;
+  min-height:100%;
+  position:relative;
 }
 p {
 font-family: 'Quattrocento Sans', sans-serif;
@@ -979,25 +982,14 @@ footer p{
 
 .footer {
   display:inline-block;
-  position: relative;
+  position: absolute;
   width:100%;
-  right: 0;
+  height:105px;
   bottom: 0;
-  left: 0;
   padding: 1px;
   text-align: center;
 }
 
-.footerSmall {
-  display:inline-block;
-  position: absolute;
-  width:100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1px;
-  text-align: center;
-}
 .hotelImages {
     position: relative;
     width:  18%;
@@ -1073,10 +1065,6 @@ opacity: 0;
   float:right;
 }
 
-.footerSmall a {
-  color: white;
-}
-
 .show img {
   max-width: 100%;
 }
@@ -1112,4 +1100,19 @@ opacity: 0;
     width: 215px;
     height: 53px;
     margin-left: 120px;
+}
+
+.leftrec p{text-align:center;}
+.rightrec p{text-align:center;}
+.lefthot p{text-align:center;}
+.righthot p{text-align:center;}
+
+.searchBody{
+  padding-bottom:0px;
+}
+
+.footerSearch{
+  position:relative;
+  left:0;
+  right:0;
 }
