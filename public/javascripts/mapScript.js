@@ -13,27 +13,46 @@ function setMapOnAll(map){
   }
 }
 
-function addMarker(location) {
- var marker = new google.maps.Marker({
-   position: location,
-   map: map
- });
- markers.push(marker);
+function callback(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
 }
 
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    showInfo(place.name);
+    map.setZoom(20);
+    map.setCenter(marker.getPosition());
+  });
+}
 
 function initMap(){
+  // Map
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: adelaide
   });
-
-  // Map
-  if(searchedLoc!=""){
-    map.setZoom(20);
-  }
+  // Show All Hotels on Location
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: adelaide,
+    radius: 1000,
+    type: ['lodging']
+  }, callback);
 
   var searchedLoc = document.getElementById('searchReq').value;
+  if(searchedLoc!==""){
+    map.setZoom(20);
+  }
   // Search taken from Google Maps API Developer Page
   var options = {
     types: ['establishment']
@@ -79,11 +98,11 @@ function initMap(){
       // };
 
       // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        title: place.name,
-        position: place.geometry.location
-      }));
+      // markers.push(new google.maps.Marker({
+      //   map: map,
+      //   title: place.name,
+      //   position: place.geometry.location
+      // }));
 
       if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
@@ -104,7 +123,6 @@ function initMap(){
           map.setCenter(marker.getPosition());
         });
         markers.push(marker);
-        setMapOnAll(map);
 
 
       if (place.geometry.viewport) {
@@ -197,8 +215,8 @@ function showInfo(hotel){
     description = "A hotel with many fine qualities such as a central location and access to public transport.";
     cost = "Cost: $300";
   } else if(hotel==="Hotel Richmond"){
-    name = hotel;
-    description = "A hotel located on Rundle Mall. Provides easy access to shopping."
+    name= hotel;
+    description = "A hotel located on Rundle Mall. Provides easy access to shopping.";
     cost = "Cost: $350";
   } else if(hotel=="The Hotel hotelmetropolitan"){
     name = hotel;
