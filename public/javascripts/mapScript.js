@@ -59,8 +59,6 @@ function initMap(){
   };
   var input = document.getElementById('searchReq');
   var searchBox = new google.maps.places.SearchBox(input,options);
-  console.log(searchedLoc);
-  showInfo(searchedLoc);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -199,17 +197,18 @@ function mapSearch(){
     });
     markers.push(marker);
   }
+  showInfo(searchLocationName);
 }
 
 function showInfo(hotel){
   var name = "Adelaide";
-  var description = "A wonderful city filled with even more wonderful hotels."
-  var cost = "No hotels selected."
-  var includes = "Please select a hotel."
+  var description = "A wonderful city filled with even more wonderful hotels.";
+  var cost = "No hotels selected.";
+  var includes = "Please select a hotel.";
   document.getElementById('floating-panel').style.display = "block";
   if(hotel==="Hilton Adelaide"){
     name = hotel;
-    description = "The Hilton Hotel is located in a central location within Adelaide."
+    description = "The Hilton Hotel is located in a central location within Adelaide.";
     cost = "Cost: $500";
     includes = "Free Wifi and Complimentary Breakfast Everyday.";
   } else if(hotel==="Hotel Grand Chancellor Adelaide"){
@@ -224,14 +223,14 @@ function showInfo(hotel){
     includes = "Free Wifi";
   } else if(hotel=="The Hotel hotelmetropolitan"){
     name = hotel;
-    description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883."
-    cost: "Cost: $250";
-    includes = "Free Wifi"
+    description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883.";
+    cost = "Cost: $250";
+    includes = "Free Wifi";
   } else if(hotel=="Majestic Roof Garden Hotel"){
     name = hotel;
     description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
     cost = "Cost: $350";
-    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights."
+    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights.";
   }
   document.getElementById('mapHotelName').innerHTML = name;
   document.getElementById('mapHotelDesc').innerHTML = description;
