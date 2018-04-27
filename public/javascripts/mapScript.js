@@ -8,8 +8,10 @@ var hotelmetropolitan = {lat: -34.928518, lng: 138.597419};
 var hotelmajesticroof = {lat: -34.923179, lng: 138.607706};
 
 function initMap(){
+  var searchedLoc = document.getElementById('searchReq').value;
   // Autocomplete taken from Google Maps page
   var input = document.getElementById('searchReq');
+  // Restrict to Establishment because hotels can't be restricted?
   var options = {
     types: ['establishment']
   };
@@ -19,6 +21,10 @@ function initMap(){
     zoom: 15,
     center: adelaide
   });
+  if(searchedLoc!==""){
+    map.setZoom(17);
+  }
+  // Set Autocomplete Restrictions
   autocomplete.bindTo('bounds', map);
   var marker = new google.maps.Marker({
     map: map,
@@ -41,7 +47,6 @@ function initMap(){
       map.setZoom(17);
     }
     marker.setPosition(place.geometry.location);
-    console.log(place.name);
     marker.setVisible(true);
     marker.addListener('click', function() {
       showInfo(place.name);
