@@ -167,6 +167,10 @@ function hideSidePanel(){
 }
 
 function manageBookingMap(hotelName) {
+      map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: adelaide
+  });
   clearMarkers();
     var hotel = adelaide;
     if(hotelName == "Hilton Hotel"){
