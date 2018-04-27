@@ -205,31 +205,38 @@ function showInfo(hotel){
   var name = "Adelaide";
   var description = "A wonderful city filled with even more wonderful hotels."
   var cost = "No hotels selected."
+  var includes = "Please select a hotel."
   document.getElementById('floating-panel').style.display = "block";
   if(hotel==="Hilton Adelaide"){
     name = hotel;
     description = "The Hilton Hotel is located in a central location within Adelaide."
     cost = "Cost: $500";
+    includes = "Free Wifi and Complimentary Breakfast Everyday.";
   } else if(hotel==="Hotel Grand Chancellor Adelaide"){
     name = "Hotel Grand Chancellor Adelaide";
     description = "A hotel with many fine qualities such as a central location and access to public transport.";
     cost = "Cost: $300";
+    includes = "Free Wifi";
   } else if(hotel==="Hotel Richmond"){
     name= hotel;
     description = "A hotel located on Rundle Mall. Provides easy access to shopping.";
     cost = "Cost: $350";
+    includes = "Free Wifi";
   } else if(hotel=="The Hotel hotelmetropolitan"){
     name = hotel;
     description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883."
     cost: "Cost: $250";
+    includes = "Free Wifi"
   } else if(hotel=="Majestic Roof Garden Hotel"){
     name = hotel;
     description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
     cost = "Cost: $350";
+    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights."
   }
   document.getElementById('mapHotelName').innerHTML = name;
   document.getElementById('mapHotelDesc').innerHTML = description;
   document.getElementById('mapHotelCost').innerHTML = cost;
+  document.getElementById('mapHotelIncludes').innerhtml = includes;
 }
 
 function hideSidePanel(){
