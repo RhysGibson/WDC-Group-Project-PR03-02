@@ -7,62 +7,114 @@ var hotelrichmond = {lat: -34.922488, lng: 138.604227};
 var hotelmetropolitan = {lat: -34.928518, lng: 138.597419};
 var hotelmajesticroof = {lat: -34.923179, lng: 138.607706};
 
+function setMapOnAll(map){
+  for(var i = 0; i<markers.length; i++){
+    markers[i].setMap(map);
+  }
+}
+
+function addMarker(location) {
+ var marker = new google.maps.Marker({
+   position: location,
+   map: map
+ });
+ markers.push(marker);
+}
+
+
 function initMap(){
-  var searchedLoc = document.getElementById('searchReq').value;
-  // Autocomplete taken from Google Maps page
-  var input = document.getElementById('searchReq');
-  // Restrict to Establishment because hotels can't be restricted?
-  var options = {
-    types: ['establishment']
-  };
-  var autocomplete = new google.maps.places.Autocomplete(input,options);
-  // Map
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: adelaide
   });
+
+  // Map
   if(searchedLoc!=""){
-    map.setZoom(17);
+    map.setZoom(20);
   }
-  // Set Autocomplete Restrictions
-  autocomplete.bindTo('bounds', map);
-  var marker = new google.maps.Marker({
+
+  var searchedLoc = document.getElementById('searchReq').value;
+  // Search taken from Google Maps API Developer Page
+  var options = {
+    types: ['establishment']
+  };
+  var input = document.getElementById('searchReq');
+  var searchBox = new google.maps.places.SearchBox(input,options);
+  console.log(searchedLoc);
+  showInfo(searchedLoc);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  /*var marker = new google.maps.Marker({
     map: map,
     anchorPoint: new google.maps.Point(0, -29)
-  });
-  // Autocomplete Event Listener
-  autocomplete.addListener('place_changed', function() {
-    marker.setVisible(false);
-    var place = autocomplete.getPlace();
-    if (!place.geometry) {
-      window.alert("No details available for input: '" + place.name + "'");
+  });*/
+  // Search Box Event Listener
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
       return;
     }
 
-    // If the place has a geometry, then present it on a map.
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
-    } else {
-      map.setCenter(place.geometry.location);
-      map.setZoom(17);
-    }
-    marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
-    marker.addListener('click', function() {
-      showInfo(place.name);
-      map.setZoom(20);
-      map.setCenter(marker.getPosition());
-    });
-    markers.push(marker);
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
 
-    var address = '';
-    if (place.address_components) {
-      address = [
-        (place.address_components[0] && place.address_components[0].short_name || ''),
-        (place.address_components[1] && place.address_components[1].short_name || ''),
-        (place.address_components[2] && place.address_components[2].short_name || '')
-      ].join(' ');
-    }
+      // Show all previous markers
+
+      // var icon = {
+      //   url: place.icon,
+      //   size: new google.maps.Size(71, 71),
+      //   origin: new google.maps.Point(0, 0),
+      //   anchor: new google.maps.Point(17, 34),
+      //   scaledSize: new google.maps.Size(25, 25)
+      // };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(20);
+        }
+        var marker = new google.maps.Marker({
+          map: map,
+          anchorPoint: new google.maps.Point(0, -29)
+        });
+        showInfo(place.name);
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+        marker.addListener('click',function(){
+          showInfo(place.name);
+          map.setZoom(20);
+          map.setCenter(marker.getPosition());
+        });
+        markers.push(marker);
+        setMapOnAll(map);
+
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
   });
   mapSearch();
 }
@@ -78,23 +130,23 @@ function initHotelMap(){
   });
 }
 
-function setMapOnAll(map){
-  for(var i = 0; i<markers.length; i++){
-    markers[i].setMap(map);
-  }
-}
-
 function clearMarkers(){
   setMapOnAll(null);
 }
 
+function showMarkers() {
+  setMapOnAll(map);
+}
+
+function resetZoom(){
+  map.setZoom(15);
+}
+
 function mapSearch(){
   var searchLocationName = document.getElementById('searchReq').value;
-  console.log(searchLocationName);
   var hotel = adelaide;
   var zoom = 15;
   var showMarker = false;
-  clearMarkers();
   if(searchLocationName == "Hilton Adelaide"){
     hotel = hotelhilton;
     zoom = 20;

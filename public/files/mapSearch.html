@@ -62,7 +62,7 @@
       </div>
       <div class="mapResult">
         <a style="float:right" href="#favourite">Favourite</a>
-        <a href="/files/hotelOverview.html">Hilton Hotel</a>
+        <a href="/files/hotelOverview.html">Hilton Adelaide</a>
         <div class="mapResultImage">
           <img src="/images/hotel.jpg" alt="Hotel Image">
         </div>
@@ -120,7 +120,7 @@
       <div id="floating-panel">
         <h3 id="mapHotelName">Hotel</h3>
         <br/>
-        <p id="mapHotelDesc">The Hilton Hotel is located in a central location within Adelaide.</p>
+        <p id="mapHotelDesc">The Hilton Adelaide is located in a central location within Adelaide.</p>
         <br/>
         <p id="mapHotelCost">Cost: $500</p>
         <br/>
@@ -128,7 +128,10 @@
           <img src="/images/hotel.jpg" alt="Hotel Image">
         </div>
         <br/>
-        <button style="font-size:20px;" type="button" onclick="goToOverview()">Book Now!</button><br/>
+        <button style="font-size:20px;" type="button" onclick="goToOverview()">Book Now!</button><br/><br/>
+        <button style="font-size:15px;" type="button" onclick="resetZoom()">Reset Zoom</button><br/>
+        <button style="font-size:15px;" type="button" onclick="showMarkers()">Show Markers</button>
+        <button style="font-size:15px;" type="button" onclick="clearMarkers()">Hide Markers</button><br/><br/>
         <button type="button" onclick="hideSidePanel()">Hide</button>
       </div>
       <div id="map">

@@ -606,7 +606,9 @@ form.searchBox::after {
   position:absolute;
   top: 10%;
   left: 1%;
-  height:70%;
+  height:auto;
+  max-height:80%;
+  overflow-y:auto;
   width:25%;
   z-index: 5;
   background-color: #fff;
@@ -1075,7 +1077,7 @@ position: relative;
 }
 
 #bookingBody {
-    height: 100%; width: 100%; margin: 0; 
+    height: 100%; width: 100%; margin: 0;
 opacity: 0;
 }
 
