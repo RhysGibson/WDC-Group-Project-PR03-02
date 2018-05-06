@@ -13,7 +13,7 @@
     <div id="banner">
       <div class="row">
           <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
-          <button onclick="goToLogin()" style="float:right">Log In/Register</button>
+          <button onclick="loadLogin()" style="float:right">Log In/Register</button>
       </div>
     </div>
         <nav>
@@ -35,6 +35,22 @@
 <p>You have not booked a hotel!</p><a href = "/files/search.html">Click here to book.</a>
 </div>
 <br/>
+    <div class="loginBox" id = "outerLayer">
+       <img src = "/images/loginbackground.jpg" style="z-index: -10;position: absolute;margin-left:-320px;margin-top: -130px; width: 900px;height: auto;">
+      <div class="loginBox2">
+			<img src="/images/user.png" alt="usericon" class="user">
+			<br>
+			<form>
+				<p>Email</p>
+				<input type="text" placeholder="Enter Email" required>
+				<p>Password</p>
+				<input type="password" placeholder="••••••••••••••••••" required>
+				<input type="submit" value="Sign In">
+				<a href="/files/SignUp%20V1.html">Not a member? Sign up now!</a>
+			</form>
+          <button id="close" onclick="closePopUp('outerLayer')">Close</button>
+		</div>
+      </div>
 </main>
 <div class="footer" id="eop">
   <p><a href="/files/faq.html">FAQ</a></p>
