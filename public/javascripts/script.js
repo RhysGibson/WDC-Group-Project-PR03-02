@@ -216,3 +216,7 @@ function goToLoginIndex(){
 function goToOverview(){
   location.href="hotelOverview.html";
 }
+
+function changeCookie() {
+res.cookie('myFirstCookie', 'false');
+}

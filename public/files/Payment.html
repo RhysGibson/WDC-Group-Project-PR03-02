@@ -6,6 +6,7 @@
         <title>Payment</title>
         <meta charset="utf-8"/>
         <script src="/javascripts/script.js"></script>
+        <script src="/javascripts/bookings.js"></script>
     </head>
     <body>
       <div id="banner">
@@ -43,7 +44,7 @@
             </form>
             <form action="/files/manageBookings.html" method="get">
               <input type="text" name="room" placeholder="Confirm Room" required>
-              <input onclick="createCookie(booking,true);" type="submit" value="Confirm">
+              <input onclick="confirmedBooking();" type="submit" value="Confirm">
             </form>
             <p>We do not require your credit card details as we use the magic of the internet to make your payments happen.</p>
             <p>No this is not a joke, check the FAQ for more.</p>

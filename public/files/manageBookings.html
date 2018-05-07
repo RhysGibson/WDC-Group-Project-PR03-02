@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/javascripts/script.js"></script>
       <script src="/javascripts/mapScript.js"></script>
+      <script src="/javascripts/bookings.js"></script>
   </head>
   <body id = "bookingBody">
     <div id="banner">
@@ -82,9 +83,10 @@
       <script>
 var hotelBooking;
 roomNumber();
+          
 var x = document.getElementById("room").innerHTML;
-console.log(x);
-if(x > 0){
+
+if(getCookie("bookingStatus") == "true"){
 hotelBooking = true;
 }else{
     hotelBooking = false;
