@@ -220,3 +220,43 @@ function goToOverview(){
 function changeCookie() {
 res.cookie('myFirstCookie', 'false');
 }
+
+function onSignIn(googleUser){
+document.cookie = ("loggedIn=true");
+var profile = googleUser.getBasicProfile();
+$(".data").css("display","block");
+$("#pic").attr('src',profile.getImageUrl());
+$("#email").text(profile.getEmail());
+    document.location = "/files/myAccount.html"
+}
+
+function onSignIn1(googleUser){
+var profile = googleUser.getBasicProfile();
+    //var cookie = "bookingStatus" + "=" + profile.getName() + ";";
+$(".data").css("display","block");
+$("#pic").attr('src',profile.getImageUrl());
+$("#email").text(profile.getEmail());
+$("#profileName").text("Welcome " + profile.getName());
+}
+
+function signOut() {
+    document.cookie = ("loggedIn=false");
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function(){
+        alert("You have been signed out");
+        $("g-signin2").css("display","block");
+        $(".data").css("display","block");
+    });
+}
+
+function accountCheck() {
+if(getCookie("loggedIn") == "true"){
+console.log("LoggedIn");
+    document.getElementById("logInButton").style.display = "none";
+    document.getElementById("accountName").style.display = "initial";
+    document.getElementById("accountName").textContent = "Your account";
+    console.log(getCookie(name));
+}else{
+    console.log("Not Logged In");
+    }
+}

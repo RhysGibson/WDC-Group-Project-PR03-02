@@ -216,7 +216,7 @@ position: absolute;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 380px;
-	height: 520px;
+	height: 540px;
 	padding: 60px 40px;
 	background: rgba(0,0,0,.5);
 }
@@ -1238,4 +1238,11 @@ opacity: 0;
 
 #outerLayer {
     position:fixed;
+}
+
+.g-signin2{
+    
+}
+.data {
+display: none;
 }

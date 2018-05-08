@@ -6,12 +6,17 @@
 		<link rel="stylesheet" href="/stylesheets/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="/javascripts/script.js"></script>
+        <script src="/javascripts/bookings.js"></script>
+        <meta name="google-signin-client_id" content="707158031089-3i5rs74miklgn29uuouimk0lo7a6t8rc.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
-	<body class = "loginBody">
+	<body class = "loginBody" onload="accountCheck()">
 		<div id="banner">
 	    <div class="row">
 	        <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
-	        <button onclick="goToLogin()" style="float:right">Log In/Register</button>
+	        <button onclick="goToLogin()" style="float:right" id = "logInButton">Log In/Register</button>
+            <button onclick="document.location.href = '/files/myAccount.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
 	    </div>
 	  </div>
 	      <nav>
@@ -295,6 +300,7 @@
                 <br><br><br>
 				<input type="submit" value="Sign Up">
                 <a href = "/files/Login%20Screen%20V1.html">Already a member? Log in now!</a>
+                <div class = "g-signin2" data-onsuccess="onSignIn"></div>
 			</form>
 		</div>
 		<div class="footer" id="eop">
