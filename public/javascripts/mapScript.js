@@ -33,6 +33,7 @@ function createMarker(place) {
     map.setZoom(20);
     map.setCenter(marker.getPosition());
   });
+  markers.push(marker);
 }
 
 function initMap(){
@@ -103,7 +104,6 @@ function initMap(){
       //   title: place.name,
       //   position: place.geometry.location
       // }));
-
       if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
         } else {
@@ -122,7 +122,6 @@ function initMap(){
           map.setZoom(20);
           map.setCenter(marker.getPosition());
         });
-        markers.push(marker);
 
 
       if (place.geometry.viewport) {
