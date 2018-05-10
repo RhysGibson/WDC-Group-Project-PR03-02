@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>GoProHotels | The Number 1 Hotel Website</title>
+        <meta charset="utf-8"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="/javascripts/script.js"></script>
+        <script src="/javascripts/bookings.js"></script>
+    </head>
+    <body onload="accountCheck()">
+  <div id="banner">
+    <div class="row">
+       <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
+       <button onclick="loadLogin()" style="float:right" id = "logInButton">Log In/Register</button>
+        <button onclick="document.location.href = '/files/myAccount.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
+    </div>
+  </div>
+      <nav>
+    <div class="navbar">
+      <ul class="topbar">
+        <li><a href="/files/News.html">News</a></li>
+        <li><a href="#deals">Current Deals</a></li>
+        <li><a href="/files/manageBookings.html">Manage Booking</a></li>
+        <li><a href="#managhotel">Manage Hotel</a></li>
+        <li><a href="#recentlyviewed">Recently Viewed</a></li>
+        <li><a href="#favourites">Favourites</a></li>
+        <li><a href="/files/faq.html">Contact Us</a></li>
+        <li style="float:right"><a href="#about"><i class="fa fa-globe"></i> Language/Currency</a></li>
+      </ul>
+    </div>
+  </nav>
+        <div class="searchContainer">
+          <div id="backgroundImage">
+            <div class="show">
+              <img src="/images/Beach.jpg" alt="Image of a Beach in Adelaide" >
+            </div>
+            <div class="show">
+              <img src="/images/City.jpg" alt="Image of Adelaide" >
+            </div>
+            <div class="show">
+              <img src="/images/Sunrise.jpg" alt="Image of a Sunrise in Adelaide">
+            </div>
+            <div class="show">
+              <img src="/images/River.jpg" alt="Image of Adelaide" >
+            </div>
+          </div>
+
+          <script>
+          $("#backgroundImage > div:gt(0)").hide();
+
+          setInterval(function() {
+            $('#backgroundImage > div:first')
+              .fadeOut(1000)
+              .next()
+              .fadeIn(1000)
+              .end()
+              .appendTo('#backgroundImage');
+          },9000);
+         </script>
+          <div class="search">
+            <form class="searchBox">
+              <input id="searchReq" type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
+              <button type="button" onclick="goToSearchIndex()"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      <main id='page'>
+        <div class="homeoutline">
+          <div class="dealsandrec">
+        <h3>Recommendations</h3>
+      </div>
+        <div class="recommendationsleft">
+          <div class="leftrec">
+            <p>Hilton Adelaide - 5 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="rightrec">
+            <ul>
+              <li>$350</li>
+              <li><i class="fa fa-wifi"></i> Free Wifi</li>
+              <li><i class="fa fa-coffee"></i> Included Breakfast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="recommendationsright">
+          <div class="leftrec">
+            <p>Hilton Adelaide - 4 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="rightrec">
+            <ul>
+              <li>$199</li>
+              <li><i class="fa fa-coffee"></i> Included Breakfast</li>
+              <li><i class="fa fa-bus"></i> Free Public Transport</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dealsandrec">
+        <h3>Hot Deals</h3>
+      </div>
+        <div class="hotleft">
+          <div class="lefthot">
+            <p>Hilton Adelaide - 3 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="righthot">
+            <ul>
+              <li>$99</li>
+              <li><i class="fa fa-wifi"></i> Free Wifi</li>
+              <li><i class="fa fa-coffee"></i> Included Breakfast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hotright">
+          <div class="lefthot">
+            <p>Hilton Adelaide - 4 Stars</p>
+            <div class="hotelImageSearch">
+              <img src="/images/hotel.jpg" alt="Hotel Image">
+            </div>
+          </div>
+          <div class="righthot">
+            <ul>
+              <li>$149</li>
+              <li><i class="fa fa-wifi"></i> Free Wifi</li>
+              <li><i class="fa fa-bus"></i> Free Public Transport</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br/>
+           <div class="loginBox" id = "outerLayer">
+       <img src = "/images/loginbackground.jpg" style="z-index: -10;position: absolute;margin-left:-320px;margin-top: -130px; width: 900px;height: auto;">
+      <div class="loginBox2">
+			<img src="/images/user.png" alt="usericon" class="user">
+			<br>
+			<form>
+				<p>Email</p>
+				<input type="text" placeholder="Enter Email" required>
+				<p>Password</p>
+				<input type="password" placeholder="••••••••••••••••••" required>
+				<input type="submit" value="Sign In">
+				<a href="/files/SignUp%20V1.html">Not a member? Sign up now!</a>
+			</form>
+          <button id="close" onclick="closePopUp('outerLayer')">Close</button>
+		</div>
+      </div>
+    </main>
+
+      <div class="footer" id="eop">
+        <p><a href="/files/faq.html">FAQ</a></p>
+        <p><a href="/files/terms.html">Terms and Conditions</a></p>
+
+        <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </body>
+</html>
