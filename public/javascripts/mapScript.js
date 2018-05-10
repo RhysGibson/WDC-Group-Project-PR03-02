@@ -294,7 +294,7 @@ function manageBookingMap(hotelName) {
     center: adelaide
   });
   clearMarkers();
-    var hotel = adelaide;
+    var hotel = hotelhilton;
     if(hotelName == "Hilton Hotel"){
     hotel = hotelhilton;
   }
