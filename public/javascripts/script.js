@@ -224,6 +224,7 @@ res.cookie('myFirstCookie', 'false');
 function onSignIn(googleUser){
 document.cookie = ("loggedIn=true");
 var profile = googleUser.getBasicProfile();
+document.cookie = ("name" + "=" + profile.getName());
 $(".data").css("display","block");
 $("#pic").attr('src',profile.getImageUrl());
 $("#email").text(profile.getEmail());
@@ -233,6 +234,7 @@ $("#email").text(profile.getEmail());
 function onSignIn1(googleUser){
 var profile = googleUser.getBasicProfile();
     //var cookie = "bookingStatus" + "=" + profile.getName() + ";";
+document.cookie = ("name" + "=" + profile.getName());
 $(".data").css("display","block");
 $("#pic").attr('src',profile.getImageUrl());
 $("#email").text(profile.getEmail());
