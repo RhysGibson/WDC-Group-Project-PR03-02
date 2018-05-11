@@ -332,6 +332,7 @@ position: absolute;
 
 .search {
   margin-top: 25%;
+  background-color: white;
   position: absolute;
     top: 50%;
     left: 50%;
@@ -1241,8 +1242,20 @@ opacity: 0;
 }
 
 .g-signin2{
-    
+
 }
 .data {
 display: none;
+}
+
+.datesLeft {
+  position: absolute;
+  float: left;
+  margin-left: 10%;
+}
+
+.datesRight {
+  position: relative;
+  margin-right: 10%;
+  float: right;
 }

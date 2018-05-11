@@ -59,13 +59,27 @@
               .appendTo('#backgroundImage');
           },9000);
          </script>
+
           <div class="search">
             <form class="searchBox">
               <input id="searchReq" type="text" placeholder="To Search in Adelaide press the button.." name="search" style="color:black;">
               <button type="button" onclick="goToSearchIndex()"><i class="fa fa-search"></i></button>
             </form>
+            <div class="datesLeft">
+              <form>
+                Check in:
+                <input type="date" name="checkIn">
+              </form>
+            </div>
+            <div class="datesRight">
+              <form>
+                Check out:
+                <input type="date" name="checkOut">
+              </form>
+            </div>
           </div>
         </div>
+
       <main id='page'>
         <div class="homeoutline">
           <div class="dealsandrec">
