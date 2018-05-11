@@ -1,6 +1,163 @@
 [
-  {"name": "Hotel Richmond", "description": "On a lively pedestrian shopping street, this vintage hotel is set in an imposing 19th-century building.",
-  "cost": "300", "rooms": "3"},
-  {"name": "Hilton Adelaide", "description": "On a lively pedestrian shopping street, this vintage hotel is set in an imposing 19th-century building.",
-  "cost": "300", "rooms": "3"},
+{
+  "name":"Hilton Adelaide",
+  "description":"The Hilton Hotel is located in a central location within Adelaide.",
+  "cost": "500",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "500"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi and Complimentary Breakfast Everyday."
+},
+{
+  "name":"Hotel Grand Chancellor Adelaide",
+  "description": "A hotel with many fine qualities such as a central location and access to public transport.",
+  "cost": "300",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "300"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi"
+},
+{
+  "name":"Hotel Richmond",
+  "description": "A hotel located on Rundle Mall. Provides easy access to shopping.",
+  "cost": "350",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "350"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi"
+},
+{
+  "name":"The Hotel Metropolitan",
+  "description": "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883.",
+  "cost": "250",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "250"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi"
+},
+{
+  "name":"Majestic Roof Garden Hotel",
+  "description": "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station",
+  "cost": "350",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "350"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi and Complimentary Breakfast for the first 2 nights."
+},
+{
+  "name":"InterContinental Adelaide",
+  "description": "Relaxed rooms and Suites in an elegant hotel featuring an outdoor pool, 3 restaurants and a gym.",
+  "cost": "450",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "450"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi and Unlimited Pool access"
+},
+{
+  "name":"Stamford Plaza Adelaide",
+  "description": "Set in a bustling area in Adelaide's city centre, thus upscale hotel is a minute's walk from Adelaide Casino.",
+  "cost": "300",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "300"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi"
+},
+{
+  "name":"Adelaide Rockford",
+  "description": "A 2 minute walk from the City West tram stop, this hotel is only 1.5 km from Adelaide Oval",
+  "cost": "350",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "350"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi and an Indoor and Outdoor Pool"
+},
+{
+  "name":"Oaks Embassy",
+  "description": "Set across from the Adelaide Convention Centre in a bustling area with theatres and restaurants",
+  "cost": "350",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "350"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Indoor and Outdoor Pool"
+},
+{
+  "name":"Oaks Horizons",
+  "description": "Bright apartment with kitchens and laundry facilities",
+  "cost": "300",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "300"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Gym and Sauna"
+},
+{
+  "name":"The Playford Hotel",
+  "description": "Elegant rooms and suites situated within a 4 minute walk from the Adelaide Railway Station and the Adelaide Casino",
+  "cost": "400",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "400"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi and an Indoor Pool"
+},
+{
+  "name":"Mercure Grosvenor Adelaide",
+  "description": "Modern rooms in a contemporary lodging 1 minute away from a tram stop",
+  "cost": "300",
+  "additional": "Gym and a Restaurant"
+},
+{
+  "name":"Miller Apartments",
+  "description": "Situated near the city centre, easy walking distance to Rundle Mall",
+  "cost": "250",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "250"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free Wifi"
+},
+{ "name": "Adelaide Paringa Motel",
+  "description": "Set in a 1926 building with an Edwardian facade",
+  "cost": "250",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "250"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+  ],
+  "additional": "Free tea and coffee"
+}
 ]

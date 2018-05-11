@@ -1,11 +1,20 @@
 var map = null;
 var markers = [];
+var hotels = [];
 var adelaide = {lat: -34.928499, lng: 138.600746};
-var hotelhilton = {lat: -34.929143, lng: 138.598906};
-var hotelchancellor = {lat: -34.923553, lng: 138.596947};
-var hotelrichmond = {lat: -34.922488, lng: 138.604227};
-var hotelmetropolitan = {lat: -34.928518, lng: 138.597419};
-var hotelmajesticroof = {lat: -34.923179, lng: 138.607706};
+
+function initHotels(){
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    hotels = JSON.parse(xhttp.responseText);
+  };
+
+  xhttp.open("GET", "/hotels.json", false);
+
+  xhttp.send();
+}
+
 
 function setMapOnAll(map){
   for(var i = 0; i<markers.length; i++){
@@ -37,6 +46,9 @@ function createMarker(place) {
 }
 
 function initMap(){
+  var v1 = getParameterByName("search");
+  document.getElementById('searchReq').value = v1;
+
   // Map
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
@@ -60,8 +72,6 @@ function initMap(){
   };
   var input = document.getElementById('searchReq');
   var searchBox = new google.maps.places.SearchBox(input,options);
-  console.log(searchedLoc);
-  showInfo(searchedLoc);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -122,6 +132,7 @@ function initMap(){
           map.setZoom(20);
           map.setCenter(marker.getPosition());
         });
+        markers.push(marker);
 
 
       if (place.geometry.viewport) {
@@ -133,7 +144,15 @@ function initMap(){
     });
     map.fitBounds(bounds);
   });
-  mapSearch();
+
+  initHotels();
+
+  if(searchedLoc!==""){
+    google.maps.event.addListenerOnce(map, 'idle', function(){
+      mapSearch();
+      showInfo(searchedLoc);
+    });
+  }
 }
 
 function initHotelMap(){
@@ -164,6 +183,21 @@ function mapSearch(){
   var hotel = adelaide;
   var zoom = 15;
   var showMarker = false;
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( {'address': searchLocationName + "Adelaide"}, function(results,status){
+    if (status == google.maps.GeocoderStatus.OK) {
+      var slat = results[0].geometry.location.lat();
+      var slng = results[0].geometry.location.lng();
+      var location = {lat: slat, lng: slng};
+      map.panTo(location);
+      console.log(results[0].place_id);
+      var service = new google.maps.places.PlacesService(map);
+      service.textSearch({query: searchLocationName, radius: '1000', location: map.getCenter()}, function(resultsnext,status){
+        showInfo(resultsnext[0].name);
+      });
+    }
+  });
+  /*
   if(searchLocationName == "Hilton Adelaide"){
     hotel = hotelhilton;
     zoom = 20;
@@ -197,85 +231,23 @@ function mapSearch(){
       map.setCenter(marker.getPosition());
     });
     markers.push(marker);
-  }
+  }*/
 }
 
 function showInfo(hotel){
-  var name = "Adelaide";
-  var description = "A wonderful city filled with even more wonderful hotels.";
+  var name = "No information available";
+  var description = "This is a placeholder description because no hotel was selected.";
   var cost = "No hotels selected.";
   var includes = "Please select a hotel.";
   document.getElementById('floating-panel').style.display = "block";
-  if(hotel==="Hilton Adelaide"){
-    name = hotel;
-    description = "The Hilton Hotel is located in a central location within Adelaide.";
-    cost = "Cost: $500";
-    includes = "Free Wifi and Complimentary Breakfast Everyday.";
-  } else if(hotel==="Hotel Grand Chancellor Adelaide"){
-    name = "Hotel Grand Chancellor Adelaide";
-    description = "A hotel with many fine qualities such as a central location and access to public transport.";
-    cost = "Cost: $300";
-    includes = "Free Wifi";
-  } else if(hotel==="Hotel Richmond"){
-    name= hotel;
-    description = "A hotel located on Rundle Mall. Provides easy access to shopping.";
-    cost = "Cost: $350";
-    includes = "Free Wifi";
-  } else if(hotel=="The Hotel Metropolitan"){
-    name = hotel;
-    description = "Adjacent to Her Majesty's Theatre and opposite Adelaide Central Market, this subdued, long-standing pub with rooms dates from 1883.";
-    cost = "Cost: $250";
-    includes = "Free Wifi";
-  } else if(hotel=="Majestic Roof Garden Hotel"){
-    name = hotel;
-    description = "A 7-minute walk from shopping at Rundle Mall, this modern hotel also lies 1.3 km from Adelaide train station";
-    cost = "Cost: $350";
-    includes = "Free Wifi and Complimentary Breakfast for the first 2 nights.";
-  } else if(hotel=="InterContinental Adelaide"){
-    name = hotel;
-    description = "Relaxed rooms and Suites in an elegant hotel featuring an outdoor pool, 3 restaurants and a gym.";
-    cost = "Cost: $450";
-    includes = "Free Wifi and Unlimited Pool access";
-  } else if(hotel=="Stamford Plaza Adelaide"){
-    name = hotel;
-    description = "Set in a bustling area in Adelaide's city centre, thus upscale hotel is a minute's walk from Adelaide Casino.";
-    cost = "Cost: $300";
-    includes = "Free Wifi";
-  } else if(hotel=="Adelaide Rockford"){
-    name = hotel;
-    description = "A 2 minute walk from the City West tram stop, this hotel is only 1.5 km from Adelaide Oval";
-    cost = "Cost: $350";
-    includes = "Free Wifi and an Indoor and Outdoor Pool";
-  } else if(hotel=="Oaks Embassy"){
-    name = hotel;
-    description = "Set across from the Adelaide Convention Centre in a bustling area with theatres and restaurants";
-    cost = "Cost: $350";
-    includes = "Indoor and Outdoor Pool";
-  } else if(hotel=="Oaks Horizons"){
-    name = hotel;
-    description = "Bright apartment with kitchens and laundry facilities";
-    cost = "Cost: $300";
-    includes = "Gym and Sauna";
-  } else if(hotel=="The Playford Hotel"){
-    name = hotel;
-    description = "Elegant rooms and suites situated within a 4 minute walk from the Adelaide Railway Station and the Adelaide Casino";
-    cost = "Cost: $400";
-    includes = "Free Wifi and an Indoor Pool";
-  } else if(hotel=="Mercure Grosvenor Adelaide"){
-    name = hotel;
-    description = "Modern rooms in a contemporary lodging 1 minute away from a tram stop";
-    cost = "Cost: $300";
-    includes = "Gym and a Restaurant";
-  } else if(hotel=="Miller Apartments"){
-    name = hotel;
-    description = "Situated near the city centre, easy walking distance to Rundle Mall";
-    cost = "Cost: $250";
-    includes = "Free Wifi";
-  } else if(hotel=="Adelaide Paringa Motel"){
-    name = hotel;
-    description = "Set in a 1926 building with an Edwardian facade";
-    cost = "Cost: $250";
-    includes = "Free tea and coffee";
+  for(var i=0;i<hotels.length;i++){
+    if(hotel==hotels[i].name){
+      name = hotels[i].name;
+      description = hotels[i].description;
+      cost = "Cost: $"+hotels[i].cost;
+      includes = hotels[i].additional;
+      break;
+    }
   }
 
   document.getElementById('mapHotelName').innerHTML = name;

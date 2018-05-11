@@ -193,12 +193,6 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function initMapSearch(){
-  var v1 = getParameterByName("search");
-  document.getElementById('searchReq').value = v1;
-  mapSearch();
-}
-
 function initSearch(){
   var v1 = getParameterByName("search");
   console.log(v1);
