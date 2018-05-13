@@ -2,7 +2,7 @@ var map = null;
 var markers = [];
 var hotels = [];
 var adelaide = {lat: -34.928499, lng: 138.600746};
-
+var hotelhilton = {lat: -34.929143, lng: 138.598906};
 function initHotels(){
   var xhttp = new XMLHttpRequest();
 

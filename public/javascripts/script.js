@@ -200,7 +200,7 @@ function initSearch(){
 }
 
 function goToLogin(){
-  location.href="Login Screen V1.html";
+  location.href="loginScreenV1.html";
 }
 
 function goToLoginIndex(){
