@@ -1259,3 +1259,7 @@ display: none;
   margin-right: 10%;
   float: right;
 }
+
+#accountPage{
+    opacity: 0;
+}

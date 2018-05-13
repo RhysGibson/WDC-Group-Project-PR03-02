@@ -36,15 +36,15 @@
 		<div class="registerBox">
 			<h2 class = "login.h2" style="text-align: left">Register</h2>
             <br>
-			<form>
+			<form id = "submit_form">
 				<p>Email</p>
-				<input type="text" placeholder="Enter Email" required>
+				<input type="text" placeholder="Enter Email" id = "email" required>
                 <p>First Name</p>
-                <input type = "text" placeholder="Rhys" required>
+                <input type = "text" placeholder="Rhys" id = "firstName" required>
                 <p>Last Name</p>
-                <input type = "text" placeholder="Bullas" required>
+                <input type = "text" placeholder="Bullas" id = "lastName" required>
 				<p>Password</p>
-				<input type="password" placeholder="••••••••••••••••••" required>
+				<input type="password" id = "password" placeholder="••••••••••••••••••" required>
                 <select>
     <option selected disabled hidden value="D">Country</option>
 	<option value="AF">Afghanistan</option>
@@ -298,7 +298,7 @@
 	<option value="ZW">Zimbabwe</option>
 </select>
                 <br><br><br>
-				<input type="submit" value="Sign Up">
+				<input type="submit" onclick = "signUp()" value="Sign Up">
                 <a href = "/files/loginScreenV1.html">Already a member? Log in now!</a>
                 <div class = "g-signin2" data-onsuccess="onSignIn"></div>
 			</form>

@@ -139,6 +139,20 @@ function fade(sender) {
     }, 10);
 }
 
+function fadeAccount(sender) {
+    var element = document.getElementById(sender);
+    console.log(element);
+    var op = 0.01;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 50 + ")";
+        op += op * 0.04;
+    }, 10);
+}
 function fadeLogin(sender) {
     var element = document.getElementById(sender);
     console.log(element);
@@ -227,7 +241,6 @@ $("#email").text(profile.getEmail());
 
 function onSignIn1(googleUser){
 var profile = googleUser.getBasicProfile();
-    //var cookie = "bookingStatus" + "=" + profile.getName() + ";";
 document.cookie = ("name" + "=" + profile.getName());
 $(".data").css("display","block");
 $("#pic").attr('src',profile.getImageUrl());
@@ -243,6 +256,7 @@ function signOut() {
         $("g-signin2").css("display","block");
         $(".data").css("display","block");
     });
+    document.location = "/files/home.html";
 }
 
 function accountCheck() {
@@ -254,5 +268,40 @@ console.log("LoggedIn");
     console.log(getCookie(name));
 }else{
     console.log("Not Logged In");
+    }
+}
+
+function signUp(){
+            var firstName = $('#firstName').val();
+            document.cookie = ("name" + "=" + firstName);
+            var lastName = $('#lastName').val();
+            document.cookie = ("lastName" + "=" + lastName);
+            var email = $('#email').val();  
+            document.cookie = ("email" + "=" + email);
+            var password = $('#password').val();
+            document.cookie = ("password" + "=" + password);
+            if(firstName!="" && lastName!="" && email!="" && password!=""){
+            document.location = "/files/myAccount.html";
+            localSignUp();
+            }
+}
+    
+    function localSignUp(){
+            document.cookie = ("loggedIn=true");
+            document.cookie = ("localSignUp=true");
+            $(".data").css("display","block");
+            $("#pic").attr('src',"/images/user.png");
+            $("#email").text(getCookie("email"));
+            $("#profileName").text("Welcome " + getCookie("name") + " " + getCookie("lastName"));
+}
+
+function verification() {
+     var email = $('#email').val(); 
+     var password = $('#password').val();
+if(email == getCookie("email") && password == getCookie("password")){
+        localSignUp();
+    }
+    else{
+    alert("Wrong email or password");
     }
 }

@@ -9,6 +9,7 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/javascripts/bookings.js"></script>
+    <script src="/javascripts/script.js"></script>
 </head>
 
 	<body onload="accountCheck()">
@@ -35,7 +36,7 @@
 	  </nav>
 
 
-        <main class="page">
+        <main class="page" id = "accountPage">
 		<div class = "g-signin2" data-onsuccess="onSignIn1" style = "display: none"></div>
             <div style = "text-align: center;">
                 <br>
@@ -63,5 +64,11 @@
 			<a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
 		</div>
 	</body>
-
+<script>
+    fadeAccount('accountPage');
+    if(getCookie("localSignUp") == "true"){
+        localSignUp();
+    }
+    
+    </script>
 </html>

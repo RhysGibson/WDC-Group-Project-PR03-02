@@ -7,6 +7,7 @@
         <meta charset="utf-8"/>
         <script src="/javascripts/script.js"></script>
         <script src="/javascripts/bookings.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
     <body onload="accountCheck()">
       <div id="banner">
@@ -91,10 +92,10 @@
 			<br>
 			<form>
 				<p>Email</p>
-				<input type="text" placeholder="Enter Email" required>
+				<input type="text" id = "email" placeholder="Enter Email" required>
 				<p>Password</p>
-				<input type="password" placeholder="••••••••••••••••••" required>
-				<input type="submit" value="Sign In">
+				<input type="password" id = "password" placeholder="••••••••••••••••••" required>
+				<input type="submit" onclick="verification()" value="Sign In">
 				<a href="/files/signUpV1.html">Not a member? Sign up now!</a>
 			</form>
           <button id="close" onclick="closePopUp('outerLayer')">Close</button>

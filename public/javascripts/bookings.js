@@ -8,6 +8,8 @@ app.get('/',function(req,res){
    res.cookie('bookingStatus','false');
     res.cookie('loggedIn','false');
     res.cookie('name','Your Account');
+    res.cookie('lastname','Null');
+    res.cookie('email','null');
     res.end('Hello');
 });
 
