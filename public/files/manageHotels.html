@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <title>Manage Hotels</title>
 </head>
-<body id="manageHotelsBody">
+<body id="manageHotelsBody" onload="initManageHotels()">
   <div id="banner">
     <div class="row">
         <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
@@ -34,7 +34,7 @@
     </div>
   </nav>
   <main class='page'>
-  <div id="mapSearchContainer">
+  <div id="manageHotelsContainer">
     <div id="leftPanelManageHotels">
       <br/>
       <div class="manageHotelSearch">
@@ -53,31 +53,48 @@
       <div class="manageHotelsListing">
         <div class="manageHotelsImage">
            <img src="/images/hotel.jpg" alt="Hotel Image">
-           <button type="button">Change image</button>
+           <button type="button" onclick="fakeFunction()">Change image</button>
         </div>
         <div style="text-align:center">
-          <h2>Hilton Adelaide</h2>
-          <button type="button">Change name</button>
+          <h2 class="manageHotelName">Hilton Adelaide</h2>
+          <button class="manageHotelNameButton" type="button" onclick="changeName(0)">Change name</button>
         </div>
         <h3>Current Deals:</h3>
-        <ul>
-          <li>Free breakfast every day<button type="button">Remove deal</button></li>
-          <li>Daytrip metro-tickets given every day<button type="button">Remove deal</button></li>
+        <ul class="manageHotelDeals">
+          <li>
+            Free breakfast every day
+            <button onclick="removeDeal(0,0)" type="button">Remove deal</button></li>
+          <li>
+            Daytrip metro-tickets given every day
+            <button onclick="removeDeal(0,1)" type="button">Remove deal</button></li>
         </ul>
-        <button type="button">Add new deal</button>
+        <button onclick="addDeal(0)" class="manageHotelDealsButton" type="button">Add new deal</button>
         <h3>Description:</h3>
-        <p>The Hilton Hotel is located in a central location within Adelaide.</p>
-        <button type="button">Edit Description</button>
+        <p class="manageHotelDescription">The Hilton Hotel is located in a central location within Adelaide.</p>
+        <button type="button" class="manageHotelDescriptionButton" onclick="changeDescription(0)">Edit Description</button>
         <h3>Rooms:</h3>
-        <ul>
-          <li><p>Type: Single</p><span>Cost per night: 500</span><button type="button">Remove room</button></li>
-          <li><p>Type: Double</p><span>Cost per night: 600</span><button type="button">Remove room</button></li>
-          <li><p>Type: King</p><span>Cost per night: 625</span><button type="button">Remove room</button></li>
+        <ul class="manageHotelRooms">
+          <li>
+            <p>Type: Single</p>
+            <span>Cost per night: 500</span>
+            <button onclick="removeRoom(0,0)" type="button">Remove room</button></li>
+          <li>
+            <p>Type: Double</p>
+            <span>Cost per night: 600</span>
+            <button onclick="removeRoom(0,1)" type="button">Remove room</button></li>
+          <li>
+            <p>Type: King</p>
+            <span>Cost per night: 625</span>
+            <button onclick="removeRoom(0,2)" type="button">Remove room</button></li>
         </ul>
-        <button type="button">Add new room</button>
+        <button class="manageHotelRoomsButton" onclick="addRoom(0)" type="button">Add new room</button>
         <h3>Additional information:</h3>
-        <p id="manageAdditionalInfo">Free Wifi and Complimentary Breakfast Everyday.</p>
-        <button type="button">Edit Additional Information</button>
+        <p  class="manageHotelAdditional">Free Wifi and Complimentary Breakfast Everyday.</p>
+        <button type="button" class="manageHotelAdditionalButton" onclick="changeAdditional(0)">Edit Additional Information</button>
+        <hr>
+        <div style="text-align: center">
+          <button type="button" class="manageHotelSaveChanges" onclick="sendPostSave">Save Changes</button>
+        </div>
       </div>
     </div>
   </div>

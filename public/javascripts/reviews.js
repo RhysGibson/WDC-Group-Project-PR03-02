@@ -101,7 +101,7 @@ function initReviews(){
     }
   };
 
-  xhttp.open("GET", "/reviews.json?hotelid=1", false);
+  xhttp.open("GET", "/reviews.json?hotelid=0", false);
 
   xhttp.send();
 }

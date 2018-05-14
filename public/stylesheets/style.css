@@ -658,6 +658,16 @@ form.searchBox::after {
   margin-top:15px;
 }
 
+#manageHotelsContainer {
+	margin:auto;
+  margin-top:15px;
+  position: relative;
+    text-align: center;
+    color: black;
+    max-width: 100%;
+    max-height: 90%;
+}
+
 #mapListings {
   border:solid 1px;
   margin-right:15px;
@@ -1275,6 +1285,7 @@ display: none;
   width:31.5%;
   border:1px solid;
   float:left;
+  position:absolute;
 }
 
 #rightPanelManageHotels{
@@ -1362,4 +1373,17 @@ display: none;
   width:95%;
   height:20%;
   font-size:4vh;
+}
+
+.manageHotelName{
+  display:inline;
+}
+
+.manageHotelNameButton{
+  display:inline;
+}
+
+.manageHotelSaveChanges{
+  margin:auto;
+  font-size:3vh;
 }
