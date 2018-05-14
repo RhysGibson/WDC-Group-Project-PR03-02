@@ -1356,3 +1356,10 @@ display: none;
   margin-bottom: 0; /* I added this after I posted my reply */
   float:left;
 }
+
+.manageHotelSearch input{
+  margin:auto;
+  width:95%;
+  height:20%;
+  font-size:4vh;
+}

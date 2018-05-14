@@ -193,15 +193,7 @@ function goToSearch(){
 }
 
 function goToSearchIndex(){
-  location.href = "/files/search.html?search=" + document.getElementById('searchReq').value;
-}
-
-function setSearchIndexDatesIn(){
-  location.href = "/files/search.html?datein=" + document.getElementById('dateReqIn').value;
-}
-
-function setSearchIndexDatesOut(){
-  location.href = "/files/search.html?dateout=" + document.getElementById('dateReqOut').value;
+  location.href = "/files/search.html?search="+document.getElementById('searchReq').value+"&datein="+document.getElementById('dateReqIn').value+"&dateout="+document.getElementById('dateReqOut').value;
 }
 
 // Taken from Online - May use NPM for Querystrings later
@@ -217,8 +209,12 @@ function getParameterByName(name, url) {
 
 function initSearch(){
   var v1 = getParameterByName("search");
+  var v2 = getParameterByName("datein");
+  var v3 = getParameterByName("dateout");
   document.getElementById('searchReq').value = v1;
   document.title = "Search results for "+v1;
+  document.getElementById('dateReqIn').value = v2;
+  document.getElementById('dateReqOut').value = v3;
 }
 
 function goToLogin(){

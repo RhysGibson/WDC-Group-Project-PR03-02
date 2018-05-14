@@ -37,13 +37,15 @@
   <div id="mapSearchContainer">
     <div id="leftPanelManageHotels">
       <br/>
-      <p>Add a hotel by clicking somewhere on the map</p>
+      <div class="manageHotelSearch">
+        <input id="searchReq" type="text" placeholder="Search for a location..." name="search" style="color:black;">
+      </div>
+      <br/>
+      <p>Add a hotel by clicking somewhere on the map and pressing the button below</p>
       <div id="manageHotelsMap">
         <p>Map not loaded. Maybe you are not connected to the internet?</p>
       </div>
-      <br/>
       <button type="button">Add Hotel</button>
-      <button type="button">Cancel</button>
     </div>
 
     <div id="rightPanelManageHotels">
@@ -105,7 +107,7 @@
     <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
   </div>
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbVDXjRbzdfmxUXsY-cnbZmn1DYmJYME&callback=initManagementMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbVDXjRbzdfmxUXsY-cnbZmn1DYmJYME&libraries=places&callback=initManagementMap">
   </script>
 </body>
 </html>
