@@ -159,5 +159,93 @@
     {"type": "king", "roomcost": "625"}
   ],
   "additional": "Free tea and coffee"
+},
+{ "name": "The Chancellor on Currie",
+  "description": "Set in the Central Business District with a 5 minute walk from Rundle Mall",
+  "cost": "200",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "200"},
+    {"type": "double", "roomcost": "450"},
+    {"type": "king", "roomcost": "475"},
+    ],
+  "additional": "Free Wifi"
+},
+{ "name": "iStay Precinct",
+  "description": "Modern Apartments set in an industrial-chic building",
+  "cost": "200",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "200"},
+    {"type": "double", "roomcost": "500"},
+    {"type": "king", "roomcost": "525"}
+    ],
+  "additional": "Air-Conditioned"
+},
+{ "name": "Franklin Central Apartments",
+  "description": "Casual, redbrick lodging",
+  "cost": "250",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "250"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+    ],
+  "additional": "Air-Conditioned"
+},
+{ "name": "Adina Apartment Hotel Adelaide Treasury",
+  "description": "Set in Adelaide's former treasury building",
+  "cost": "200",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "200"},
+    {"type": "double", "roomcost": "500"},
+    {"type": "king", "roomcost": "525"}
+    ],
+  "additional": "Free Wifi"
+},
+{ "name": "Backpack Oz",
+  "description": "Budget Accomodation",
+  "cost": "100",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "100"},
+    {"type": "double", "roomcost": "150"},
+    {"type": "king", "roomcost": "175"}
+    ],
+  "additional": "Free Wifi"
+},
+{ "name": "Adabco Boutique Hotel",
+  "description": "Upmarket Rooms and Suites",
+  "cost": "250",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "250"},
+    {"type": "double", "roomcost": "600"},
+    {"type": "king", "roomcost": "625"}
+    ],
+  "additional": "Free Wifi and Free Breakfast"
+},
+{ "name": "Hostel 109 Flashpackers",
+  "description": "Relaxed Hostel offering low-key rooms",
+  "cost": "100",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "100"},
+    {"type": "double", "roomcost": "150"},
+    {"type": "king", "roomcost": "175"}
+    ],
+  "additional": "Free Wifi"
+},
+{ "name": "Chifley on South Terrace",
+  "description": "Modern hotel opposite the Adelaide Park Lands",
+  "cost": "150",
+  "rooms":
+  [
+    {"type": "single", "roomcost": "150"},
+    {"type": "double", "roomcost": "200"},
+    {"type": "king", "roomcost": "225"}
+    ],
+  "additional": "Free Wifi"
 }
 ]
