@@ -167,8 +167,8 @@
   [
     {"type": "single", "roomcost": "200"},
     {"type": "double", "roomcost": "450"},
-    {"type": "king", "roomcost": "475"},
-    ],
+    {"type": "king", "roomcost": "475"}
+  ],
   "additional": "Free Wifi"
 },
 { "name": "iStay Precinct",
