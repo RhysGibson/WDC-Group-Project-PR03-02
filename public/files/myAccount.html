@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<title>My Account</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,13 +44,13 @@
             <div class = "data">
             <h2 id = profileName>Name</h2>
                 <br>
-            <img id = "pic" class = "img-cirle" width="100" height = "100" style = "border-radius: 50px;"/>
+            <img id = "pic" alt="img circle" class = "img-cirle" width="100" height = "100" style = "border-radius: 50px;"/>
             <p id = "email" class = "alert alert-danger"></p>
                 <button onclick="signOut()" class = "btn-danger">Sign Out</button>
                 <br><br>
                 <a href="/files/search.html"><p>Book hotel here</p></a>
-                <a href="/files/manageBookings.html"><p href = "manageBookings.html">Manage your hotels here</p></a>
-                <span id = "manageHotels" style = "display: none;"><a href="/files/managehotels.html"><p href = "manageBookings.html">Manage your hotels here</p></a></span>
+                <a href="/files/manageBookings.html"><p>Manage your hotels here</p></a>
+                <span id = "manageHotels" style = "display: none;"><a href="/files/managehotels.html"><p>Manage your hotels here</p></a></span>
             </div>
                 </div>
         </main>
@@ -64,15 +65,16 @@
 			<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
 			<a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
 		</div>
+		<script>
+		    fadeAccount('accountPage');
+		    if(getCookie("localSignUp") == "true"){
+		        localSignUp();
+		    }
+		    if(getCookie("hotelManagerStatus") == "true"){
+		        $('#manageHotels').css("display","block");
+		    }
+
+		    </script>
 	</body>
-<script>
-    fadeAccount('accountPage');
-    if(getCookie("localSignUp") == "true"){
-        localSignUp();
-    }
-    if(getCookie("hotelManagerStatus") == "true"){
-        $('#manageHotels').css("display","block");
-    }
-    
-    </script>
+
 </html>

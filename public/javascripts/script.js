@@ -121,7 +121,7 @@ function checkHotel1(){
 function closePopUp(sender){
 element = document.getElementById(sender);
 element.style.display='none';
-element.style.opacity = 0.1
+element.style.opacity = 0.1;
 }
 
 function fade(sender) {
@@ -246,7 +246,7 @@ document.cookie = ("name" + "=" + profile.getName());
 $(".data").css("display","block");
 $("#pic").attr('src',profile.getImageUrl());
 $("#email").text(profile.getEmail());
-    document.location = "/files/myAccount.html"
+    document.location = "/files/myAccount.html";
 }
 
 function onSignIn1(googleUser){
@@ -284,16 +284,15 @@ console.log("LoggedIn");
 
 function signUp(){
             var firstName = $('#firstName').val();
-            document.cookie = ("name" + "=" + firstName);
             var lastName = $('#lastName').val();
-            document.cookie = ("lastName" + "=" + lastName);
+            document.cookie = ("name" + "=" + firstName + " " + lastName);
             var email = $('#email').val();
             document.cookie = ("email" + "=" + email);
             var password = $('#password').val();
             document.cookie = ("password" + "=" + password);
-            var HMStatus = $('#HMStatus').is(':checked')
+            var HMStatus = $('#HMStatus').is(':checked');
             document.cookie = ("hotelManagerStatus" + "=" + HMStatus);
-            if(firstName!="" && lastName!="" && email!="" && password!=""){
+            if(firstName!=="" && lastName!=="" && email!=="" && password!==""){
             document.location = "/files/myAccount.html";
             localSignUp();
             }
@@ -305,7 +304,7 @@ function signUp(){
             $(".data").css("display","block");
             $("#pic").attr('src',"/images/user.png");
             $("#email").text(getCookie("email"));
-            $("#profileName").text("Welcome " + getCookie("name") + " " + getCookie("lastName"));
+            $("#profileName").text("Welcome " + getCookie("name"));
 }
 
 function verification() {
