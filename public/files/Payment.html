@@ -45,8 +45,11 @@
               <br><br>
             </form>
             <form action="/files/manageBookings.html" method="get">
-              <input type="text" name="room" placeholder="Confirm Room" required>
-              <input onclick="confirmedBooking();" type="submit" value="Confirm">
+              <select name="hotelRoomNumber">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+              <input onclick="confirmedBooking();" type="submit" value="Confirm" required>
             </form>
             <p>We do not require your credit card details as we use the magic of the internet to make your payments happen.</p>
             <p>No this is not a joke, check the FAQ for more.</p>

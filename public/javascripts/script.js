@@ -221,6 +221,12 @@ function initSearch(){
   document.title = "Search results for "+v1;
 }
 
+function initDateIn(){
+  var d1 = getParameterByName("datein");
+  document.getElementById('dateReqIn').value = d1;
+  document.title = "Search results for "+d1;
+}
+
 function goToLogin(){
   location.href="loginScreenV1.html";
 }
