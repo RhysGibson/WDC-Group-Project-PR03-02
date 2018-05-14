@@ -1,4 +1,4 @@
 [
-  {"hotelid": "1", "postid": "1", "username": "Raza Daza", "date": "5/10/2001", "text": "I love this hotel! There's so much stuff to do and the staff were super friendly! I'd definitely go here again just because of how good it was!", "likes": "5092", "dislikes": "482", "rating": "5", "parent": "0"},
-  {"hotelid": "1", "postid": "2", "username": "Bazil Mop", "date": "6/10/2001", "text": "Terrible staff and terrible service. I would rate it one but I was homeless and they gave me complimentary breakfast by accident.", "likes": "213", "dislikes": "121", "rating": "1", "parent": "0"}
+  {"hotelid": "0", "postid": "1", "username": "Raza Daza", "date": "5/10/2001", "text": "I love this hotel! There's so much stuff to do and the staff were super friendly! I'd definitely go here again just because of how good it was!", "likes": "5092", "dislikes": "482", "rating": "5", "parent": "0"},
+  {"hotelid": "0", "postid": "2", "username": "Bazil Mop", "date": "6/10/2001", "text": "Terrible staff and terrible service. I would rate it one but I was homeless and they gave me complimentary breakfast by accident.", "likes": "213", "dislikes": "121", "rating": "1", "parent": "0"}
 ]
