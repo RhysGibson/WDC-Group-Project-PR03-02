@@ -254,7 +254,7 @@ function showInfo(hotel){
   document.getElementById('mapHotelName').innerHTML = name;
   document.getElementById('mapHotelDesc').innerHTML = description;
   document.getElementById('mapHotelCost').innerHTML = cost;
-  document.getElementById('mapHotelIncludes').innerhtml = includes;
+  document.getElementById('mapHotelIncludes').innerHTML = includes;
 }
 
 function hideSidePanel(){

@@ -8,7 +8,15 @@ function initManageHotels(){
 
   xhttp.onreadystatechange = function() {
     hotels = JSON.parse(xhttp.responseText);
-    console.log(hotels);
+    var hotelNames = document.getElementsByClassName('manageHotelName');
+    var hotelDeals = document.getElementsByClassName('manageHotelDeals');
+    var hotelDescriptions = document.getElementsByClassName('manageHotelDescription');
+    var hotelRooms = document.getElementsByClassName('manageHotelRooms');
+    var hotelAdditionals = document.getElementsByClassName('manageHotelAdditional');
+    // Do this temporarily while we implement the rest later
+    hotelNames[0].innerHTML = hotels[0].name;
+    hotelDescriptions[0].innerHTML = hotels[0].description;
+    hotelAdditionals[0].innerHTML = hotels[0].additional;
   };
 
   xhttp.open("GET", "/hotels.json", false);
@@ -299,21 +307,39 @@ function removeRoom(hotel,num){
 }
 
 function addHotel(){
-
+  alert('Not yet implemented.');
 }
 
 function sendPostSave(hotel){
+  var xhttp = new XMLHttpRequest();
   var hotelNames = document.getElementsByClassName('manageHotelName');
   var hotelDeals = document.getElementsByClassName('manageHotelDeals');
   var hotelDescriptions = document.getElementsByClassName('manageHotelDescription');
   var hotelRooms = document.getElementsByClassName('manageHotelRooms');
   var hotelAdditionals = document.getElementsByClassName('manageHotelAdditional');
 
+  // set temporarily while this doesn't work, everything else should still change
+  var newDeals = hotels[hotel].deals;
+  var newRooms = hotels[hotel].rooms;
+
+  /*
+  // save Rooms
+  for(var i=0;i<hotelDeals[hotel].childNodes.length;i++){
+    console.log(hotelDeals[hotel].childNodes[i].innerHTML);
+  }
+
+  // save Deals
+  for(var i=0;i<hotelRooms[hotel].childNodes.length;i++){
+    console.log(hotelRooms[hotel].childNodes[i].innerHTML);
+  }*/
+
   xhttp.open("POST", "/editHotel.json", true);
 
   xhttp.setRequestHeader("Content-type","application/json");
 
-  xhttp.send(JSON.stringify({hotelid:hotel,name=hotelNames[hotel],deals}));
+  // Deals and Rooms do not save properly
+  xhttp.send(JSON.stringify({hotelid:hotel,name:hotelNames[hotel].innerHTML,cost:hotels[hotel].cost,deals:newDeals,description:hotelDescriptions[hotel].innerHTML,rooms:newRooms,additional:hotelAdditionals[hotel].innerHTML}));
+  alert('Successfully saved details! (Deals and Rooms not affected)!');
 }
 
 function fakeFunction(){
