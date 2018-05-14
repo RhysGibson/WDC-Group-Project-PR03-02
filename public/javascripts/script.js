@@ -196,6 +196,14 @@ function goToSearchIndex(){
   location.href = "/files/search.html?search=" + document.getElementById('searchReq').value;
 }
 
+function setSearchIndexDatesIn(){
+  location.href = "/files/search.html?datein=" + document.getElementById('dateReqIn').value;
+}
+
+function setSearchIndexDatesOut(){
+  location.href = "/files/search.html?dateout=" + document.getElementById('dateReqOut').value;
+}
+
 // Taken from Online - May use NPM for Querystrings later
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;

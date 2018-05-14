@@ -68,13 +68,15 @@
             <div class="datesLeft">
               <form>
                 Check in:
-                <input type="date" name="checkIn">
+                <input id="dateReqIn" type="date" name="datein">
+                <button type="button" onclick="setSearchIndexDatesIn()">Set</button>
               </form>
             </div>
             <div class="datesRight">
               <form>
                 Check out:
-                <input type="date" name="checkOut">
+                <input id="dateReqOut" type="date" name="dateout">
+                <button type="button" onclick="setSearchIndexDatesOut()">Set</button>
               </form>
             </div>
           </div>
