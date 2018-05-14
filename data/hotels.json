@@ -149,7 +149,8 @@
   ],
   "additional": "Free Wifi"
 },
-{ "name": "Adelaide Paringa Motel",
+{
+  "name": "Adelaide Paringa Motel",
   "description": "Set in a 1926 building with an Edwardian facade",
   "cost": "250",
   "rooms":
@@ -160,7 +161,8 @@
   ],
   "additional": "Free tea and coffee"
 },
-{ "name": "The Chancellor on Currie",
+{
+  "name": "The Chancellor on Currie",
   "description": "Set in the Central Business District with a 5 minute walk from Rundle Mall",
   "cost": "200",
   "rooms":
@@ -171,7 +173,8 @@
   ],
   "additional": "Free Wifi"
 },
-{ "name": "iStay Precinct",
+{
+  "name": "iStay Precinct",
   "description": "Modern Apartments set in an industrial-chic building",
   "cost": "200",
   "rooms":
@@ -182,7 +185,8 @@
     ],
   "additional": "Air-Conditioned"
 },
-{ "name": "Franklin Central Apartments",
+{
+  "name": "Franklin Central Apartments",
   "description": "Casual, redbrick lodging",
   "cost": "250",
   "rooms":
@@ -193,7 +197,8 @@
     ],
   "additional": "Air-Conditioned"
 },
-{ "name": "Adina Apartment Hotel Adelaide Treasury",
+{
+  "name": "Adina Apartment Hotel Adelaide Treasury",
   "description": "Set in Adelaide's former treasury building",
   "cost": "200",
   "rooms":
@@ -204,7 +209,8 @@
     ],
   "additional": "Free Wifi"
 },
-{ "name": "Backpack Oz",
+{
+  "name": "Backpack Oz",
   "description": "Budget Accomodation",
   "cost": "100",
   "rooms":
@@ -215,7 +221,8 @@
     ],
   "additional": "Free Wifi"
 },
-{ "name": "Adabco Boutique Hotel",
+{
+  "name": "Adabco Boutique Hotel",
   "description": "Upmarket Rooms and Suites",
   "cost": "250",
   "rooms":
@@ -226,7 +233,8 @@
     ],
   "additional": "Free Wifi and Free Breakfast"
 },
-{ "name": "Hostel 109 Flashpackers",
+{
+  "name": "Hostel 109 Flashpackers",
   "description": "Relaxed Hostel offering low-key rooms",
   "cost": "100",
   "rooms":
@@ -237,7 +245,8 @@
     ],
   "additional": "Free Wifi"
 },
-{ "name": "Chifley on South Terrace",
+{
+  "name": "Chifley on South Terrace",
   "description": "Modern hotel opposite the Adelaide Park Lands",
   "cost": "150",
   "rooms":
