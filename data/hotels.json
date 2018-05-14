@@ -13,8 +13,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi and Complimentary Breakfast Everyday."
 },
@@ -32,8 +31,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -51,8 +49,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -70,8 +67,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -89,8 +85,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi and Complimentary Breakfast for the first 2 nights."
 },
@@ -108,8 +103,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi and Unlimited Pool access"
 },
@@ -127,8 +121,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -146,8 +139,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi and an Indoor and Outdoor Pool"
 },
@@ -165,8 +157,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Indoor and Outdoor Pool"
 },
@@ -184,8 +175,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Gym and Sauna"
 },
@@ -203,8 +193,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi and an Indoor Pool"
 },
@@ -222,8 +211,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Gym and a Restaurant"
 },
@@ -241,8 +229,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -260,8 +247,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free tea and coffee"
 },
@@ -279,8 +265,7 @@
   ],
   "deals":
   [
-    {"deal": "Free breakfast every day"},
-    {"deal": "Daytrip metro-tickets given every day"}
+    "first", "second", "third"
   ],
   "additional": "Free Wifi"
 },
@@ -298,8 +283,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Air-Conditioned"
 },
@@ -317,8 +301,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Air-Conditioned"
 },
@@ -336,8 +319,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Free Wifi"
 },
@@ -355,8 +337,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Free Wifi"
 },
@@ -374,8 +355,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Free Wifi and Free Breakfast"
 },
@@ -393,8 +373,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Free Wifi"
 },
@@ -412,8 +391,7 @@
     ],
     "deals":
     [
-      {"deal": "Free breakfast every day"},
-      {"deal": "Daytrip metro-tickets given every day"}
+      "first", "second", "third"
     ],
   "additional": "Free Wifi"
 }
