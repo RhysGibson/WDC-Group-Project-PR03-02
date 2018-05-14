@@ -432,6 +432,7 @@ form.searchBox::after {
 	padding:5px;
   font-weight:bold;
   margin-top:10px;
+  text-align:center;
 }
 
 #searchResults {
@@ -1262,4 +1263,89 @@ display: none;
 
 #accountPage{
     opacity: 0;
+}
+
+#searchResultsNavigation{
+  text-align: center;
+}
+
+#leftPanelManageHotels{
+  text-align: center;
+  width:31.5%;
+  border:1px solid;
+  float:left;
+}
+
+#rightPanelManageHotels{
+  width:67.5%;
+  border:1px solid;
+  float:right;
+}
+
+#manageHotelsContainer{
+  text-align:center;
+  margin-top:10px;
+}
+
+#manageHotelsMap{
+  width:95%;
+  padding-top:95%;
+  border:solid 1px;
+  margin:auto;
+}
+
+.manageHotelsListing {
+  border-radius:25px;
+  display: inline-block;
+  margin:0 auto;
+  width:100%;
+  height:auto;
+  background:#8aa5ce;
+  margin-top:1px;
+  border:1px solid #2555a3;
+  margin-bottom:1px;
+  padding:5px;
+  text-align:left;
+}
+
+.manageHotelsListing li{
+  margin-left:15px;
+}
+
+.manageHotelsListing h2{
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.manageHotelsListing h3{
+  text-decoration: underline;
+}
+
+.manageHotelsListing button{
+  margin-left:10px;
+}
+
+.manageHotelsImage{
+  padding-top:10%;
+  width:40%;
+  float:right;
+  position:relative;
+}
+
+.manageHotelsImage img{
+  border:1px solid darkgrey;
+  border-radius:25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+}
+
+.manageHotelsImage button{
+  text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:75%;
 }

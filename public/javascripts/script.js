@@ -209,8 +209,8 @@ function getParameterByName(name, url) {
 
 function initSearch(){
   var v1 = getParameterByName("search");
-  console.log(v1);
   document.getElementById('searchReq').value = v1;
+  document.title = "Search results for "+v1;
 }
 
 function goToLogin(){
@@ -276,7 +276,7 @@ function signUp(){
             document.cookie = ("name" + "=" + firstName);
             var lastName = $('#lastName').val();
             document.cookie = ("lastName" + "=" + lastName);
-            var email = $('#email').val();  
+            var email = $('#email').val();
             document.cookie = ("email" + "=" + email);
             var password = $('#password').val();
             document.cookie = ("password" + "=" + password);
@@ -285,7 +285,7 @@ function signUp(){
             localSignUp();
             }
 }
-    
+
     function localSignUp(){
             document.cookie = ("loggedIn=true");
             document.cookie = ("localSignUp=true");
@@ -296,7 +296,7 @@ function signUp(){
 }
 
 function verification() {
-     var email = $('#email').val(); 
+     var email = $('#email').val();
      var password = $('#password').val();
 if(email == getCookie("email") && password == getCookie("password")){
         localSignUp();
