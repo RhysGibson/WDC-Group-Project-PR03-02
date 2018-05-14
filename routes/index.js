@@ -53,8 +53,25 @@ router.post('/addReview.json', function(req,res) {
   res.send(JSON.stringify(reviews));
 });
 
+// Not properly implemented yet
 router.post('/addHotel.json', function(req,res) {
   hotels.push({hotelid: req.body.hotelid, name: req.body.name, cost: req.body.cost, additional: req.body.additional});
+  res.send(JSON.stringify(hotels));
+});
+
+router.post('/editHotel.json', function(req,res) {
+  for(var i=0;i<hotels.length;i++){
+    if(req.body.hotelid==hotels[i].hotelid){
+      hotels[i].name = req.body.name;
+      hotels[i].description = req.body.description;
+      hotels[i].cost = req.body.cost;
+      hotels[i].rooms = req.body.rooms;
+      hotels[i].deals = req.body.deals;
+      hotels[i].additional = req.body.additional;
+      console.log(hotels[i]);
+      break;
+    }
+  }
   res.send(JSON.stringify(hotels));
 });
 

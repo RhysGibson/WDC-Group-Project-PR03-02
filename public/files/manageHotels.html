@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <title>Manage Hotels</title>
 </head>
-<body id="manageHotelsBody" onload="initManageHotels()">
+<body id="manageHotelsBody" onload="initManageHotels();accountCheck()">
   <div id="banner">
     <div class="row">
         <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
@@ -93,7 +93,7 @@
         <button type="button" class="manageHotelAdditionalButton" onclick="changeAdditional(0)">Edit Additional Information</button>
         <hr>
         <div style="text-align: center">
-          <button type="button" class="manageHotelSaveChanges" onclick="sendPostSave">Save Changes</button>
+          <button type="button" class="manageHotelSaveChanges" onclick="sendPostSave(0)">Save Changes</button>
         </div>
       </div>
     </div>

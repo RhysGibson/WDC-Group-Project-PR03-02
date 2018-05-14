@@ -8,6 +8,7 @@ function initManageHotels(){
 
   xhttp.onreadystatechange = function() {
     hotels = JSON.parse(xhttp.responseText);
+    console.log(hotels);
   };
 
   xhttp.open("GET", "/hotels.json", false);
@@ -290,15 +291,29 @@ function addRoom(hotel){
 }
 
 function removeDeal(hotel,num){
-
+  alert('This function is buggy so is not implemented yet...');
 }
 
 function removeRoom(hotel,num){
-
+  alert('This function is buggy so is not implemented yet...');
 }
 
 function addHotel(){
 
+}
+
+function sendPostSave(hotel){
+  var hotelNames = document.getElementsByClassName('manageHotelName');
+  var hotelDeals = document.getElementsByClassName('manageHotelDeals');
+  var hotelDescriptions = document.getElementsByClassName('manageHotelDescription');
+  var hotelRooms = document.getElementsByClassName('manageHotelRooms');
+  var hotelAdditionals = document.getElementsByClassName('manageHotelAdditional');
+
+  xhttp.open("POST", "/editHotel.json", true);
+
+  xhttp.setRequestHeader("Content-type","application/json");
+
+  xhttp.send(JSON.stringify({hotelid:hotel,name=hotelNames[hotel],deals}));
 }
 
 function fakeFunction(){
