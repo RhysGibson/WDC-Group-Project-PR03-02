@@ -49,7 +49,7 @@ router.get('/hotels.json', function(req, res, next) {
 });
 
 router.post('/addReview.json', function(req,res) {
-  reviews.push({hotelid: req.body.hotelid, postid: req.body.postid, user: req.body.user, date: req.body.date, text: req.body.text, likes: 0, dislikes: 0, rating: req.body.rating, parent: req.body.parent});
+  reviews.push({hotelid: req.body.hotelid, postid: req.body.postid, username: req.body.username, date: req.body.date, text: req.body.text, likes: 0, dislikes: 0, rating: req.body.rating, parent: req.body.parent});
   res.send(JSON.stringify(reviews));
 });
 
