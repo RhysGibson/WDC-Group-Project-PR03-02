@@ -133,7 +133,7 @@ function changeName(hotel){
     submitButton.parentNode.removeChild(submitButton);
     hotelNameButtons[hotel].style.display = "inline";
     hotelNames[hotel].style.display = "inline";
-  }
+  };
   submitButton.innerHTML = "Submit name change";
   hotelNameButtons[hotel].style.display = "none";
   hotelNames[hotel].parentNode.insertBefore(submitButton, hotelNames[hotel].nextSibling);
@@ -191,7 +191,7 @@ function changeDescription(hotel){
     submitButton.parentNode.removeChild(submitButton);
     hotelDescriptionButtons[hotel].style.display = "block";
     hotelDescriptions[hotel].style.display = "block";
-  }
+  };
   submitButton.innerHTML = "Submit description change";
   hotelDescriptionButtons[hotel].style.display = "none";
   hotelDescriptions[hotel].parentNode.insertBefore(submitButton, hotelDescriptions[hotel].nextSibling);
@@ -220,7 +220,7 @@ function changeAdditional(hotel){
     submitButton.parentNode.removeChild(submitButton);
     hotelDescriptionButtons[hotel].style.display = "block";
     hotelDescriptions[hotel].style.display = "block";
-  }
+  };
   submitButton.innerHTML = "Submit description change";
   hotelDescriptionButtons[hotel].style.display = "none";
   hotelDescriptions[hotel].parentNode.insertBefore(submitButton, hotelDescriptions[hotel].nextSibling);
@@ -241,7 +241,7 @@ function addDeal(hotel){
   var submitButton = document.createElement('button');
   submitButton.onclick = function(){
     var li = document.createElement('li');
-    var removeBut = document.createElement('button')
+    var removeBut = document.createElement('button');
     input.parentNode.removeChild(input);
     submitButton.parentNode.removeChild(submitButton);
     removeBut.innerHTML = "Remove deal";
@@ -250,7 +250,7 @@ function addDeal(hotel){
     li.appendChild(removeBut);
     hotelDeals[hotel].appendChild(li);
     hotelDealsButtons[hotel].style.display = "block";
-  }
+  };
   submitButton.innerHTML = "Submit deal";
   hotelDeals[hotel].parentNode.insertBefore(submitButton, hotelDeals[hotel].nextSibling);
   hotelDeals[hotel].parentNode.insertBefore(input, hotelDeals[hotel].nextSibling);
@@ -279,7 +279,7 @@ function addRoom(hotel){
     p.innerHTML = "Type: "+input1.value;
     var sp = document.createElement('span');
     sp.innerHTML = "Cost per night: "+input2.value;
-    var removeBut = document.createElement('button')
+    var removeBut = document.createElement('button');
     input1.parentNode.removeChild(input1);
     input2.parentNode.removeChild(input2);
     submitButton.parentNode.removeChild(submitButton);
@@ -290,7 +290,7 @@ function addRoom(hotel){
     li.appendChild(removeBut);
     hotelDeals[hotel].appendChild(li);
     hotelDealsButtons[hotel].style.display = "block";
-  }
+  };
   submitButton.innerHTML = "Submit deal";
   hotelDeals[hotel].parentNode.insertBefore(submitButton, hotelDeals[hotel].nextSibling);
   hotelDeals[hotel].parentNode.insertBefore(input2, hotelDeals[hotel].nextSibling);
