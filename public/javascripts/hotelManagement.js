@@ -38,7 +38,7 @@ function initManagementMap(){
   marker = new google.maps.Marker({
     position: adelaide,
     map: map
-  })
+  });
   marker.addListener('click',function(){
     map.setZoom(18);
     map.setCenter(marker.getPosition());

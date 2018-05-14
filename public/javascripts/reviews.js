@@ -60,7 +60,7 @@ function initReviews(){
       likes.innerHTML = reviews[k].likes;
       dislikes.innerHTML = reviews[k].dislikes;
       date.innerHTML = "Posted on: "+reviews[k].date;
-      rating.innerHTML = "Rating: "
+      rating.innerHTML = "Rating: ";
       text.innerHTML = reviewText;
 
       for(var i=0;i<reviewRate;i++){
@@ -70,7 +70,7 @@ function initReviews(){
       reply.innerHTML = '<i class="fa fa-reply"></i> Reply';
       reply.href = "#reply";
       reply.style.marginRight = "15px";
-      report.innerHTML = '<i class="fa fa-flag"></i> Report'
+      report.innerHTML = '<i class="fa fa-flag"></i> Report';
       report.href = "#report";
       report.style.marginRight = "15px";
 
@@ -90,7 +90,7 @@ function initReviews(){
       newReview.appendChild(report);
       if(getCookie("name")==reviews[k].username){
         var edit = document.createElement("a");
-        edit.innerHTML = '<i class="fa fa-edit"></i> Edit'
+        edit.innerHTML = '<i class="fa fa-edit"></i> Edit';
         edit.href = "#edit";
         newReview.appendChild(edit);
       }
@@ -159,7 +159,7 @@ function submitReview(hotel){
   likes.innerHTML = "0";
   dislikes.innerHTML = "0";
   date.innerHTML = "Posted on: "+dateFormat;
-  rating.innerHTML = "Rating: "
+  rating.innerHTML = "Rating: ";
   revtext.innerHTML = reviewText;
   for(var i=0;i<reviewRate;i++){
     rating.innerHTML += '<i class="fa fa-star"></i>';
@@ -167,10 +167,10 @@ function submitReview(hotel){
   reply.innerHTML = '<i class="fa fa-reply"></i> Reply';
   reply.href = "#reply";
   reply.style.marginRight = "15px";
-  report.innerHTML = '<i class="fa fa-flag"></i> Report'
+  report.innerHTML = '<i class="fa fa-flag"></i> Report';
   report.href = "#report";
   report.style.marginRight = "15px";
-  edit.innerHTML = '<i class="fa fa-edit"></i> Edit'
+  edit.innerHTML = '<i class="fa fa-edit"></i> Edit';
   edit.href = "#edit";
 
   newReview.appendChild(br);

@@ -628,8 +628,8 @@ form.searchBox::after {
 .rightroom {
   float:right;
   font-size: 18px;
-  margin-right: 40px;
-  margin-top: 30px;
+  margin-right: 10%;
+  margin-top: 5%;
 }
 
 .hotelRoomImageSearch{
@@ -1261,7 +1261,7 @@ display: none;
 }
 
 .datesLeft {
-  position: absolute;
+  position: relative;
   float: left;
   margin-left: 10%;
 }
