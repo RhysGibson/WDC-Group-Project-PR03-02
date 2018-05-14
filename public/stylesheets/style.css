@@ -627,6 +627,7 @@ form.searchBox::after {
 
 .rightroom {
   float:right;
+  font-size: 18px;
   margin-right: 40px;
   margin-top: 30px;
 }
