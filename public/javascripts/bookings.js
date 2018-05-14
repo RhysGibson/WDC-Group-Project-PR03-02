@@ -10,7 +10,7 @@ app.get('/',function(req,res){
     res.cookie('name','Your Account');
     res.cookie('lastname','Null');
     res.cookie('email','null');
-    res.end('Hello');
+    res.end('debug');
 });
 
 app.listen(3000,function() {

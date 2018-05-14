@@ -1350,3 +1350,9 @@ display: none;
   margin-right: auto;
   width:75%;
 }
+.inline-field input,
+.inline-field label {
+  display: inline-block;
+  margin-bottom: 0; /* I added this after I posted my reply */
+  float:left;
+}

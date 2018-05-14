@@ -49,6 +49,7 @@
                 <br><br>
                 <a href="/files/search.html"><p>Book hotel here</p></a>
                 <a href="/files/manageBookings.html"><p href = "manageBookings.html">Manage your hotels here</p></a>
+                <span id = "manageHotels" style = "display: none;"><a href="/files/managehotels.html"><p href = "manageBookings.html">Manage your hotels here</p></a></span>
             </div>
                 </div>
         </main>
@@ -68,6 +69,9 @@
     fadeAccount('accountPage');
     if(getCookie("localSignUp") == "true"){
         localSignUp();
+    }
+    if(getCookie("hotelManagerStatus") == "true"){
+        $('#manageHotels').css("display","block");
     }
     
     </script>

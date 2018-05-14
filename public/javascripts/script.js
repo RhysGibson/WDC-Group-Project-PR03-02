@@ -264,6 +264,7 @@ function signOut() {
         $("g-signin2").css("display","block");
         $(".data").css("display","block");
     });
+   // document.cookie = ("hotelManagerStatus" + "=" + "off");
     document.location = "/files/home.html";
 }
 
@@ -288,6 +289,8 @@ function signUp(){
             document.cookie = ("email" + "=" + email);
             var password = $('#password').val();
             document.cookie = ("password" + "=" + password);
+            var HMStatus = $('#HMStatus').is(':checked')
+            document.cookie = ("hotelManagerStatus" + "=" + HMStatus);
             if(firstName!="" && lastName!="" && email!="" && password!=""){
             document.location = "/files/myAccount.html";
             localSignUp();
