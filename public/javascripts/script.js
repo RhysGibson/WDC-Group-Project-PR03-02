@@ -284,9 +284,8 @@ console.log("LoggedIn");
 
 function signUp(){
             var firstName = $('#firstName').val();
-            document.cookie = ("name" + "=" + firstName);
             var lastName = $('#lastName').val();
-            document.cookie = ("lastName" + "=" + lastName);
+            document.cookie = ("name" + "=" + firstName + " " + lastName);      
             var email = $('#email').val();
             document.cookie = ("email" + "=" + email);
             var password = $('#password').val();
@@ -305,7 +304,7 @@ function signUp(){
             $(".data").css("display","block");
             $("#pic").attr('src',"/images/user.png");
             $("#email").text(getCookie("email"));
-            $("#profileName").text("Welcome " + getCookie("name") + " " + getCookie("lastName"));
+            $("#profileName").text("Welcome " + getCookie("name"));
 }
 
 function verification() {
