@@ -9,6 +9,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var mysql = require('mysql');
+var dbConnectionPool = mysql.createPool({ host: 'localhost', user: 'root', password: 'webpassword', database: 'HotelSite'});
+app.use(function(req, res, next) { req.pool = dbConnectionPool; next(); });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
