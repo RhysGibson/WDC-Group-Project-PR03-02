@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 var fs = require('fs');
-var reviews = [];
 var hotels = [];
 
 /* GET home page. */
@@ -10,13 +9,34 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/*fs.readFile('data/reviews.json', 'utf8', function(err, data){
-  reviews = JSON.parse(data);
-})*/
-
 fs.readFile('data/hotels.json', 'utf8', function(err, data){
   hotels = JSON.parse(data);
 })
+
+router.post('/login', function(req, res){
+  req.pool.getConnection(function(err,connection){
+    if(err){throw err;}
+    var sql = "SELECT email, password from users";
+    connection.query(sql, function(err, result, fields){
+      if(err){throw err;}
+      connection.release();
+      if(req.body.email==results[i].email){
+        if(req.body.password==results[i].password){
+          req.session.userid=results[i].userid;
+          req.session.firstname=results[i].firstname;
+          req.session.lastname=results[i].lastname;
+          req.session.email=results[i].email;
+          req.session.manager=results[i].manager;
+          req.session.country=results[i].country;
+        } else{
+          break;
+        }
+      }
+      res.redirect(req.session.redirect);
+    })
+  });
+  res.redirect("/files/loginScreenV1.html");
+});
 
 router.get('/reviews.json', function(req, res, next) {
   req.pool.getConnection(function(err,connection){

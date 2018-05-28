@@ -35,12 +35,12 @@
 		<div class="loginBoxOG">
 			<img src="/images/user.png" alt="usericon" class="user">
 			<br>
-			<form>
+			<form action="/login" method="post">
 				<p>Email</p>
 				<input type="text" id = "email" placeholder="Enter Email" required>
 				<p>Password</p>
 				<input type="password" id = "password" placeholder="••••••••••••••••••" required>
-				<input type="submit" onclick="verification()" value="Sign In">
+				<input type="submit" value="Sign In">
 				<a href="/files/signUpV1.html">Not a member? Sign up now!</a>
                 <div class = "g-signin2" data-onsuccess="onSignIn"></div>
 			</form>

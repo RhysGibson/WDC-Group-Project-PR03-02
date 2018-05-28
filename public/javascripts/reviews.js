@@ -34,11 +34,11 @@ function initReviews(){
       upButton.className = "reviewThumbs";
       upButton.innerHTML = '<i class="fa fa-thumbs-up"></i>';
       upButton.style.color = "green";
-      upButton.onclick = likeReview(reviews[k].reviewid,true);
+
       downButton.className = "reviewThumbs";
       downButton.innerHTML = '<i class="fa fa-thumbs-down"></i>';
       downButton.style.color = "red";
-      upButton.onclick = likeReview(reviews[k].reviewid,false);
+
 
       likeDiv.appendChild(upButton);
       likeDiv.appendChild(downButton);
@@ -204,14 +204,12 @@ function submitReview(hotel){
 }
 
 function likeReview(review,like){
-
-  var xhttp = new XMLHttpRequest();
-  var liketext;
   if(like){
-    liketext = document.getElementById('reviewlike'+review).innerHTML;
+    var liketext = document.getElementById('reviewlike'+review).innerHTML;
   } else{
-    liketext = document.getElementById('reviewdislike'+review).innerHTML;
+    var liketext = document.getElementById('reviewdislike'+review).innerHTML;
   }
+  var xhttp = new XMLHttpRequest();
 
   liketext = Number(liketext) + Number(1);
 
@@ -219,5 +217,4 @@ function likeReview(review,like){
 
   xhttp.setRequestHeader("Content-type","application/json");
   xhttp.send(JSON.stringify({reviewid:review,like:like}));
-
 }
