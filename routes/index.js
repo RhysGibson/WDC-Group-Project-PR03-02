@@ -10,15 +10,27 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-fs.readFile('data/reviews.json', 'utf8', function(err, data){
+/*fs.readFile('data/reviews.json', 'utf8', function(err, data){
   reviews = JSON.parse(data);
-})
+})*/
 
 fs.readFile('data/hotels.json', 'utf8', function(err, data){
   hotels = JSON.parse(data);
 })
 
 router.get('/reviews.json', function(req, res, next) {
+  req.pool.getConnection(function(err,connection){
+    if(err){throw err;}
+    var sql = "SELECT * from users inner join reviews on users.userid = reviews.userid WHERE hotelid = ?";
+    var search_val = req.query.hotelid;
+    connection.query(sql, [search_val], function(err, result, fields){
+      if(err){throw err;}
+      connection.release();
+      res.json(result);
+    });
+  });
+
+  /*
   var number = Number(req.query.hotelid);
   console.log(req.query.hotelid);
   var request = [];
@@ -30,7 +42,7 @@ router.get('/reviews.json', function(req, res, next) {
     }
   }
 
-  res.send(JSON.stringify(request));
+  res.send(JSON.stringify(request));*/
 });
 
 router.get('/hotels.json', function(req, res, next) {
@@ -48,17 +60,50 @@ router.get('/hotels.json', function(req, res, next) {
   res.send(JSON.stringify(hotels));
 });
 
-router.post('/addReview.json', function(req,res) {
-  reviews.push({hotelid: req.body.hotelid, postid: req.body.postid, username: req.body.username, date: req.body.date, text: req.body.text, likes: 0, dislikes: 0, rating: req.body.rating, parent: req.body.parent});
+/*
+router.post('/addCustomer', function(req,res) {
+  var data = req.body;
   req.pool.getConnection(function(err, connection){
     if(err) throw err;
-    var sql = "";
+    var sql = "INSERT INTO users (lastName, firstName, email, password, country) VALUES ";
     connection.query(sql, function(err, results){
       connection.release();
     });
   });
   res.send(JSON.stringify(reviews));
+});*/
+
+router.post('/addReview.json', function(req,res) {
+  req.pool.getConnection(function(err, connection){
+    if(err) {throw err;}
+    var sql = "INSERT INTO reviews(hotelid, userid, dateposted, reviewtext, likes, dislikes, rating, parentreview) VALUES (?,?,?,?,?,?,?,?)";
+    var new_review = [
+      req.body.hotelid, req.body.userid, req.body.dateposted, req.body.reviewtext, req.body.likes, req.body.dislikes, req.body.rating, req.body.parent
+    ]
+    connection.query(sql, new_review, function(err, result, fields){
+      if (err){throw err;}
+    });
+  });
+  res.send(JSON.stringify(reviews));
 });
+
+/* This doesn't work properly and for some reason completely breaks the code
+router.post('/likeReview.json', function(req,res){
+  req.pool.getConnection(function(err, connection){
+    if(err) {throw err;}
+    var sql;
+    console.log(req.body.like);
+    if(req.body.like){
+      sql = "UPDATE reviews SET likes = likes+1 WHERE reviewid = ?";
+    } else{
+      sql = "UPDATE reviews SET dislikes = dislikes+1 WHERE reviewid = ?";
+    }
+    var review = req.body.reviewid;
+    connection.query(sql, review, function(err,result,fields){
+      if(err){throw err;}
+    });
+  });
+})*/
 
 // Not properly implemented yet
 router.post('/addHotel.json', function(req,res) {

@@ -1,0 +1,4 @@
+0	manager	admin	adminmanager@goprohotels.com	password	Australia	1
+1	user	admin	adminuser@goprohotels.com	password	Australia	0
+2	Daza	Raza	razadaza@gmail.com	password2	Australia	0
+3	Mop	Bazil	bazilmop@hotmail.com	password3	Australia	0
