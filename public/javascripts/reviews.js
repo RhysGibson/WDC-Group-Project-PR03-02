@@ -1,10 +1,13 @@
 var reviews = [];
 
 function initReviews(){
-  if(getCookie("loggedIn") == "true"){
+  if(session[0].userid != "-1"){
     document.getElementById('reviewBox').disabled = false;
     document.getElementById('reviewButton').disabled = false;
     document.getElementById('leaveUsReview').innerHTML = "Leave us a Review!";
+  } else {
+    document.getElementById('reviewBox').disabled = true;
+    document.getElementById('reviewButton').disabled = true;
   }
   var xhttp = new XMLHttpRequest();
 

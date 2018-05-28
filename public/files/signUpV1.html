@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Login</title>
+		<title>Sign Up for GoProHotels</title>
 		<link rel="stylesheet" href="/stylesheets/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="/javascripts/script.js"></script>
@@ -11,12 +11,12 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
-	<body class = "loginBody" onload="accountCheck()">
+	<body class = "loginBody" onload="checkSession()">
 		<div id="banner">
 	    <div class="row">
 	        <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
 	        <button onclick="goToLogin()" style="float:right" id = "logInButton">Log In/Register</button>
-            <button onclick="document.location.href = '/files/myAccount.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
+            <button onclick="document.location.href = '/files/account.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
 	    </div>
 	  </div>
 	      <nav>
@@ -36,16 +36,16 @@
 		<div class="registerBox">
 			<h2 class = "login.h2" style="text-align: left">Register</h2>
             <br>
-			<form id = "submit_form">
+			<form action="/signUp" method="post" id = "submit_form">
 				<p>Email</p>
-				<input type="text" placeholder="Enter Email" id = "email" required>
+				<input type="text" name="email" placeholder="Enter Email" id = "email" required>
                 <p>First Name</p>
-                <input type = "text" placeholder="Rhys" id = "firstName" required>
+                <input type = "text" name="firstname" placeholder="Rhys" id = "firstName" required>
                 <p>Last Name</p>
-                <input type = "text" placeholder="Bullas" id = "lastName" required>
+                <input type = "text" name="lastname" placeholder="Bullas" id = "lastName" required>
 				<p>Password</p>
-				<input type="password" id = "password" placeholder="••••••••••••••••••" required>
-                <select>
+				<input type="password" name="password" id = "password" placeholder="••••••••••••••••••" required>
+                <select name="country">
     <option selected disabled hidden value="D">Country</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
@@ -298,11 +298,11 @@
 	<option value="ZW">Zimbabwe</option>
 </select>
 <div class="inline-field">
-  <input type="checkbox" id = "HMStatus" style ="margin-top: 13px;">
+  <input type="checkbox" name="manager" value="0" id = "HMStatus" style ="margin-top: 13px;">
   <label style = "color: white;margin-top: -15px;">Hotel Manager?</label>
 </div>
                 <br><br><br>
-				<input type="submit" style = "margin-top: -15px;" onclick = "signUp()" value="Sign Up">
+				<input type="submit" style = "margin-top: -15px;" value="Sign Up">
                 <a href = "/files/loginScreenV1.html">Already a member? Log in now!</a>
                 <div class = "g-signin2" data-onsuccess="onSignIn"></div>
 			</form>
@@ -315,5 +315,5 @@
 			<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
 			<a href="http://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
 		</div>
-	</body> 
+	</body>
 </html>

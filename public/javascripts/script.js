@@ -1,6 +1,7 @@
 var peopleCount = 0;
 var setLocation = "Adelaide";
 var roomChoice;
+var session = [];
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -246,7 +247,7 @@ document.cookie = ("name" + "=" + profile.getName());
 $(".data").css("display","block");
 $("#pic").attr('src',profile.getImageUrl());
 $("#email").text(profile.getEmail());
-    document.location = "/files/myAccount.html";
+    document.location = "/files/account.html";
 }
 
 function onSignIn1(googleUser){
@@ -259,6 +260,14 @@ $("#profileName").text("Welcome " + profile.getName());
 }
 
 function signOut() {
+  console.log("Sending request to sign out");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    document.location = "/files/home.html";
+  }
+  xhttp.open("POST","/signOut",false);
+  xhttp.send();
+  /*
     document.cookie = ("loggedIn=false");
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function(){
@@ -268,21 +277,25 @@ function signOut() {
     });
    // document.cookie = ("hotelManagerStatus" + "=" + "off");
     document.location = "/files/home.html";
+  */
 }
 
-function accountCheck() {
-if(getCookie("loggedIn") == "true"){
-console.log("LoggedIn");
-    document.getElementById("logInButton").style.display = "none";
-    document.getElementById("accountName").style.display = "initial";
-    document.getElementById("accountName").textContent = "Your account";
-    console.log(getCookie(name));
-}else{
-    console.log("Not Logged In");
+function checkSession(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    session = JSON.parse(xhttp.responseText);
+    if(session[0].userid != "-1"){
+      document.getElementById("logInButton").style.display = "none";
+      document.getElementById("accountName").style.display = "initial";
+      document.getElementById("accountName").textContent = "Your account";
     }
+  }
+  xhttp.open("GET","/inSession",false);
+  xhttp.send();
 }
 
 function signUp(){
+  /*
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
             document.cookie = ("name" + "=" + firstName + " " + lastName);
@@ -293,9 +306,10 @@ function signUp(){
             var HMStatus = $('#HMStatus').is(':checked');
             document.cookie = ("hotelManagerStatus" + "=" + HMStatus);
             if(firstName!=="" && lastName!=="" && email!=="" && password!==""){
-            document.location = "/files/myAccount.html";
+            document.location = "/files/account.html";
             localSignUp();
             }
+            */
 }
 
     function localSignUp(){
@@ -303,8 +317,15 @@ function signUp(){
             document.cookie = ("localSignUp=true");
             $(".data").css("display","block");
             $("#pic").attr('src',"/images/user.png");
-            $("#email").text(getCookie("email"));
-            $("#profileName").text("Welcome " + getCookie("name"));
+            $("#email").text(session[0].email);
+            $("#profileName").text("Welcome " + session[0].firstname);
+}
+
+function initAccount(){
+  $(".data").css("display","block");
+  $("#pic").attr('src',"/images/user.png");
+  $("#email").text(session[0].email);
+  document.getElementById('profileName').innerHTML = "Welcome "+session[0].firstname;
 }
 
 function verification() {

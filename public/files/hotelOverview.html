@@ -15,12 +15,12 @@
   <title>Hotel Overview</title>
   <meta charset="UTF-8">
 </head>
-<body onload="initReviews();accountCheck()">
+<body onload="checkSession();initReviews()">
   <div id="banner">
     <div class="row">
         <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
         <button onclick="loadLogin()" style="float:right" id = "logInButton">Log In/Register</button>
-        <button onclick="document.location.href = '/files/myAccount.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
+        <button onclick="document.location.href = '/files/account.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
     </div>
   </div>
       <nav>

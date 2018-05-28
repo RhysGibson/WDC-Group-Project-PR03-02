@@ -11,31 +11,76 @@ router.get('/', function(req, res, next) {
 
 fs.readFile('data/hotels.json', 'utf8', function(err, data){
   hotels = JSON.parse(data);
-})
+});
 
 router.post('/login', function(req, res){
+  function redirect(){
+    if(req.session.userid){
+      res.redirect("/files/home.html");
+    } else{
+      res.redirect("/files/loginScreenV1.html");
+    }
+  }
   req.pool.getConnection(function(err,connection){
     if(err){throw err;}
-    var sql = "SELECT email, password from users";
+    var sql = "SELECT * from users";
     connection.query(sql, function(err, result, fields){
       if(err){throw err;}
       connection.release();
-      if(req.body.email==results[i].email){
-        if(req.body.password==results[i].password){
-          req.session.userid=results[i].userid;
-          req.session.firstname=results[i].firstname;
-          req.session.lastname=results[i].lastname;
-          req.session.email=results[i].email;
-          req.session.manager=results[i].manager;
-          req.session.country=results[i].country;
-        } else{
-          break;
+      for(var i=0;i<result.length;i++){
+        if(req.body.email==result[i].email){
+          if(req.body.password==result[i].password){
+            req.session.userid=result[i].userid;
+            req.session.firstname=result[i].firstname;
+            req.session.lastname=result[i].lastname;
+            req.session.email=result[i].email;
+            req.session.manager=result[i].manager;
+            req.session.country=result[i].country;
+          } else{
+            break;
+          }
         }
       }
-      res.redirect(req.session.redirect);
-    })
+      redirect();
+    });
   });
-  res.redirect("/files/loginScreenV1.html");
+});
+
+router.get('/files/account.html', function(req, res, next) {
+  if(req.session.userid){
+    res.redirect("/files/myAccount.html");
+  } else{
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
+router.post('/signUp', function(req, res){
+  console.log(req.body.manager);
+  req.pool.getConnection(function(err, connection){
+    if(err) {throw err;}
+    var sql = "INSERT INTO users(lastname,firstname,email,password,country,manager) VALUES (?,?,?,?,?,?)";
+    var sendVal = 1;
+    if(req.body.manager === null){
+      sendVal = 0;
+    }
+    var new_user = [
+      req.body.lastname, req.body.firstname, req.body.email, req.body.password, req.body.country, sendVal
+    ]
+    connection.query(sql, new_user, function(err, result, fields){
+      if (err){throw err;}
+      var logSql = "SELECT * from users where email = ?";
+      connection.query(logSql, req.body.email, function(err, result2, fields2){
+        if (err){throw err;}
+        req.session.userid=result2[0].userid;
+        req.session.firstname=result2[0].firstname;
+        req.session.lastname=result2[0].lastname;
+        req.session.email=result2[0].email;
+        req.session.manager=result2[0].manager;
+        req.session.country=result2[0].country;
+      });
+    });
+  });
+  res.redirect("/files/account.html");
 });
 
 router.get('/reviews.json', function(req, res, next) {
@@ -63,6 +108,22 @@ router.get('/reviews.json', function(req, res, next) {
   }
 
   res.send(JSON.stringify(request));*/
+});
+
+router.get('/inSession', function(req, res, next) {
+  var sess=req.session;
+  var session = [];
+  if(sess.userid){
+    session.push({userid:sess.userid,firstname:sess.firstname,lastname:sess.lastname,email:sess.email,manager:sess.manager,country:sess.country});
+  } else{
+    var nosess = "-1";
+    session.push({userid:nosess});
+  }
+  res.send(JSON.stringify(session));
+});
+
+router.post('/signOut',function(req,res){
+  req.session.destroy();
 });
 
 router.get('/hotels.json', function(req, res, next) {
@@ -104,7 +165,6 @@ router.post('/addReview.json', function(req,res) {
       if (err){throw err;}
     });
   });
-  res.send(JSON.stringify(reviews));
 });
 
 router.post('/likeReview.json', function(req,res){

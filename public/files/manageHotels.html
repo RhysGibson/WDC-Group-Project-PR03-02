@@ -11,12 +11,12 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <title>Manage Hotels</title>
 </head>
-<body id="manageHotelsBody" onload="initManageHotels();accountCheck()">
+<body id="manageHotelsBody" onload="initManageHotels();checkSession()">
   <div id="banner">
     <div class="row">
         <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
         <button onclick="loadLogin()" style="float:right" id = "logInButton">Log In/Register</button>
-        <button onclick="document.location.href = '/files/myAccount.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
+        <button onclick="document.location.href = '/files/account.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
     </div>
   </div>
   <nav>
@@ -126,5 +126,5 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbVDXjRbzdfmxUXsY-cnbZmn1DYmJYME&libraries=places&callback=initManagementMap">
   </script>
-</body> 
+</body>
 </html>
