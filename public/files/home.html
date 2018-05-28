@@ -8,13 +8,6 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="/javascripts/script.js"></script>
         <script src="/javascripts/bookings.js"></script>
-
-        <!-- Bootstrap stuff -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     </head>
     <body onload="checkSession()">
   <div id="banner">
@@ -24,7 +17,7 @@
         <button onclick="document.location.href = '/files/account.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
     </div>
   </div>
-      <!-- <nav>
+      <nav>
     <div class="navbar">
       <ul class="topbar">
         <li><a href="/files/news.html">News</a></li>
@@ -37,36 +30,7 @@
         <li style="float:right"><a href="#about"><i class="fa fa-globe"></i> Language/Currency</a></li>
       </ul>
     </div>
-  </nav> -->
-
-  <nav class="navbar navbar-custom navbar-static-top" role="navigation" style="width: 100%; margin-top:0.3%; margin-bottom:0px;">
-  <div class="container-fluid">
-    <div class="navbar-header" style="margin-left:9.2%">
-      <a class="navbar-brand" href="/files/home.html">Home</a>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/files/news.html">News</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/files/manageBookings.html">Manage Booking</a></li>
-            <li><a href="/files/manageHotels.html">Manage Hotel</a></li>
-          </ul>
-        </li>
-        <li><a href="/files/faq.html">Contact Us</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right" style="margin-right:5%">
-        <li><a href="#"><span class="fa fa-globe"></span> Language/Currency</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
         <div class="searchContainer">
           <div id="backgroundImage">
@@ -91,9 +55,8 @@
           setInterval(function() {
             $('#backgroundImage > div:first')
               .fadeOut(1000)
-
               .next()
-
+              .fadeIn(1000)
               .end()
               .appendTo('#backgroundImage');
           },9000);
