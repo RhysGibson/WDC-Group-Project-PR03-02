@@ -55,7 +55,11 @@ router.get('/files/account.html', function(req, res, next) {
 });
 
 router.post('/signUp', function(req, res){
-  console.log(req.body.manager);
+  function redirect(){
+    if(req.session.userid){
+      res.redirect("/files/account.html");
+    }
+  }
   req.pool.getConnection(function(err, connection){
     if(err) {throw err;}
     var sql = "INSERT INTO users(lastname,firstname,email,password,country,manager) VALUES (?,?,?,?,?,?)";
@@ -77,10 +81,10 @@ router.post('/signUp', function(req, res){
         req.session.email=result2[0].email;
         req.session.manager=result2[0].manager;
         req.session.country=result2[0].country;
+        redirect();
       });
     });
   });
-  res.redirect("/files/account.html");
 });
 
 router.get('/reviews.json', function(req, res, next) {
