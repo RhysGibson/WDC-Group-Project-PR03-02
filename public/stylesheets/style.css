@@ -213,11 +213,11 @@ position: absolute;
 .registerBox
 {
 	position: absolute;
-	top: 50%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	width: 380px;
-	height: 540px;
+	width: 28%;
+	height: 75%;
 	padding: 60px 40px;
 	background: rgba(0,0,0,.5);
 }
@@ -235,7 +235,7 @@ position: absolute;
 .registerBox input
 {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 8%;
 }
 .registerBox input[type="text"],
 .registerBox input[type="password"]
@@ -1366,8 +1366,9 @@ display: none;
 .inline-field input,
 .inline-field label {
   display: inline-block;
-  margin-bottom: 0; /* I added this after I posted my reply */
+  margin-bottom: 0; 
   float:left;
+overflow: auto;
 }
 
 .manageHotelSearch input{
