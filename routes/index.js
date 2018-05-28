@@ -87,7 +87,6 @@ router.post('/addReview.json', function(req,res) {
   res.send(JSON.stringify(reviews));
 });
 
-/* This doesn't work properly and for some reason completely breaks the code
 router.post('/likeReview.json', function(req,res){
   req.pool.getConnection(function(err, connection){
     if(err) {throw err;}
@@ -103,7 +102,7 @@ router.post('/likeReview.json', function(req,res){
       if(err){throw err;}
     });
   });
-})*/
+})
 
 // Not properly implemented yet
 router.post('/addHotel.json', function(req,res) {

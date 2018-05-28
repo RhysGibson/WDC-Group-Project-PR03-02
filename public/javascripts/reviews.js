@@ -52,9 +52,11 @@ function initReviews(){
       date.style.marginLeft = "10px";
       var likes = document.createElement("span");
       likes.style.color = "green";
+      likes.setAttribute("id","reviewlike"+reviews[k].reviewid);
       var dislikes = document.createElement("span");
       dislikes.style.color = "red";
       dislikes.style.marginLeft = "10px";
+      dislikes.setAttribute("id","reviewdislike"+reviews[k].reviewid);
       var rating = document.createElement("span");
       var text = document.createElement("p");
       var reply = document.createElement("a");
@@ -202,12 +204,20 @@ function submitReview(hotel){
 }
 
 function likeReview(review,like){
-  /*
+
   var xhttp = new XMLHttpRequest();
+  var liketext;
+  if(like){
+    liketext = document.getElementById('reviewlike'+review).innerHTML;
+  } else{
+    liketext = document.getElementById('reviewdislike'+review).innerHTML;
+  }
+
+  liketext = Number(liketext) + Number(1);
 
   xhttp.open("POST", "/likeReview.json", true);
 
   xhttp.setRequestHeader("Content-type","application/json");
   xhttp.send(JSON.stringify({reviewid:review,like:like}));
-  */
+
 }
