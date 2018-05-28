@@ -104,18 +104,19 @@ function roomNumber() {
   var parameters = location.search.substring(1).split("&");
   var temp = parameters[0].split("=");
   roomChoice = unescape(temp[1]);
-  document.getElementById("room").innerHTML = roomChoice;
+  document.getElementById("roomNumber").innerHTML = roomChoice;
 }
 
 
-function addHotel(){
-console.log("hello there");
-}
 function loadLogin(){
     fadeLogin('outerLayer');
 }
 
 function checkHotel1(){
+    //retrieve data from server
+    //edit the data in the pop up
+    //harderst part will be the map implementation
+    // document.getElementById("roomName").innerHTML = "Test";
     fade('pop1');
 }
 
