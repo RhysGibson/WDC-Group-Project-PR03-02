@@ -44,8 +44,8 @@
 <button id="close" onclick="closePopUp('pop1')">Close</button><br>
 <h1 style = text-align:center>Hilton Adelaide</h1>
 <hr>
-    <p class = "spacing">Room:<span id = "Room"> Hilton Adelaide</span></p>
-    <p class = "spacing">Room Number: <span id = "room"></span></p>
+    <p class = "spacing">Room:<span id = "roomName"> Hilton Adelaide</span></p>
+    <p class = "spacing">Room Number: <span id = "roomNumber"></span></p>
     <p class = "spacing">Cost:$502</p>
     <p class = "spacing">Payment:fulfilled</p>
     <p class = "spacing"><a href = "/files/roomCanceled.html">Cancel Room</a></p>
@@ -85,8 +85,6 @@
 var hotelBooking;
 roomNumber();
 
-var x = document.getElementById("room").innerHTML;
-
 if(getCookie("bookingStatus") == "true"){
 hotelBooking = true;
 }else{
@@ -97,7 +95,7 @@ if(hotelBooking == false){
 }else if(hotelBooking == true){
     fade('bookingBody')
 }
-function addElement () {
+function addElement (bookingId) {
   var newDiv = document.createElement("div");
 newDiv.style.backgroundImage = "url(/images/1.jpg)";
   // add the newly created element and its content into the DOM
@@ -113,8 +111,13 @@ newDiv.style.backgroundImage = "url(/images/1.jpg)";
     newDiv.style.marginTop = "3.3%";
     newDiv.style.marginLeft = "10%";
     newDiv.setAttribute("onclick","checkHotel1()");
+    newDiv.id = bookingId;
   document.body.insertBefore(newDiv, currentDiv);
 }
+          //when selecting the dive the pop up needs to access the database and get the relevant data
+          //each div will have a booking id that gets inserted into the addElement function
+          //onclick on the div when send request to the database and retrieve data from the database to retrieve the information with that id
+          //
 </script>
        <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbVDXjRbzdfmxUXsY-cnbZmn1DYmJYME&callback=initMap">
