@@ -171,8 +171,9 @@ router.get('/reviews.json', function(req, res, next) {
 router.get('/bookings', function(req, res, next) {
   req.pool.getConnection(function(err,connection){
     if(err){throw err;}
-    var sql = "SELECT users.firstname, users.lastname, users.email, bookings.bookingid, bookings.datein, bookings.dateout, bookings.roomnum, bookings.imagefile, bookings.cost, bookings.paymentfulfilled, bookings.numpeople, hotels.hotelname, hotels.latitude, hotels.longitude from users inner join bookings on users.userid = bookings.userid inner join hotels on hotels.hotelid = bookings.hotelid";
-    connection.query(sql, function(err, result, fields){
+    var sql = "SELECT users.firstname, users.lastname, users.email, bookings.bookingid, bookings.datein, bookings.dateout, bookings.roomnum, bookings.imagefile, bookings.cost, bookings.paymentfulfilled, bookings.numpeople, hotels.hotelname, hotels.latitude, hotels.longitude from users inner join bookings on users.userid = bookings.userid inner join hotels on hotels.hotelid = bookings.hotelid where users.userid = ?";
+    var auserid = req.session.userid;
+    connection.query(sql, [auserid], function(err, result, fields){
       if(err){throw err;}
       connection.release();
       res.json(result);

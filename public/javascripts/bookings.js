@@ -25,7 +25,7 @@ function initBookings(){
     }
   };
 
-  xhttp.open("GET", "/bookings", false);
+  xhttp.open("GET", "/bookings?userid="+session[0].userid, false);
 
   xhttp.send();
 }
