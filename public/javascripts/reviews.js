@@ -13,7 +13,7 @@ function initOverview(){
   var date2 = new Date(d2);
   var dateFormat2 = date2.getDate() + "/" + Number(date2.getMonth()+1) + "/" + date2.getFullYear();
 
-  if(datein != "" && dateout != ""){
+  if(datein !== "" && dateout !== ""){
     document.getElementById("checkin").innerHTML = "Check-In/Check-Out: "+dateFormat1+" - "+dateFormat2;
   }
   var xhttp = new XMLHttpRequest();
@@ -30,10 +30,10 @@ function initOverview(){
     for(var i=0;i<overviewHotel[0].userrating;i++){
       userrating.innerHTML += '<i class="fa fa-star"></i>';
     }
-    for(var i=0;i<overviewHotel[0].hotelrating;i++){
+    for(i=0;i<overviewHotel[0].hotelrating;i++){
       hotelrating.innerHTML += '<i class="fa fa-star"></i>';
     }
-  }
+  };
 
   xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
 
@@ -90,7 +90,7 @@ function initReviews(){
       newReview.className = "review";
 
       var username = document.createElement("span");
-      var date = document.createElement("span");
+      date = document.createElement("span");
       date.style.color = "blue";
       date.style.marginLeft = "10px";
       var likes = document.createElement("span");
@@ -250,7 +250,7 @@ function likeReview(review,like){
   if(like){
     var liketext = document.getElementById('reviewlike'+review).innerHTML;
   } else{
-    var liketext = document.getElementById('reviewdislike'+review).innerHTML;
+    liketext = document.getElementById('reviewdislike'+review).innerHTML;
   }
   var xhttp = new XMLHttpRequest();
 

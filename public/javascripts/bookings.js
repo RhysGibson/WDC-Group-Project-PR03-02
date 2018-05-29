@@ -23,7 +23,7 @@ function initBookings(){
         addElement(bookings[i].bookingid);
       }
     }
-  }
+  };
 
   xhttp.open("GET", "/bookings", false);
 

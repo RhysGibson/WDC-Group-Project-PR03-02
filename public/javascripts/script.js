@@ -272,7 +272,7 @@ function initHotelRooms(){
       PayNows[i].innerHTML = "Pay Now ($"+cost+")";
       hotelNames[i].innerHTML = hotelRooms[0].hotelname+" - "+hotelRooms[0].hotelrating+" Stars";
     }
-  }
+  };
   xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
 
   xhttp.send();
@@ -307,7 +307,7 @@ function signOut() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     document.location = "/files/home.html";
-  }
+  };
   xhttp.open("POST","/signOut",false);
   xhttp.send();
   /*
@@ -332,7 +332,7 @@ function checkSession(){
       document.getElementById("accountName").style.display = "initial";
       document.getElementById("accountName").textContent = "Your account";
     }
-  }
+  };
   xhttp.open("GET","/inSession",false);
   xhttp.send();
 }
