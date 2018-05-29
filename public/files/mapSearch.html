@@ -120,6 +120,35 @@
         <p class="mapSearchCost">$350</p>
       </div>
     </div>
+      <div id="popUpFilters">
+      <p>Price Range:</p>
+      <span>Min Price:</span>
+      <input id="priceRangeSearchMin" type="number" name="costs" min="1" value="1" onchange="getPriceRangeMin()"/><br />
+      <span>Max Price:</span>
+      <input id="priceRangeSearchMax" type="number" name="costs" min="2" value="600" onchange="getPriceRangeMax()"/><br />
+      <span id="priceRangeText">$ 1-600</span>
+      <p>Number of People:</p>
+      <input id="numPeopleSearch" type="number" name="people" min="1" max="9" value="1"/><br />
+      <p>Hotel Stars</p>
+      <input id="hotelStarsSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getHotelStarsSearch()"/><br />
+      <span id="hotelStarsText"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+      <p>User Rating</p>
+      <input id="userRatingSearch" type="range" name="ratings" min="1" max="5" value="3" oninput="getUserRatingSearch()"/><br />
+      <span id="userRatingText"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+      <p>Location</p>
+      <input id="locationSearch" type="text" value="Adelaide"><br />
+      <p>Accomodation</p>
+      <input type="checkbox" name="bed" value="kingBed" />King Bed<br />
+      <input type="checkbox" name="bed" value="queenBed" />Queen Bed<br />
+      <input type="checkbox" name="bed" value="singleBed" />Single Bed<br />
+      <p>Features</p>
+      <input type="checkbox" name="features" value="complimentaryBreakfast" />Complimentary Breakfast<br />
+      <input type="checkbox" name="features" value="freeWifi" />Free WiFi<br />
+      <input type="checkbox" name="features" value="pool" />Pool<br /><br />
+      <button id="refineButton" type="submit" onclick="refineSearch()">Refine Search</button>
+      <button id="clearFilters" type="reset" onclick="resetFilters()">Clear Filters</button>
+      <button id="closeFilters" onclick="closePopUp('popUpFilters')">Close</button>
+    </div>
     <div id="wrapper">
       <div id="floating-panel">
         <h3 id="mapHotelName">Hotel</h3>

@@ -332,3 +332,7 @@ if(email == getCookie("email") && password == getCookie("password")){
     alert("Wrong email or password");
     }
 }
+
+function openFilters(){
+    fade("popUpFilters");
+}
