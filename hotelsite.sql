@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.15-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.16  Distrib 10.3.7-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1    Database: hotelsite
+-- Host: localhost    Database: hotelsite
 -- ------------------------------------------------------
--- Server version	10.2.15-MariaDB
+-- Server version	10.3.7-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,18 +34,19 @@ CREATE TABLE `bookings` (
   `bookingid` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) DEFAULT NULL,
   `hotelid` int(11) DEFAULT NULL,
-  `datein` date DEFAULT NULL,
-  `dateout` date DEFAULT NULL,
+  `datein` varchar(15) DEFAULT NULL,
+  `dateout` varchar(15) DEFAULT NULL,
   `roomnum` int(11) DEFAULT NULL,
   `imagefile` varchar(100) DEFAULT NULL,
   `cost` int(11) DEFAULT NULL,
   `paymentfulfilled` tinyint(4) DEFAULT 1,
+  `numpeople` int(11) DEFAULT NULL,
   PRIMARY KEY (`bookingid`),
   KEY `hotelid_idx` (`hotelid`),
   KEY `userid_idx` (`userid`),
   CONSTRAINT `bookingshotelid` FOREIGN KEY (`hotelid`) REFERENCES `hotels` (`hotelid`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `bookingsuserid` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `bookingsuserid` FOREIGN KEY (`userid`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,6 +55,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (3,2,1,'5/29/2018','6/2/2018',5,'/images/room1.jpg',500,1,1);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +134,7 @@ CREATE TABLE `hotels` (
   PRIMARY KEY (`hotelid`),
   UNIQUE KEY `hotelid_UNIQUE` (`hotelid`),
   KEY `userid_idx` (`userid`),
-  CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE SET NULL ON UPDATE NO ACTION
+  CONSTRAINT `userid` FOREIGN KEY (`userid`) REFERENCES `users` (`userID`) ON DELETE SET NULL ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -167,7 +169,7 @@ CREATE TABLE `reviews` (
   KEY `userid_idx` (`userid`),
   KEY `hotelid_idx` (`hotelid`),
   CONSTRAINT `reviewshotelid` FOREIGN KEY (`hotelid`) REFERENCES `hotels` (`hotelid`) ON DELETE SET NULL ON UPDATE NO ACTION,
-  CONSTRAINT `reviewsuserid` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE NO ACTION
+  CONSTRAINT `reviewsuserid` FOREIGN KEY (`userid`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -224,7 +226,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`userid`),
   UNIQUE KEY `userid_UNIQUE` (`userid`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,7 +235,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'manager','admin','adminmanager@goprohotels.com','password','Australia',1),(2,'Daza','Raza','razadaza@gmail.com','password2','Australia',0),(3,'Mop','Bazil','bazilmop@hotmail.com','password3','Australia',0),(4,'user','admin','adminuser@goprohotels.com','password','Australia',0),(5,'Adelaide','Hilton','manager@hiltonadelaide.com.au','passwordhilton','Australia',1);
+INSERT INTO `users` VALUES (1,'manager','admin','adminmanager@goprohotels.com','password','AU',1),(2,'Daza','Raza','razadaza@gmail.com','password2','AU',0),(3,'Mop','Bazil','bazilmop@hotmail.com','password3','AU',0),(4,'user','admin','adminuser@goprohotels.com','password','AU',0),(5,'Adelaide','Hilton','manager@hiltonadelaide.com.au','passwordhilton','AU',1),(6,'John','John','ohno@what.com','password1','BD',0),(7,'Jose','No Thanks','notanemail@gmail.com','thisisapassword','BD',0),(8,'Josen','No Thanks','notan1email@gmail.com','yes','BD',1),(9,'Nosay','Mohay','ohhoho@gmail.com','notapassword','AI',1),(10,'Nosay','Mohay','ohhoho2@gmail.com','No','BS',1),(11,'Me','Sign','signmeup@hotmail.com','up','AU',1),(12,'Up','Signing','Brotel@broseph.com','Works','BH',1),(13,'Up','Signing','Brotel@bros2eph.com','1231','AU',1),(14,'Up','Signing','test@test1.com','Again','AU',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -246,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-28 20:06:39
+-- Dump completed on 2018-05-29 11:25:57
