@@ -15,7 +15,7 @@
   <title>Hotel Overview</title>
   <meta charset="UTF-8">
 </head>
-<body onload="checkSession();initReviews()">
+<body onload="checkSession();initOverview();initReviews()">
   <div id="banner">
     <div class="row">
         <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
@@ -43,7 +43,7 @@
       <img src="/images/hotel.jpg" alt="Hotel Image">
     </div>
     <div id="overviewGeneralInfo">
-      <span style="font-size: 50px;">Hilton Adelaide</span>
+      <span style="font-size: 50px;" id="hotelname">Hilton Adelaide</span>
       <a href="#favorite">Favourite</a>
       <br/><br/>
       <form method="get" action="/files/HotelRoom.html">
@@ -51,18 +51,18 @@
     </form>
       <br/>
       <br/>
-      <span>User Rating: </span>
-      <span style="color:#2555a3"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+      <span >User Rating: </span>
+      <span style="color:#2555a3" id="userRating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <br/>
       <span>Hotel Rating: </span>
-      <span style="color:gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+      <span style="color:gold" id="hotelRating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
       <br/><br/>
       <span>Details of Booking:</span>
       <br/>
       <ul style="margin-left:25px">
         <li>Rooms: 1 Room</li>
         <li>Accomodation: 1 King Size Bed</li>
-        <li>Check-In/Check-Out: 10/03/2019-15/03/2019 (5 Days)</li>
+        <li id="checkin">Check-In/Check-Out: 10/03/2019 - 15/03/2019</li>
       </ul>
       <p style="font-family:Raleway">
         $502 - Hotels 4 U &#9; $520 - Hotel Notvago &#9; $549 - Cheap Hotels
@@ -80,7 +80,7 @@
         <p><i class="fa fa-coffee"></i> Complimentary Breakfast</p>
         <p><i class="fa fa-tint"></i> Pool</p>
         <p><b>Description:</b></p>
-        <p>Hilton is a global brand founded by Conrad Hilton. The Hilton Adelaide is one of Adelaide's finest hotels. It's central location in the CBD allows you to commute around the city easily, letting you make the most of your time in Adelaide. Whether you're looking for a good time in the city or just a nice play to stay for a while, the Hilton Adelaide has you covered. Our staff will be sure to take care of any of your needs to the best of our ability to leave you with a satisfied experience.
+        <p id="extendedDescription">Extended Description of Hotel Here
         </p>
       </div>
       <br/>
@@ -121,22 +121,6 @@
     </div>
   </div>
   <br/>
-      <div class="loginBox" id = "outerLayer">
-       <img src = "/images/loginbackground.jpg" alt="log in background" style="z-index: -10;position: absolute;margin-left:-320px;margin-top: -130px; width: 900px;height: auto;">
-      <div class="loginBox2">
-			<img src="/images/user.png" alt="usericon" class="user">
-			<br>
-			<form>
-				<p>Email</p>
-				<input type="text" id = "email" placeholder="Enter Email" required>
-				<p>Password</p>
-				<input type="password" id = "password" placeholder="••••••••••••••••••" required>
-				<input type="submit" onclick="verification()" value="Sign In">
-				<a href="/files/signUpV1.html">Not a member? Sign up now!</a>
-			</form>
-          <button id="close" onclick="closePopUp('outerLayer')">Close</button>
-		</div>
-      </div>
 </main>
   <div class="footer" id="eop">
     <p><a href="/files/faq.html">FAQ</a></p>

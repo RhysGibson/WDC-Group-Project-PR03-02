@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 var fs = require('fs');
-var hotels = [];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -135,9 +134,8 @@ router.get('/reviews.json', function(req, res, next) {
 router.get('/bookings', function(req, res, next) {
   req.pool.getConnection(function(err,connection){
     if(err){throw err;}
-    var sql = "SELECT user.firstname, user.lastname, user.email, bookings.bookingid, bookings.datein, bookings.dateout, bookings.roomnum, bookings.imagefile, bookings.cost, bookings.paymentfulfilled, hotel.name, hotel.latitude, hotel.longitude from users inner join bookings on users.userid = bookings.userid inner join hotels on hotels.hotelid = bookings.hotelid";
-    var search_val = req.query.hotelid;
-    connection.query(sql, [search_val], function(err, result, fields){
+    var sql = "SELECT users.firstname, users.lastname, users.email, bookings.bookingid, bookings.datein, bookings.dateout, bookings.roomnum, bookings.imagefile, bookings.cost, bookings.paymentfulfilled, bookings.numpeople, hotels.hotelname, hotels.latitude, hotels.longitude from users inner join bookings on users.userid = bookings.userid inner join hotels on hotels.hotelid = bookings.hotelid";
+    connection.query(sql, function(err, result, fields){
       if(err){throw err;}
       connection.release();
       res.json(result);
@@ -162,18 +160,30 @@ router.post('/signOut',function(req,res){
 });
 
 router.get('/hotels.json', function(req, res, next) {
-  /*
-  var number = Number(req.query.hotelid);
-  var request = [];
-
-  // Compare hotel ID with the Review
-  for(var i=0;i<reviews.length;i++){
-    if(reviews[i].hotelid == number){
-      request.push(reviews[i]);
-    }
-  }*/
-
-  res.send(JSON.stringify(hotels));
+  var hotels = [];
+  if(req.query.hotelid){
+    req.pool.getConnection(function(err,connection){
+      if(err){throw err;}
+      var sql = "SELECT * from hotels where hotelid = ?";
+      var search_val = req.query.hotelid;
+      connection.query(sql, [search_val], function(err, result, fields){
+        if(err){throw err;}
+        connection.release();
+        res.json(result);
+      });
+    });
+  } else{
+    req.pool.getConnection(function(err,connection){
+      if(err){throw err;}
+      var sql = "SELECT * from hotels";
+      var search_val = req.query.hotelid;
+      connection.query(sql, [search_val], function(err, result, fields){
+        if(err){throw err;}
+        connection.release();
+        res.json(result);
+      });
+    });
+  }
 });
 
 /*

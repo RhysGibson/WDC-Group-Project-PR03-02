@@ -109,7 +109,7 @@ function roomNumber() {
 
 
 function loadLogin(){
-  document.location = "/files/loginScreenV1";
+  document.location = "/files/loginScreenV1.html";
 }
 
 function checkHotel1(){
@@ -128,7 +128,6 @@ element.style.opacity = 0.1;
 
 function fade(sender) {
     var element = document.getElementById(sender);
-    console.log(element);
     var op = 0.1;  // initial opacity
     element.style.display = 'block';
     var timer = setInterval(function () {
@@ -225,16 +224,10 @@ function initDateIn(){
   document.title = "Search results for "+d1;
 }
 
-function goToLogin(){
-  location.href="loginScreenV1.html";
-}
-
-function goToLoginIndex(){
-  location.href="/files/Login Screen V1.html";
-}
-
-function goToOverview(){
-  location.href="hotelOverview.html";
+function goToOverview(hotel){
+  var datein=document.getElementById('dateReqIn').value;
+  var dateout=document.getElementById('dateReqOut').value;
+  location.href="hotelOverview.html?hotelid="+hotel+"&datein="+datein+"&dateout="+dateout;
 }
 
 function changeCookie() {

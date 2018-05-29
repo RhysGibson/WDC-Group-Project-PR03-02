@@ -496,6 +496,11 @@ form.searchBox::after {
   float:right;
 }
 
+.viewDetails button{
+  font-size:15px;
+  font-family:Raleway;
+}
+
 .hotelImageSearch{
   width:70%;
   height:width;

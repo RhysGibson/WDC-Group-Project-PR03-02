@@ -1,6 +1,45 @@
 var reviews = [];
+var overviewHotel = [];
+
+function initOverview(){
+  // Set Text
+  var hotelid = getParameterByName("hotelid");
+  var datein = getParameterByName("datein");
+  var d1 = Date.parse(datein);
+  var date1 = new Date(d1);
+  var dateFormat1 = date1.getDate() + "/" + Number(date1.getMonth()+1) + "/" + date1.getFullYear();
+  var dateout = getParameterByName("dateout");
+  var d2 = Date.parse(datein);
+  var date2 = new Date(d2);
+  var dateFormat2 = date2.getDate() + "/" + Number(date2.getMonth()+1) + "/" + date2.getFullYear();
+
+  if(datein != "" && dateout != ""){
+    document.getElementById("checkin").innerHTML = "Check-In/Check-Out: "+dateFormat1+" - "+dateFormat2;
+  }
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    overviewHotel = JSON.parse(xhttp.responseText);
+    document.getElementById("hotelname").innerHTML = overviewHotel[0].hotelname;
+    document.getElementById("extendedDescription").innerHTML = overviewHotel[0].extendeddescription;
+    var userrating = document.getElementById("userRating");
+    var hotelrating = document.getElementById("hotelRating");
+    userrating.innerHTML = "";
+    hotelrating.innerHTML = "";
+    for(var i=0;i<overviewHotel[0].userrating;i++){
+      userrating.innerHTML += '<i class="fa fa-star"></i>';
+    }
+    for(var i=0;i<overviewHotel[0].hotelrating;i++){
+      hotelrating.innerHTML += '<i class="fa fa-star"></i>';
+    }
+  }
+
+  xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
+
+  xhttp.send();
+}
 
 function initReviews(){
+  var hotelid = getParameterByName("hotelid");
   if(session[0].userid != "-1"){
     document.getElementById('reviewBox').disabled = false;
     document.getElementById('reviewButton').disabled = false;
@@ -22,7 +61,6 @@ function initReviews(){
       var d = Date.parse(reviews[k].dateposted);
       var date = new Date(d);
       var dateFormat = date.getDate() + "/" + Number(date.getMonth()+1) + "/" + date.getFullYear();
-      var nameFull = reviews[k].firstname+" "+reviews[k].lastname;
 
       var br = document.createElement("br");
       var br2 = document.createElement("br");
@@ -64,7 +102,7 @@ function initReviews(){
       var text = document.createElement("p");
       var reply = document.createElement("a");
       var report = document.createElement("a");
-      username.innerHTML = "<b>"+nameFull+"</b>";
+      username.innerHTML = "<b>"+reviews[k].firstname+" "+reviews[k].lastname+"</b>";
       likes.innerHTML = reviews[k].likes;
       dislikes.innerHTML = reviews[k].dislikes;
       date.innerHTML = "Posted on: "+dateFormat;
@@ -96,7 +134,7 @@ function initReviews(){
       newReview.appendChild(hr2);
       newReview.appendChild(reply);
       newReview.appendChild(report);
-      if(getCookie("name")==nameFull){
+      if(session[0].userid==reviews[k].userid){
         var edit = document.createElement("a");
         edit.innerHTML = '<i class="fa fa-edit"></i> Edit';
         edit.href = "#edit";
@@ -109,7 +147,7 @@ function initReviews(){
     }
   };
 
-  xhttp.open("GET", "/reviews.json?hotelid=1", false);
+  xhttp.open("GET", "/reviews.json?hotelid="+hotelid, false);
 
   xhttp.send();
 }
