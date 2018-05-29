@@ -3,12 +3,14 @@ var markers = [];
 var hotels = [];
 var adelaide = {lat: -34.928499, lng: 138.600746};
 var hotelhilton = {lat: -34.929143, lng: 138.598906};
+var currentlyselectedhotel = 1;
 
 function initHotels(){
   var xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function() {
     hotels = JSON.parse(xhttp.responseText);
+    console.log(hotels);
   };
 
   xhttp.open("GET", "/hotels.json", false);
@@ -242,11 +244,12 @@ function showInfo(hotel){
   var includes = "Please select a hotel.";
   document.getElementById('floating-panel').style.display = "block";
   for(var i=0;i<hotels.length;i++){
-    if(hotel==hotels[i].name){
-      name = hotels[i].name;
-      description = hotels[i].description;
-      cost = "Cost: $"+hotels[i].cost;
-      includes = hotels[i].additional;
+    if(hotel==hotels[i].hotelname){
+      currentlyselectedhotel = hotels[i].hotelid;
+      name = hotels[i].hotelname;
+      description = hotels[i].hoteldescription;
+      cost = "Cost: $"+hotels[i].hotelcost;
+      includes = hotels[i].additionalinfo;
       break;
     }
   }
@@ -278,4 +281,10 @@ function manageBookingMap(hotelName) {
   map.panTo(hotel);
   map.setZoom(20);
   markers.push(marker);
+}
+
+function goToOverviewFromMap(){
+  var datein = getParameterByName("datein");
+  var dateout = getParameterByName("dateout");
+  location.href = "/files/hotelOverview.html?hotelid="+currentlyselectedhotel+"&datein="+datein+"&dateout="+dateout;
 }

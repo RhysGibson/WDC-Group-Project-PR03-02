@@ -56,7 +56,7 @@ function makeBooking(){
     imagefile = "/images/room2.jpg";
   }
 
-  xhttp.open("POST", "/makeBooking", true);
+  xhttp.open("POST", "/makeBooking", false);
 
   xhttp.setRequestHeader("Content-type","application/json");
   xhttp.send(JSON.stringify({hotelid:hotelid,datein:dateFormat1,dateout:dateFormat2,roomnum:roomnum,imagefile:imagefile,cost:bookingcost,numpeople:numpeople}));

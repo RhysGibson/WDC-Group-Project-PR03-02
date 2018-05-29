@@ -187,7 +187,7 @@ element.style.filter  = 'alpha(opacity=90)';
 }
 
 function goToMap(){
-  location.href = "/files/mapSearch.html?search=" + document.getElementById('searchReq').value;
+  location.href = "/files/mapSearch.html?search=" + document.getElementById('searchReq').value+"&datein="+document.getElementById('dateReqIn').value+"&dateout="+document.getElementById('dateReqOut').value;
 }
 
 function goToSearch(){
@@ -205,7 +205,11 @@ function goToPayment(dealnum){
   var hotelid = getParameterByName("hotelid");
   var datein = getParameterByName("datein");
   var dateout = getParameterByName("dateout");
-  location.href = "/files/payment.html?hotelid="+hotelid+"&datein="+datein+"&dateout="+dateout+"&dealnum="+dealnum;
+  if(session[0].userid == "-1"){
+    location.href = "/files/loginScreenV1.html";
+  } else{
+    location.href = "/files/payment.html?hotelid="+hotelid+"&datein="+datein+"&dateout="+dateout+"&dealnum="+dealnum;
+  }
 }
 
 function goToSearchIndex(){
@@ -234,7 +238,21 @@ function initSearch(){
 }
 
 function initHotelRooms(){
-  var PayNows = document.getElementsByClassName("");
+  var hotelNames = document.getElementsByClassName("hotelRoomhotelName");
+  var PayNows = document.getElementsByClassName("roomBook");
+  var hotelid = getParameterByName("hotelid");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    hotelRooms = JSON.parse(xhttp.responseText);
+    for(var i=0;i<PayNows.length;i++){
+      var cost = Number(hotelRooms[0].hotelcost) + Number(i*18);
+      PayNows[i].innerHTML = "Pay Now ($"+cost+")";
+      hotelNames[i].innerHTML = hotelRooms[0].hotelname+" - "+hotelRooms[0].hotelrating+" Stars";
+    }
+  }
+  xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
+
+  xhttp.send();
 }
 
 function goToOverview(hotel){
@@ -263,7 +281,6 @@ $("#profileName").text("Welcome " + profile.getName());
 }
 
 function signOut() {
-  console.log("Sending request to sign out");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     document.location = "/files/home.html";
