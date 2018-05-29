@@ -247,8 +247,9 @@ function submitReview(){
 }
 
 function likeReview(review,like){
+  var liketext;
   if(like){
-    var liketext = document.getElementById('reviewlike'+review).innerHTML;
+    liketext = document.getElementById('reviewlike'+review).innerHTML;
   } else{
     liketext = document.getElementById('reviewdislike'+review).innerHTML;
   }

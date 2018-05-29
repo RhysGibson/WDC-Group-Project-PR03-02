@@ -389,7 +389,7 @@ function openFilters(){
 function addElement (bookingId) {
     var index;
     for(var i = 0; i <bookings.length;i++){
-        if(bookings[i].bookingid = bookingId){
+        if(bookings[i].bookingid == bookingId){
             index = i;
             break;
         }
