@@ -153,18 +153,18 @@ function initReviews(){
   xhttp.send();
 }
 
-function submitReview(hotel){
+function submitReview(){
+  var hotel = getParameterByName("hotelid");
   var xhttp = new XMLHttpRequest();
   var d = new Date();
 
   var dateFormat = d.getDate() + "/" + Number(d.getMonth()+1) + "/" + d.getFullYear();
   var dateSend = Number(d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
-  console.log(dateSend);
 
   var container = document.getElementById('reviewsContainer');
   var reviewText = document.getElementById('reviewBox').value;
   var reviewRate = document.getElementById('reviewRating').value;
-  var usernameText = getCookie("name");
+  var usernameText = session[0].firstname+" "+session[0].lastname;
 
   var br = document.createElement("br");
   var br2 = document.createElement("br");
@@ -242,7 +242,7 @@ function submitReview(hotel){
   xhttp.open("POST", "/addReview.json", true);
 
   xhttp.setRequestHeader("Content-type","application/json");
-  xhttp.send(JSON.stringify({hotelid:hotel,userid:2,dateposted:dateSend,reviewtext:revtext.innerHTML,likes:0,dislikes:0,rating:reviewRate,parent:0}));
+  xhttp.send(JSON.stringify({hotelid:hotel,dateposted:dateSend,reviewtext:revtext.innerHTML,likes:0,dislikes:0,rating:reviewRate,parent:0}));
 }
 
 function likeReview(review,like){

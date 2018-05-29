@@ -7,9 +7,10 @@
         <meta charset="utf-8"/>
         <script src="/javascripts/script.js"></script>
         <script src="/javascripts/bookings.js"></script>
+        <script src="/javascripts/payment.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
-    <body onload="checkSession()">
+    <body onload="checkSession();initPayment()">
       <div id="banner">
         <div class="row">
             <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
@@ -33,27 +34,32 @@
 <main class="page">
   <br/>
           <div class="contentoutline">
-            <form style="text-align:center" class="payment" action="/action_page.php">
-              <h2>Confirm Details</h2>
+              <div style="text-align:center" class="payment">
+              <h2 id="hotelname">Confirm Booking to Hotel Name</h2>
+              <br/>
               <p>Date In</p>
-              <input type="date" name="datein">
+              <input type="date" id="datein" name="datein">
               <br/><br/>
               <p>Date Out</p>
-              <input type="date" name="dateout">
+              <input type="date" id="dateout" name="dateout">
               <br/><br/>
               <p>Room Number</p>
-              <input type="number" name="roomnum" min="1" value="5">
-              <br/><br/>
+              <p id="roomnum">?</p>
+              <br/>
+              <p>Cost</p>
+              <p id="hotelcost">?</p>
+              <br/>
               <p>Number of People</p>
-              <input type="number" name="numpeople" min="1" max="9" value="5">
+              <input onchange="checkPayment()" type="number" id="numpeople" name="numpeople" min="1" max="9" value="1">
               <br/><br/>
               <p>Confirm which room deal you would like below.</p>
-              <select name="deal">
+              <select onchange="checkPayment()" id="dealnum" name="deal">
                 <option value="1">1</option>
                 <option value="2">2</option>
               </select>
               <br/><br/>
-              <input type="submit" value="Submit">
+              <button style="font-size:20px" onclick="makeBooking()">Submit</button>
+              </div>
             </form>
             <br/><br/>
             <p>We do not require your credit card details as we use the magic of the internet to make your payments happen.</p>

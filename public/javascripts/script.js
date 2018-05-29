@@ -201,8 +201,15 @@ function goToSearch(){
 function goToRooms(){
   var hotelid = getParameterByName("hotelid");
   var datein = getParameterByName("datein");
-  var dateout = getParameterByName("datein");
-  location.href = "/files/hotelRoom.html?hotelid="+hotelid;
+  var dateout = getParameterByName("dateout");
+  location.href = "/files/hotelRoom.html?hotelid="+hotelid+"&datein="+datein+"&dateout="+dateout;
+}
+
+function goToPayment(dealnum){
+  var hotelid = getParameterByName("hotelid");
+  var datein = getParameterByName("datein");
+  var dateout = getParameterByName("dateout");
+  location.href = "/files/payment.html?hotelid="+hotelid+"&datein="+datein+"&dateout="+dateout+"&dealnum="+dealnum;
 }
 
 function goToSearchIndex(){
@@ -253,10 +260,6 @@ function goToOverview(hotel){
   var datein=document.getElementById('dateReqIn').value;
   var dateout=document.getElementById('dateReqOut').value;
   location.href="hotelOverview.html?hotelid="+hotel+"&datein="+datein+"&dateout="+dateout;
-}
-
-function changeCookie() {
-res.cookie('myFirstCookie', 'false');
 }
 
 function onSignIn(googleUser){

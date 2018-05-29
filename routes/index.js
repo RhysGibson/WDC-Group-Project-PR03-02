@@ -45,6 +45,27 @@ router.post('/login', function(req, res){
   });
 });
 
+router.post('/makeBooking', function(req, res){
+  function redirect(){
+    res.redirect('/files/manageBookings.html');
+  }
+  if(req.session.userid){
+    req.pool.getConnection(function(err, connection){
+      if(err) {throw err;}
+      var sql = "INSERT INTO bookings(hotelid, userid, datein, dateout, roomnum, imagefile, cost, paymentfulfilled, numpeople) VALUES (?,?,?,?,?,?,?,?,?)";
+      var new_booking = [
+        req.body.hotelid, req.session.userid, req.body.datein, req.body.dateout, req.body.roomnum, req.body.imagefile, req.body.cost, 0, req.body.numpeople
+      ]
+      connection.query(sql, new_booking, function(err, result, fields){
+        if (err){throw err;}
+        redirect();
+      });
+    });
+  } else{
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
 router.get('/files/login.html', function(req, res, next) {
   if(req.session.userid){
     res.redirect("/files/home.html");
@@ -202,27 +223,14 @@ router.get('/hotels.json', function(req, res, next) {
   }
 });
 
-/*
-router.post('/addCustomer', function(req,res) {
-  var data = req.body;
-  req.pool.getConnection(function(err, connection){
-    if(err) throw err;
-    var sql = "INSERT INTO users (lastName, firstName, email, password, country) VALUES ";
-    connection.query(sql, function(err, results){
-      connection.release();
-    });
-  });
-  res.send(JSON.stringify(reviews));
-});*/
-
 router.post('/addReview.json', function(req,res) {
   req.pool.getConnection(function(err, connection){
     if(err) {throw err;}
     var sql = "INSERT INTO reviews(hotelid, userid, dateposted, reviewtext, likes, dislikes, rating, parentreview) VALUES (?,?,?,?,?,?,?,?)";
     var new_review = [
-      req.body.hotelid, req.body.userid, req.body.dateposted, req.body.reviewtext, req.body.likes, req.body.dislikes, req.body.rating, req.body.parent
+      req.body.hotelid, req.session.userid, req.body.dateposted, req.body.reviewtext, req.body.likes, req.body.dislikes, req.body.rating, req.body.parent
     ]
-    connection.query(sql, new_review, function(err, result, fields){
+    connection.query(sql,new_review, function(err, result, fields){
       if (err){throw err;}
     });
   });
