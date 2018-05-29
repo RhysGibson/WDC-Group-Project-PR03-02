@@ -19,10 +19,9 @@ function initBookings(){
       document.location="/files/bookingNotMade.html";
     } else{
       fade('bookingBody');
-      document.getElementById("hotelname").innerHTML = bookings[0].hotelname;
-      document.getElementById("roomNumber").innerHTML = bookings[0].roomnum;
-      document.getElementById("cost").innerHTML = "Cost: $"+bookings[0].cost;
-      document.getElementById("numpeople").innerHTML = "Number of People: "+bookings[0].numpeople;
+        for(var i = 0; i < bookings.length;i ++){
+        addElement(bookings[i].bookingid);
+    }
       var fulfilled;
 
       if(bookings[0].paymentfulfilled == "1"){
@@ -46,7 +45,21 @@ function initBookings(){
   xhttp.send();
 }
 
-function setMapLocation(lati,long){
-  var location = {lat: lati, lng: long};
-  map.panTo(location);
-}
+
+
+//function loadBookings(){
+//  var xhttp = new XMLHttpRequest();
+//
+//  xhttp.onreadystatechange = function() {
+//      console.log("adding bookings");
+//    bookings = JSON.parse(xhttp.responseText);
+//    for(var i = 0; i < bookings.length();i ++){
+//        addElement(bookings[i].id);
+//    }
+//  }
+//
+//  xhttp.open("GET", "/bookings", false);
+//
+//  xhttp.send();
+//}
+

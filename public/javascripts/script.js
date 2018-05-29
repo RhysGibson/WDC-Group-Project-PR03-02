@@ -2,7 +2,6 @@ var peopleCount = 0;
 var setLocation = "Adelaide";
 var roomChoice;
 var session = [];
-var hotelRooms = [];
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -110,18 +109,15 @@ function roomNumber() {
 
 
 function loadLogin(){
-  if(session[0].userid != "-1"){
-    document.location = "/files/account.html";
-  } else{
-    document.location = "/files/login.html";
-  }
+  document.location = "/files/loginScreenV1.html";
 }
 
 function checkHotel1(){
-    //retrieve data from server
-    //edit the data in the pop up
-    //harderst part will be the map implementation
-    // document.getElementById("roomName").innerHTML = "Test";
+     document.getElementById("hotelname").innerHTML = bookings[0].hotelname;
+      document.getElementById("roomNumber").innerHTML = bookings[0].roomnum;
+      document.getElementById("cost").innerHTML = "Cost: $"+bookings[0].cost;
+      document.getElementById("numpeople").innerHTML = "Number of People: "+bookings[0].numpeople;
+    setMapLocation(bookings[0].latitude,bookings[0].longitude);
     fade('pop1');
 }
 
@@ -238,22 +234,7 @@ function initSearch(){
 }
 
 function initHotelRooms(){
-  var hotelNames = document.getElementsByClassName("hotelRoomhotelName");
-  var PayNows = document.getElementsByClassName("roomBook");
-  var hotelid = getParameterByName("hotelid");
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    hotelRooms = JSON.parse(xhttp.responseText);
-    console.log(hotelRooms);
-    for(var i=0;i<PayNows.length;i++){
-      var cost = Number(hotelRooms[0].hotelcost) + Number(i*18);
-      PayNows[i].innerHTML = "Pay Now ($"+cost+")";
-      hotelNames[i].innerHTML = hotelRooms[0].hotelname+" - "+hotelRooms[0].hotelrating+" Stars";
-    }
-  }
-  xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
-
-  xhttp.send();
+  var PayNows = document.getElementsByClassName("");
 }
 
 function goToOverview(hotel){
@@ -289,6 +270,17 @@ function signOut() {
   }
   xhttp.open("POST","/signOut",false);
   xhttp.send();
+  /*
+    document.cookie = ("loggedIn=false");
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function(){
+        alert("You have been signed out");
+        $("g-signin2").css("display","block");
+        $(".data").css("display","block");
+    });
+   // document.cookie = ("hotelManagerStatus" + "=" + "off");
+    document.location = "/files/home.html";
+  */
 }
 
 function checkSession(){
@@ -296,7 +288,9 @@ function checkSession(){
   xhttp.onreadystatechange = function() {
     session = JSON.parse(xhttp.responseText);
     if(session[0].userid != "-1"){
-      document.getElementById("logInButton").innerHTML = "Your Account";
+      document.getElementById("logInButton").style.display = "none";
+      document.getElementById("accountName").style.display = "initial";
+      document.getElementById("accountName").textContent = "Your account";
     }
   }
   xhttp.open("GET","/inSession",false);
@@ -350,4 +344,42 @@ if(email == getCookie("email") && password == getCookie("password")){
 
 function openFilters(){
     fade("popUpFilters");
+}
+
+function addElement (bookingId) {
+    var index;
+    for(var i = 0; i <bookings.length;i++){
+        if(bookings[i].bookingid = bookingId){
+            index = i;
+            break;
+        }
+    }
+    console.log(index);
+  var newDiv = document.createElement("div");
+newDiv.style.backgroundImage = "url("+bookings[index].imagefile+")";
+  // add the newly created element and its content into the DOM
+  var currentDiv = document.getElementById("addButton");
+    newDiv.style.width = "18%";
+    newDiv.style.height = "20%";
+    newDiv.style.backgroundPosition = "50%";
+    newDiv.style.backgroundRepeat = "no-repeat";
+    newDiv.style.backgroundSize = "cover";
+    newDiv.style.float = "left";
+    newDiv.style.margin = "1.66%";
+    newDiv.style.marginBottom = "0%";
+    newDiv.style.marginTop = "3.3%";
+    newDiv.style.marginLeft = "10%";
+    newDiv.setAttribute("onclick","checkHotel1()");
+    newDiv.id = bookingId;
+  document.body.insertBefore(newDiv, currentDiv);
+}
+
+function setMapLocation(lati,long){
+     var latLng = new google.maps.LatLng(lati,long);
+    map.panTo(latLng);
+var marker = new google.maps.Marker({
+    position: latLng,
+    title:"Hello World!"
+});
+    marker.setMap(map);
 }
