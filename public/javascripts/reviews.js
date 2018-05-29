@@ -9,7 +9,7 @@ function initOverview(){
   var date1 = new Date(d1);
   var dateFormat1 = date1.getDate() + "/" + Number(date1.getMonth()+1) + "/" + date1.getFullYear();
   var dateout = getParameterByName("dateout");
-  var d2 = Date.parse(datein);
+  var d2 = Date.parse(dateout);
   var date2 = new Date(d2);
   var dateFormat2 = date2.getDate() + "/" + Number(date2.getMonth()+1) + "/" + date2.getFullYear();
 
@@ -21,6 +21,7 @@ function initOverview(){
     overviewHotel = JSON.parse(xhttp.responseText);
     document.getElementById("hotelname").innerHTML = overviewHotel[0].hotelname;
     document.getElementById("extendedDescription").innerHTML = overviewHotel[0].extendeddescription;
+    document.getElementById("overviewBook").innerHTML = "Book Now ($"+overviewHotel[0].hotelcost+")";
     var userrating = document.getElementById("userRating");
     var hotelrating = document.getElementById("hotelRating");
     userrating.innerHTML = "";

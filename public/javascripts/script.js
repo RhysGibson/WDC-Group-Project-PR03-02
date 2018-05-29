@@ -186,11 +186,16 @@ element.style.filter  = 'alpha(opacity=90)';
 }
 
 function goToMap(){
-  location.href = "mapSearch.html?search=" + document.getElementById('searchReq').value;
+  location.href = "/files/mapSearch.html?search=" + document.getElementById('searchReq').value;
 }
 
 function goToSearch(){
-  location.href = "search.html?search=" + document.getElementById('searchReq').value;
+  location.href = "/files/search.html?search=" + document.getElementById('searchReq').value;
+}
+
+function goToRooms(){
+  var hotelid = getParameterByName("hotelid");
+  location.href = "/files/hotelRoom.html?hotelid="+hotelid;
 }
 
 function goToSearchIndex(){
@@ -218,10 +223,8 @@ function initSearch(){
   document.getElementById('dateReqOut').value = v3;
 }
 
-function initDateIn(){
-  var d1 = getParameterByName("datein");
-  document.getElementById('dateReqIn').value = d1;
-  document.title = "Search results for "+d1;
+function initHotelRooms(){
+  var PayNows = document.getElementsByClassName("");
 }
 
 function goToOverview(hotel){
