@@ -38,7 +38,7 @@ function initBookings(){
       var dateFormat2 = date2.getDate() + "/" + Number(date2.getMonth()+1) + "/" + date2.getFullYear();
       document.getElementById("dates").innerHTML = "Dates: "+dateFormat1+" - "+dateFormat2;
     }
-  }
+  };
 
   xhttp.open("GET", "/bookings", false);
 
@@ -62,4 +62,3 @@ function initBookings(){
 //
 //  xhttp.send();
 //}
-

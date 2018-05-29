@@ -28,7 +28,7 @@ function initPayment(){
       cost = Number((deal.value-1)*18*(numpeople.value)) + Number(0.5*Number(numpeople.value-1)*Number(paymentHotel[0].hotelcost))+ Number(paymentHotel[0].hotelcost);
     }
     hotelcost.innerHTML = cost;
-  }
+  };
 
   xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
 
