@@ -2,6 +2,7 @@ var peopleCount = 0;
 var setLocation = "Adelaide";
 var roomChoice;
 var session = [];
+var hotelRooms = [];
 
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -109,7 +110,11 @@ function roomNumber() {
 
 
 function loadLogin(){
-  document.location = "/files/loginScreenV1.html";
+  if(session[0].userid != "-1"){
+    document.location = "/files/account.html";
+  } else{
+    document.location = "/files/login.html";
+  }
 }
 
 function checkHotel1(){
@@ -195,6 +200,8 @@ function goToSearch(){
 
 function goToRooms(){
   var hotelid = getParameterByName("hotelid");
+  var datein = getParameterByName("datein");
+  var dateout = getParameterByName("datein");
   location.href = "/files/hotelRoom.html?hotelid="+hotelid;
 }
 
@@ -224,7 +231,22 @@ function initSearch(){
 }
 
 function initHotelRooms(){
-  var PayNows = document.getElementsByClassName("");
+  var hotelNames = document.getElementsByClassName("hotelRoomhotelName");
+  var PayNows = document.getElementsByClassName("roomBook");
+  var hotelid = getParameterByName("hotelid");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    hotelRooms = JSON.parse(xhttp.responseText);
+    console.log(hotelRooms);
+    for(var i=0;i<PayNows.length;i++){
+      var cost = Number(hotelRooms[0].hotelcost) + Number(i*18);
+      PayNows[i].innerHTML = "Pay Now ($"+cost+")";
+      hotelNames[i].innerHTML = hotelRooms[0].hotelname+" - "+hotelRooms[0].hotelrating+" Stars";
+    }
+  }
+  xhttp.open("GET", "/hotels.json?hotelid="+hotelid, false);
+
+  xhttp.send();
 }
 
 function goToOverview(hotel){
@@ -264,17 +286,6 @@ function signOut() {
   }
   xhttp.open("POST","/signOut",false);
   xhttp.send();
-  /*
-    document.cookie = ("loggedIn=false");
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function(){
-        alert("You have been signed out");
-        $("g-signin2").css("display","block");
-        $(".data").css("display","block");
-    });
-   // document.cookie = ("hotelManagerStatus" + "=" + "off");
-    document.location = "/files/home.html";
-  */
 }
 
 function checkSession(){
@@ -282,9 +293,7 @@ function checkSession(){
   xhttp.onreadystatechange = function() {
     session = JSON.parse(xhttp.responseText);
     if(session[0].userid != "-1"){
-      document.getElementById("logInButton").style.display = "none";
-      document.getElementById("accountName").style.display = "initial";
-      document.getElementById("accountName").textContent = "Your account";
+      document.getElementById("logInButton").innerHTML = "Your Account";
     }
   }
   xhttp.open("GET","/inSession",false);

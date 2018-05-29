@@ -45,6 +45,22 @@ router.post('/login', function(req, res){
   });
 });
 
+router.get('/files/login.html', function(req, res, next) {
+  if(req.session.userid){
+    res.redirect("/files/home.html");
+  } else{
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
+router.get('/files/signUp.html', function(req, res, next) {
+  if(req.session.userid){
+    res.redirect("/files/home.html");
+  } else{
+    res.redirect("/files/signUpV1.html");
+  }
+});
+
 router.get('/files/account.html', function(req, res, next) {
   if(req.session.userid){
     res.redirect("/files/myAccount.html");

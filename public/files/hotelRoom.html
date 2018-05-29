@@ -9,12 +9,11 @@
         <script src="/javascripts/bookings.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
-    <body onload="checkSession()">
+    <body onload="checkSession();initHotelRooms()">
       <div id="banner">
         <div class="row">
            <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
             <button onclick="loadLogin()" style="float:right" id = "logInButton">Log In/Register</button>
-            <button onclick="document.location.href = '/files/account.html';" style="float:right; display: none;" id = "accountName">Your Account</button>
         </div>
       </div>
           <nav>
@@ -42,7 +41,7 @@
             </div>
             <div class="rightroom">
               <ul>
-                <li class="hotelRoomhotelName">Hilton Adelaide - 5 Stars<p></p></li>
+                <li class="hotelRoomhotelName">Hotel Name - 5 Stars<p></p></li>
                 <li>Free WiFi<p></p></li>
                 <li>Hotel Features Include:<p></p></li>
                 <li>Close to public transport<p></p></li>
@@ -68,7 +67,7 @@
             </div>
             <div class="rightroom">
               <ul>
-                <li>Hilton Adelaide - 5 Stars<p></p></li>
+                <li class="hotelRoomhotelName">Hotel Name - 5 Stars<p></p></li>
                 <li>Free WiFi<p></p></li>
                 <li>Hotel Features Include:<p></p></li>
                 <li>Close to public transport<p></p></li>
