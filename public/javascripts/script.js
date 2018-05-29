@@ -109,7 +109,7 @@ function roomNumber() {
 
 
 function loadLogin(){
-    fadeLogin('outerLayer');
+  document.location = "/files/loginScreenV1";
 }
 
 function checkHotel1(){

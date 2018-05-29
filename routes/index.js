@@ -50,6 +50,38 @@ router.get('/files/account.html', function(req, res, next) {
   if(req.session.userid){
     res.redirect("/files/myAccount.html");
   } else{
+    res.status(403);
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
+router.get('/files/hotelManagement.html', function(req, res, next) {
+  if(req.session.userid){
+    if(req.session.manager == "1"){
+      res.redirect("/files/manageHotels.html");
+    } else{
+      res.status(403).send("403 (Forbidden) - You must be a hotel manager to access this page.");
+    }
+  } else{
+    res.status(403);
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
+router.get('/files/hotelBookings.html', function(req, res, next) {
+  if(req.session.userid){
+    res.redirect("/files/manageBookings.html");
+  } else{
+    res.status(403);
+    res.redirect("/files/loginScreenV1.html");
+  }
+});
+
+router.get('/files/account.html', function(req, res, next) {
+  if(req.session.userid){
+    res.redirect("/files/myAccount.html");
+  } else{
+    res.status(403).send("403 (Forbidden)");
     res.redirect("/files/loginScreenV1.html");
   }
 });
@@ -98,20 +130,19 @@ router.get('/reviews.json', function(req, res, next) {
       res.json(result);
     });
   });
+});
 
-  /*
-  var number = Number(req.query.hotelid);
-  console.log(req.query.hotelid);
-  var request = [];
-
-  // Compare hotel ID with the Review
-  for(var i=0;i<reviews.length;i++){
-    if(reviews[i].hotelid == number){
-      request.push(reviews[i]);
-    }
-  }
-
-  res.send(JSON.stringify(request));*/
+router.get('/bookings', function(req, res, next) {
+  req.pool.getConnection(function(err,connection){
+    if(err){throw err;}
+    var sql = "SELECT user.firstname, user.lastname, user.email, bookings.bookingid, bookings.datein, bookings.dateout, bookings.roomnum, bookings.imagefile, bookings.cost, bookings.paymentfulfilled, hotel.name, hotel.latitude, hotel.longitude from users inner join bookings on users.userid = bookings.userid inner join hotels on hotels.hotelid = bookings.hotelid";
+    var search_val = req.query.hotelid;
+    connection.query(sql, [search_val], function(err, result, fields){
+      if(err){throw err;}
+      connection.release();
+      res.json(result);
+    });
+  });
 });
 
 router.get('/inSession', function(req, res, next) {

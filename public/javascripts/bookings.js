@@ -1,24 +1,23 @@
-var express = require('express');
-var cookieParser = require('cookie-parser');
+var bookings = [];
 
-var app = express();
-app.use(cookieParser());
+function initBookings(){
+  var xhttp = new XMLHttpRequest();
 
-app.get('/',function(req,res){
-   res.cookie('bookingStatus','false');
-    res.cookie('loggedIn','false');
-    res.cookie('name','Your Account');
-    res.cookie('lastname','Null');
-    res.cookie('email','null');
-    res.end('debug');
-});
+  xhttp.onreadystatechange = function() {
+    bookings = JSON.parse(xhttp.responseText);
+    console.log(bookings);
+    if(bookings.length=="0"){
+      document.location="/files/bookingNotMade.html";
+    } else{
+      fade('bookingBody');
+      document.getElementById("hotelname").innerHTML = bookings[0].hotelname;
+      document.getElementById("roomNumber").innerHTML = bookings[0].roomnum;
+    }
+  }
 
-app.listen(3000,function() {
-    console.log('Ready');
-});
+  xhttp.open("GET", "/bookings", false);
 
-function confirmedBooking() {
-document.cookie = ("bookingStatus=true");
+  xhttp.send();
 }
 
 function getCookie(name)
@@ -27,7 +26,3 @@ function getCookie(name)
     var value = re.exec(document.cookie);
     return (value !== null) ? unescape(value[1]) : null;
   }
-
-function bookingCancelled(){
-    document.cookie = ("bookingStatus=false");
-}

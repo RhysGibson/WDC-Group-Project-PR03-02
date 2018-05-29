@@ -12,7 +12,7 @@
       <script src="/javascripts/mapScript.js"></script>
       <script src="/javascripts/bookings.js"></script>
   </head>
-  <body id = "bookingBody" onload="checkSession()">
+  <body id = "bookingBody" onload="checkSession();initBookings()">
     <div id="banner">
       <div class="row">
          <a href="/index.html"><img src = "/images/icon.png" id = "homeIcon" alt="GoProHotels"></a>
@@ -44,10 +44,10 @@
 <button id="close" onclick="closePopUp('pop1')">Close</button><br>
 <h1 style = text-align:center>Hilton Adelaide</h1>
 <hr>
-    <p class = "spacing">Room:<span id = "roomName"> Hilton Adelaide</span></p>
+    <p class = "spacing">Hotel:<span id = "hotelname"> Hilton Adelaide</span></p>
     <p class = "spacing">Room Number: <span id = "roomNumber"></span></p>
-    <p class = "spacing">Cost:$502</p>
-    <p class = "spacing">Payment:fulfilled</p>
+    <p class = "spacing" id="cost">Cost:$502</p>
+    <p class = "spacing" id="fulfilled">Payment:fulfilled</p>
     <p class = "spacing"><a href = "/files/roomCanceled.html">Cancel Room</a></p>
     <div id="map" style = "width: 93%; height: 60%;margin-left:3.5%;margin-top: 2%;">
       <p>Map not loaded. Maybe you are not connected to the internet?</p>
@@ -84,16 +84,6 @@
       <script>
 var hotelBooking;
 roomNumber();
-if(getCookie("bookingStatus") == "true"){
-hotelBooking = true;
-}else{
-    hotelBooking = false;
-}
-if(hotelBooking == false){
-    document.location = "/files/bookingNotMade.html"
-}else if(hotelBooking == true){
-    fade('bookingBody')
-}
 function addElement (bookingId) {
   var newDiv = document.createElement("div");
 newDiv.style.backgroundImage = "url(/images/1.jpg)";
