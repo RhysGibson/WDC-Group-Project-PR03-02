@@ -13,13 +13,18 @@ function initManageHotels(){
     var hotelDescriptions = document.getElementsByClassName('manageHotelDescription');
     var hotelRooms = document.getElementsByClassName('manageHotelRooms');
     var hotelAdditionals = document.getElementsByClassName('manageHotelAdditional');
-    // Do this temporarily while we implement the rest later
-    hotelNames[0].innerHTML = hotels[0].name;
-    hotelDescriptions[0].innerHTML = hotels[0].description;
-    hotelAdditionals[0].innerHTML = hotels[0].additional;
+    if(hotels.length==0){
+      hotelNames[0].innerHTML = "DNE";
+      hotelNames[0].description = "DNE";
+      hotelNames[0].additional = "DNE";
+    } else{
+      hotelNames[0].innerHTML = hotels[0].name;
+      hotelDescriptions[0].innerHTML = hotels[0].description;
+      hotelAdditionals[0].innerHTML = hotels[0].additional;  
+    }
   };
 
-  xhttp.open("GET", "/hotels.json", false);
+  xhttp.open("GET", "/hotels.json?userid="session[0].userid, false);
 
   xhttp.send();
 }

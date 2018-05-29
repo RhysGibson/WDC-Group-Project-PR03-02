@@ -19,6 +19,7 @@ function initOverview(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     overviewHotel = JSON.parse(xhttp.responseText);
+    console.log(overviewHotel);
     document.getElementById("hotelname").innerHTML = overviewHotel[0].hotelname;
     document.getElementById("extendedDescription").innerHTML = overviewHotel[0].extendeddescription;
     document.getElementById("overviewBook").innerHTML = "Book Now ($"+overviewHotel[0].hotelcost+")";

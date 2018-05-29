@@ -60,6 +60,7 @@ function makeBooking(){
 
   xhttp.setRequestHeader("Content-type","application/json");
   xhttp.send(JSON.stringify({hotelid:hotelid,datein:dateFormat1,dateout:dateFormat2,roomnum:roomnum,imagefile:imagefile,cost:bookingcost,numpeople:numpeople}));
+  location.href = "/files/manageBookings.html";
 }
 
 function checkPayment(){

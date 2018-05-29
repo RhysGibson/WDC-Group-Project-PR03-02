@@ -112,12 +112,35 @@ function loadLogin(){
   document.location = "/files/loginScreenV1.html";
 }
 
-function checkHotel1(){
-     document.getElementById("hotelname").innerHTML = bookings[0].hotelname;
-      document.getElementById("roomNumber").innerHTML = bookings[0].roomnum;
-      document.getElementById("cost").innerHTML = "Cost: $"+bookings[0].cost;
-      document.getElementById("numpeople").innerHTML = "Number of People: "+bookings[0].numpeople;
-    setMapLocation(bookings[0].latitude,bookings[0].longitude);
+function checkHotel1(bookingId){
+  var index;
+  console.log("test");
+  for(var i = 0; i <bookings.length;i++){
+      if(bookings[i].bookingid = bookingId){
+          index = i;
+          break;
+      }
+  }
+     document.getElementById("hotelname").innerHTML = bookings[index].hotelname;
+      document.getElementById("roomNumber").innerHTML = bookings[index].roomnum;
+      document.getElementById("cost").innerHTML = "Cost: $"+bookings[index].cost;
+      document.getElementById("numpeople").innerHTML = "Number of People: "+bookings[index].numpeople;
+    setMapLocation(bookings[0].latitude,bookings[index].longitude);
+    var fulfilled;
+
+    if(bookings[index].paymentfulfilled == "1"){
+      fulfilled = "Paid";
+    } else{
+      fulfilled = "Not Paid";
+    }
+    document.getElementById("fulfilled").innerHTML = "Payment fulfilled: "+fulfilled;
+    var d1 = Date.parse(bookings[index].datein);
+    var date1 = new Date(d1);
+    var dateFormat1 = date1.getDate() + "/" + Number(date1.getMonth()+1) + "/" + date1.getFullYear();
+    var d2 = Date.parse(bookings[index].dateout);
+    var date2 = new Date(d2);
+    var dateFormat2 = date2.getDate() + "/" + Number(date2.getMonth()+1) + "/" + date2.getFullYear();
+    document.getElementById("dates").innerHTML = "Dates: "+dateFormat1+" - "+dateFormat2;
     fade('pop1');
 }
 
@@ -386,7 +409,7 @@ newDiv.style.backgroundImage = "url("+bookings[index].imagefile+")";
     newDiv.style.marginBottom = "0%";
     newDiv.style.marginTop = "3.3%";
     newDiv.style.marginLeft = "10%";
-    newDiv.setAttribute("onclick","checkHotel1()");
+    newDiv.setAttribute("onclick","checkHotel1("+bookingId+")");
     newDiv.id = bookingId;
   document.body.insertBefore(newDiv, currentDiv);
 }

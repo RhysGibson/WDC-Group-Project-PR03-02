@@ -198,7 +198,18 @@ router.post('/signOut',function(req,res){
 
 router.get('/hotels.json', function(req, res, next) {
   var hotels = [];
-  if(req.query.hotelid){
+  if(req.query.userid != "-1" && !req.query.hotelid){
+    req.pool.getConnection(function(err,connection){
+      if(err){throw err;}
+      var sql = "SELECT * from hotels where userid = ?";
+      var search_val = req.query.hotelid;
+      connection.query(sql, [search_val], function(err, result, fields){
+        if(err){throw err;}
+        connection.release();
+        res.json(result);
+      });
+    });
+  }else if(req.query.hotelid){
     req.pool.getConnection(function(err,connection){
       if(err){throw err;}
       var sql = "SELECT * from hotels where hotelid = ?";
